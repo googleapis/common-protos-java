@@ -1,6 +1,6 @@
-// Build artifacts
+# Build artifacts
 .gradle/
 build/
 
-// Temporary documentation
+# Temporary documentation
 tmp_gh-pages/
