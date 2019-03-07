@@ -1,0 +1,33 @@
+---
+version: 2.0
+jobs:
+  openjdk7:
+    docker:
+      - image: openjdk:7u111
+        environment:
+          TERM: dumb
+    steps:
+      - checkout
+      - run:
+          name: Run GAPIC unit tests in OpenJDK 7.
+          command: ./gradlew clean test -Dorg.gradle.jvmargs=-Xmx256m
+    working_directory: /var/code/googleapis/
+
+  openjdk8:
+    docker:
+      - image: openjdk:8
+        environment:
+          TERM: dumb
+    steps:
+      - checkout
+      - run:
+          name: Run GAPIC unit tests in OpenJDK 8.
+          command: ./gradlew clean test -Dorg.gradle.jvmargs=-Xmx256m
+    working_directory: /var/code/googleapis/
+
+workflows:
+  version: 2
+  tests:
+    jobs:
+      - openjdk7
+      - openjdk8
