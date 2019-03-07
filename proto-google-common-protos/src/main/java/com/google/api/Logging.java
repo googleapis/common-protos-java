@@ -137,7 +137,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The monitored resource type. The type must be defined in the
-     * [Service.monitored_resources][google.api.Service.monitored_resources] section.
+     * [Service.monitored_resources][google.api.Service.monitored_resources]
+     * section.
      * </pre>
      *
      * <code>string monitored_resource = 3;</code>
@@ -146,7 +147,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The monitored resource type. The type must be defined in the
-     * [Service.monitored_resources][google.api.Service.monitored_resources] section.
+     * [Service.monitored_resources][google.api.Service.monitored_resources]
+     * section.
      * </pre>
      *
      * <code>string monitored_resource = 3;</code>
@@ -157,9 +159,9 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Names of the logs to be sent to this destination. Each name must
-     * be defined in the [Service.logs][google.api.Service.logs] section. If the log name is
-     * not a domain scoped name, it will be automatically prefixed with
-     * the service name followed by "/".
+     * be defined in the [Service.logs][google.api.Service.logs] section. If the
+     * log name is not a domain scoped name, it will be automatically prefixed
+     * with the service name followed by "/".
      * </pre>
      *
      * <code>repeated string logs = 1;</code>
@@ -169,9 +171,9 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Names of the logs to be sent to this destination. Each name must
-     * be defined in the [Service.logs][google.api.Service.logs] section. If the log name is
-     * not a domain scoped name, it will be automatically prefixed with
-     * the service name followed by "/".
+     * be defined in the [Service.logs][google.api.Service.logs] section. If the
+     * log name is not a domain scoped name, it will be automatically prefixed
+     * with the service name followed by "/".
      * </pre>
      *
      * <code>repeated string logs = 1;</code>
@@ -180,9 +182,9 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Names of the logs to be sent to this destination. Each name must
-     * be defined in the [Service.logs][google.api.Service.logs] section. If the log name is
-     * not a domain scoped name, it will be automatically prefixed with
-     * the service name followed by "/".
+     * be defined in the [Service.logs][google.api.Service.logs] section. If the
+     * log name is not a domain scoped name, it will be automatically prefixed
+     * with the service name followed by "/".
      * </pre>
      *
      * <code>repeated string logs = 1;</code>
@@ -191,9 +193,9 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Names of the logs to be sent to this destination. Each name must
-     * be defined in the [Service.logs][google.api.Service.logs] section. If the log name is
-     * not a domain scoped name, it will be automatically prefixed with
-     * the service name followed by "/".
+     * be defined in the [Service.logs][google.api.Service.logs] section. If the
+     * log name is not a domain scoped name, it will be automatically prefixed
+     * with the service name followed by "/".
      * </pre>
      *
      * <code>repeated string logs = 1;</code>
@@ -303,7 +305,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The monitored resource type. The type must be defined in the
-     * [Service.monitored_resources][google.api.Service.monitored_resources] section.
+     * [Service.monitored_resources][google.api.Service.monitored_resources]
+     * section.
      * </pre>
      *
      * <code>string monitored_resource = 3;</code>
@@ -323,7 +326,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The monitored resource type. The type must be defined in the
-     * [Service.monitored_resources][google.api.Service.monitored_resources] section.
+     * [Service.monitored_resources][google.api.Service.monitored_resources]
+     * section.
      * </pre>
      *
      * <code>string monitored_resource = 3;</code>
@@ -347,9 +351,9 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Names of the logs to be sent to this destination. Each name must
-     * be defined in the [Service.logs][google.api.Service.logs] section. If the log name is
-     * not a domain scoped name, it will be automatically prefixed with
-     * the service name followed by "/".
+     * be defined in the [Service.logs][google.api.Service.logs] section. If the
+     * log name is not a domain scoped name, it will be automatically prefixed
+     * with the service name followed by "/".
      * </pre>
      *
      * <code>repeated string logs = 1;</code>
@@ -361,9 +365,9 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Names of the logs to be sent to this destination. Each name must
-     * be defined in the [Service.logs][google.api.Service.logs] section. If the log name is
-     * not a domain scoped name, it will be automatically prefixed with
-     * the service name followed by "/".
+     * be defined in the [Service.logs][google.api.Service.logs] section. If the
+     * log name is not a domain scoped name, it will be automatically prefixed
+     * with the service name followed by "/".
      * </pre>
      *
      * <code>repeated string logs = 1;</code>
@@ -374,9 +378,9 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Names of the logs to be sent to this destination. Each name must
-     * be defined in the [Service.logs][google.api.Service.logs] section. If the log name is
-     * not a domain scoped name, it will be automatically prefixed with
-     * the service name followed by "/".
+     * be defined in the [Service.logs][google.api.Service.logs] section. If the
+     * log name is not a domain scoped name, it will be automatically prefixed
+     * with the service name followed by "/".
      * </pre>
      *
      * <code>repeated string logs = 1;</code>
@@ -387,9 +391,9 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Names of the logs to be sent to this destination. Each name must
-     * be defined in the [Service.logs][google.api.Service.logs] section. If the log name is
-     * not a domain scoped name, it will be automatically prefixed with
-     * the service name followed by "/".
+     * be defined in the [Service.logs][google.api.Service.logs] section. If the
+     * log name is not a domain scoped name, it will be automatically prefixed
+     * with the service name followed by "/".
      * </pre>
      *
      * <code>repeated string logs = 1;</code>
@@ -749,7 +753,8 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * The monitored resource type. The type must be defined in the
-       * [Service.monitored_resources][google.api.Service.monitored_resources] section.
+       * [Service.monitored_resources][google.api.Service.monitored_resources]
+       * section.
        * </pre>
        *
        * <code>string monitored_resource = 3;</code>
@@ -769,7 +774,8 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * The monitored resource type. The type must be defined in the
-       * [Service.monitored_resources][google.api.Service.monitored_resources] section.
+       * [Service.monitored_resources][google.api.Service.monitored_resources]
+       * section.
        * </pre>
        *
        * <code>string monitored_resource = 3;</code>
@@ -790,7 +796,8 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * The monitored resource type. The type must be defined in the
-       * [Service.monitored_resources][google.api.Service.monitored_resources] section.
+       * [Service.monitored_resources][google.api.Service.monitored_resources]
+       * section.
        * </pre>
        *
        * <code>string monitored_resource = 3;</code>
@@ -808,7 +815,8 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * The monitored resource type. The type must be defined in the
-       * [Service.monitored_resources][google.api.Service.monitored_resources] section.
+       * [Service.monitored_resources][google.api.Service.monitored_resources]
+       * section.
        * </pre>
        *
        * <code>string monitored_resource = 3;</code>
@@ -822,7 +830,8 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * The monitored resource type. The type must be defined in the
-       * [Service.monitored_resources][google.api.Service.monitored_resources] section.
+       * [Service.monitored_resources][google.api.Service.monitored_resources]
+       * section.
        * </pre>
        *
        * <code>string monitored_resource = 3;</code>
@@ -849,9 +858,9 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * Names of the logs to be sent to this destination. Each name must
-       * be defined in the [Service.logs][google.api.Service.logs] section. If the log name is
-       * not a domain scoped name, it will be automatically prefixed with
-       * the service name followed by "/".
+       * be defined in the [Service.logs][google.api.Service.logs] section. If the
+       * log name is not a domain scoped name, it will be automatically prefixed
+       * with the service name followed by "/".
        * </pre>
        *
        * <code>repeated string logs = 1;</code>
@@ -863,9 +872,9 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * Names of the logs to be sent to this destination. Each name must
-       * be defined in the [Service.logs][google.api.Service.logs] section. If the log name is
-       * not a domain scoped name, it will be automatically prefixed with
-       * the service name followed by "/".
+       * be defined in the [Service.logs][google.api.Service.logs] section. If the
+       * log name is not a domain scoped name, it will be automatically prefixed
+       * with the service name followed by "/".
        * </pre>
        *
        * <code>repeated string logs = 1;</code>
@@ -876,9 +885,9 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * Names of the logs to be sent to this destination. Each name must
-       * be defined in the [Service.logs][google.api.Service.logs] section. If the log name is
-       * not a domain scoped name, it will be automatically prefixed with
-       * the service name followed by "/".
+       * be defined in the [Service.logs][google.api.Service.logs] section. If the
+       * log name is not a domain scoped name, it will be automatically prefixed
+       * with the service name followed by "/".
        * </pre>
        *
        * <code>repeated string logs = 1;</code>
@@ -889,9 +898,9 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * Names of the logs to be sent to this destination. Each name must
-       * be defined in the [Service.logs][google.api.Service.logs] section. If the log name is
-       * not a domain scoped name, it will be automatically prefixed with
-       * the service name followed by "/".
+       * be defined in the [Service.logs][google.api.Service.logs] section. If the
+       * log name is not a domain scoped name, it will be automatically prefixed
+       * with the service name followed by "/".
        * </pre>
        *
        * <code>repeated string logs = 1;</code>
@@ -903,9 +912,9 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * Names of the logs to be sent to this destination. Each name must
-       * be defined in the [Service.logs][google.api.Service.logs] section. If the log name is
-       * not a domain scoped name, it will be automatically prefixed with
-       * the service name followed by "/".
+       * be defined in the [Service.logs][google.api.Service.logs] section. If the
+       * log name is not a domain scoped name, it will be automatically prefixed
+       * with the service name followed by "/".
        * </pre>
        *
        * <code>repeated string logs = 1;</code>
@@ -923,9 +932,9 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * Names of the logs to be sent to this destination. Each name must
-       * be defined in the [Service.logs][google.api.Service.logs] section. If the log name is
-       * not a domain scoped name, it will be automatically prefixed with
-       * the service name followed by "/".
+       * be defined in the [Service.logs][google.api.Service.logs] section. If the
+       * log name is not a domain scoped name, it will be automatically prefixed
+       * with the service name followed by "/".
        * </pre>
        *
        * <code>repeated string logs = 1;</code>
@@ -943,9 +952,9 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * Names of the logs to be sent to this destination. Each name must
-       * be defined in the [Service.logs][google.api.Service.logs] section. If the log name is
-       * not a domain scoped name, it will be automatically prefixed with
-       * the service name followed by "/".
+       * be defined in the [Service.logs][google.api.Service.logs] section. If the
+       * log name is not a domain scoped name, it will be automatically prefixed
+       * with the service name followed by "/".
        * </pre>
        *
        * <code>repeated string logs = 1;</code>
@@ -961,9 +970,9 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * Names of the logs to be sent to this destination. Each name must
-       * be defined in the [Service.logs][google.api.Service.logs] section. If the log name is
-       * not a domain scoped name, it will be automatically prefixed with
-       * the service name followed by "/".
+       * be defined in the [Service.logs][google.api.Service.logs] section. If the
+       * log name is not a domain scoped name, it will be automatically prefixed
+       * with the service name followed by "/".
        * </pre>
        *
        * <code>repeated string logs = 1;</code>
@@ -977,9 +986,9 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * Names of the logs to be sent to this destination. Each name must
-       * be defined in the [Service.logs][google.api.Service.logs] section. If the log name is
-       * not a domain scoped name, it will be automatically prefixed with
-       * the service name followed by "/".
+       * be defined in the [Service.logs][google.api.Service.logs] section. If the
+       * log name is not a domain scoped name, it will be automatically prefixed
+       * with the service name followed by "/".
        * </pre>
        *
        * <code>repeated string logs = 1;</code>

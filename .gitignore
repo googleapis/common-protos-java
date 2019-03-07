@@ -2,6 +2,7 @@
 .gradle/
 build/
 /out
+/tmp_common_protos
 
 # Temporary documentation
 tmp_gh-pages/

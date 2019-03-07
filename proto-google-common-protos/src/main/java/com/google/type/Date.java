@@ -10,8 +10,9 @@ package com.google.type;
  * is relative to the Proleptic Gregorian Calendar. The day may be 0 to
  * represent a year and month where the day is not significant, e.g. credit card
  * expiration date. The year may be 0 to represent a month and day independent
- * of year, e.g. anniversary date. Related types are [google.type.TimeOfDay][google.type.TimeOfDay]
- * and `google.protobuf.Timestamp`.
+ * of year, e.g. anniversary date. Related types are
+ * [google.type.TimeOfDay][google.type.TimeOfDay] and
+ * `google.protobuf.Timestamp`.
  * </pre>
  *
  * Protobuf type {@code google.type.Date}
@@ -328,8 +329,9 @@ private static final long serialVersionUID = 0L;
    * is relative to the Proleptic Gregorian Calendar. The day may be 0 to
    * represent a year and month where the day is not significant, e.g. credit card
    * expiration date. The year may be 0 to represent a month and day independent
-   * of year, e.g. anniversary date. Related types are [google.type.TimeOfDay][google.type.TimeOfDay]
-   * and `google.protobuf.Timestamp`.
+   * of year, e.g. anniversary date. Related types are
+   * [google.type.TimeOfDay][google.type.TimeOfDay] and
+   * `google.protobuf.Timestamp`.
    * </pre>
    *
    * Protobuf type {@code google.type.Date}

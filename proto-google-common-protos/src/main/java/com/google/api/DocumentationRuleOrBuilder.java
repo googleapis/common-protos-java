@@ -55,8 +55,8 @@ public interface DocumentationRuleOrBuilder extends
 
   /**
    * <pre>
-   * Deprecation description of the selected element(s). It can be provided if an
-   * element is marked as `deprecated`.
+   * Deprecation description of the selected element(s). It can be provided if
+   * an element is marked as `deprecated`.
    * </pre>
    *
    * <code>string deprecation_description = 3;</code>
@@ -64,8 +64,8 @@ public interface DocumentationRuleOrBuilder extends
   java.lang.String getDeprecationDescription();
   /**
    * <pre>
-   * Deprecation description of the selected element(s). It can be provided if an
-   * element is marked as `deprecated`.
+   * Deprecation description of the selected element(s). It can be provided if
+   * an element is marked as `deprecated`.
    * </pre>
    *
    * <code>string deprecation_description = 3;</code>

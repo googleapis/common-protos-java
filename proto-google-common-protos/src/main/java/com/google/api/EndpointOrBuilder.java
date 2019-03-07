@@ -28,8 +28,8 @@ public interface EndpointOrBuilder extends
   /**
    * <pre>
    * DEPRECATED: This field is no longer supported. Instead of using aliases,
-   * please specify multiple [google.api.Endpoint][google.api.Endpoint] for each of the intended
-   * aliases.
+   * please specify multiple [google.api.Endpoint][google.api.Endpoint] for each
+   * of the intended aliases.
    * Additional names that this endpoint will be hosted on.
    * </pre>
    *
@@ -40,8 +40,8 @@ public interface EndpointOrBuilder extends
   /**
    * <pre>
    * DEPRECATED: This field is no longer supported. Instead of using aliases,
-   * please specify multiple [google.api.Endpoint][google.api.Endpoint] for each of the intended
-   * aliases.
+   * please specify multiple [google.api.Endpoint][google.api.Endpoint] for each
+   * of the intended aliases.
    * Additional names that this endpoint will be hosted on.
    * </pre>
    *
@@ -51,8 +51,8 @@ public interface EndpointOrBuilder extends
   /**
    * <pre>
    * DEPRECATED: This field is no longer supported. Instead of using aliases,
-   * please specify multiple [google.api.Endpoint][google.api.Endpoint] for each of the intended
-   * aliases.
+   * please specify multiple [google.api.Endpoint][google.api.Endpoint] for each
+   * of the intended aliases.
    * Additional names that this endpoint will be hosted on.
    * </pre>
    *
@@ -62,8 +62,8 @@ public interface EndpointOrBuilder extends
   /**
    * <pre>
    * DEPRECATED: This field is no longer supported. Instead of using aliases,
-   * please specify multiple [google.api.Endpoint][google.api.Endpoint] for each of the intended
-   * aliases.
+   * please specify multiple [google.api.Endpoint][google.api.Endpoint] for each
+   * of the intended aliases.
    * Additional names that this endpoint will be hosted on.
    * </pre>
    *
@@ -110,9 +110,10 @@ public interface EndpointOrBuilder extends
   /**
    * <pre>
    * The specification of an Internet routable address of API frontend that will
-   * handle requests to this [API Endpoint](https://cloud.google.com/apis/design/glossary).
-   * It should be either a valid IPv4 address or a fully-qualified domain name.
-   * For example, "8.8.8.8" or "myservice.appspot.com".
+   * handle requests to this [API
+   * Endpoint](https://cloud.google.com/apis/design/glossary). It should be
+   * either a valid IPv4 address or a fully-qualified domain name. For example,
+   * "8.8.8.8" or "myservice.appspot.com".
    * </pre>
    *
    * <code>string target = 101;</code>
@@ -121,9 +122,10 @@ public interface EndpointOrBuilder extends
   /**
    * <pre>
    * The specification of an Internet routable address of API frontend that will
-   * handle requests to this [API Endpoint](https://cloud.google.com/apis/design/glossary).
-   * It should be either a valid IPv4 address or a fully-qualified domain name.
-   * For example, "8.8.8.8" or "myservice.appspot.com".
+   * handle requests to this [API
+   * Endpoint](https://cloud.google.com/apis/design/glossary). It should be
+   * either a valid IPv4 address or a fully-qualified domain name. For example,
+   * "8.8.8.8" or "myservice.appspot.com".
    * </pre>
    *
    * <code>string target = 101;</code>

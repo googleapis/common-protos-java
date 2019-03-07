@@ -10,7 +10,8 @@ public interface MetricRuleOrBuilder extends
   /**
    * <pre>
    * Selects the methods to which this rule applies.
-   * Refer to [selector][google.api.DocumentationRule.selector] for syntax details.
+   * Refer to [selector][google.api.DocumentationRule.selector] for syntax
+   * details.
    * </pre>
    *
    * <code>string selector = 1;</code>
@@ -19,7 +20,8 @@ public interface MetricRuleOrBuilder extends
   /**
    * <pre>
    * Selects the methods to which this rule applies.
-   * Refer to [selector][google.api.DocumentationRule.selector] for syntax details.
+   * Refer to [selector][google.api.DocumentationRule.selector] for syntax
+   * details.
    * </pre>
    *
    * <code>string selector = 1;</code>

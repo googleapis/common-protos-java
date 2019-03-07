@@ -5,7 +5,8 @@ package com.google.longrunning;
 
 /**
  * <pre>
- * The request message for [Operations.GetOperation][google.longrunning.Operations.GetOperation].
+ * The request message for
+ * [Operations.GetOperation][google.longrunning.Operations.GetOperation].
  * </pre>
  *
  * Protobuf type {@code google.longrunning.GetOperationRequest}
@@ -284,7 +285,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The request message for [Operations.GetOperation][google.longrunning.Operations.GetOperation].
+   * The request message for
+   * [Operations.GetOperation][google.longrunning.Operations.GetOperation].
    * </pre>
    *
    * Protobuf type {@code google.longrunning.GetOperationRequest}

@@ -15,7 +15,8 @@ public interface ConfigChangeOrBuilder extends
    * 'key' is used. If the field has no unique identifier, the numeric index
    * is used.
    * Examples:
-   * - visibility.rules[selector=="google.LibraryService.CreateBook"].restriction
+   * -
+   * visibility.rules[selector=="google.LibraryService.CreateBook"].restriction
    * - quota.metric_rules[selector=="google"].metric_costs[key=="reads"].value
    * - logging.producer_destinations[0]
    * </pre>
@@ -31,7 +32,8 @@ public interface ConfigChangeOrBuilder extends
    * 'key' is used. If the field has no unique identifier, the numeric index
    * is used.
    * Examples:
-   * - visibility.rules[selector=="google.LibraryService.CreateBook"].restriction
+   * -
+   * visibility.rules[selector=="google.LibraryService.CreateBook"].restriction
    * - quota.metric_rules[selector=="google"].metric_costs[key=="reads"].value
    * - logging.producer_destinations[0]
    * </pre>
