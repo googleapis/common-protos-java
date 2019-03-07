@@ -22,16 +22,12 @@ COMMON_PROTOS_REPO="https://github.com/googleapis/googleapis.git"
 : "${ROOT_DIR:=$(pwd)}"
 echo "root dir: ${ROOT_DIR}"
 TEMP_COMMON_PROTOS_DIR="${ROOT_DIR}/tmp_common_protos"
-PROTOC_OUT_DIR="${ROOT_DIR}/out"
-SRC_DIR="${ROOT_DIR}/src"
+OUT_DIR="${ROOT_DIR}/out"
+PROTO_SRC_DIR="${ROOT_DIR}/proto-google-common-protos/src"
+GRPC_SRC_DIR="${ROOT_DIR}/grpc-google-common-protos/src"
 
-# Protoc bin
 : "${PROTOC_BIN:=$(which protoc)}"
-echo "protoc bin: ${PROTOC_BIN}"
-
-# Check protoc version
 PROTOC_VERSION=$($PROTOC_BIN --version)
-echo "protoc version: ${PROTOC_VERSION}"
 
 if [ "${PROTOC_VERSION}" != "${REQUIRED_PROTOC_VERSION}" ]
 then
@@ -42,17 +38,28 @@ fi
 rm -rf ${TEMP_COMMON_PROTOS_DIR}
 git clone ${COMMON_PROTOS_REPO} ${TEMP_COMMON_PROTOS_DIR}
 
-rm -rf ${PROTOC_OUT_DIR}
-mkdir ${PROTOC_OUT_DIR}
+# Copy the artman config file to the googleapis dir
+cp ${ROOT_DIR}/artman_core.yaml ${TEMP_COMMON_PROTOS_DIR}
 
-PROTOS_TO_GENERATE=$(find ${TEMP_COMMON_PROTOS_DIR} -name "*.proto")
+rm -rf ${OUT_DIR}
+mkdir ${OUT_DIR}
 
-PROTOC_ARGS="--php_out ${PROTOC_OUT_DIR} -I${TEMP_COMMON_PROTOS_DIR} ${PROTOS_TO_GENERATE}"
+PROTOC_ARGS="--php_out ${OUT_DIR} -I${TEMP_COMMON_PROTOS_DIR} ${PROTOS_TO_GENERATE}"
 echo "Calling protoc with args: ${PROTOC_ARGS}"
 ${PROTOC_BIN} ${PROTOC_ARGS}
 
-rm -rf ${SRC_DIR}
-mkdir ${SRC_DIR}
+# Run artman to generate compiled protos and grpc stubs.
+# Artman will handle figuring out which proto src directories to include and exclude
+# and invoking the grpc protoc plugin.
+# TODO switch to just using protoc.
+
+artman --output-dir ${OUT_DIR} --config google/artman_core.yaml generate java_grpc
+
+rm -rf ${PROTO_SRC_DIR}
+mkdir ${PROTO_SRC_DIR}
+rm -rf ${GRPC_SRC_DIR}
+mkdir ${GRPC_SRC_DIR}
 
 echo "Copy protos to src"
-cp -r ${PROTOC_OUT_DIR}/Google/* ${SRC_DIR}/
+cp -r ${OUT_DIR}/proto-google-common-protos/src ${PROTO_SRC_DIR}/
+cp -r ${OUT_DIR}/grpc-google-common-protos/src ${GRPC_SRC_DIR}/
