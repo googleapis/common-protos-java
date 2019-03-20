@@ -17,7 +17,7 @@ buildscript {
 apply plugin: 'java'
 apply plugin: 'io.codearte.nexus-staging'
 
-project.version = "1.14.0" // {x-version-update:common-protos-java:current}
+project.version = "1.14.1-SNAPSHOT" // {x-version-update:common-protos-java:current}
 
 if (project.hasProperty('ossrhUsername') && project.hasProperty('ossrhPassword')) {
   // Nexus staging plugin only works at root project level
