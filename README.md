@@ -11,7 +11,7 @@ The protobuf definitions for these generated Java classes are provided in the
 Quickstart
 ----------
 
-[//]: # ({x-version-update-start:google-cloud-bom:released})
+[//]: # ({x-version-update-start:common-protos-java:released})
 If you are using Maven, add this to your pom.xml file
 ```xml
   <dependencyManagement>
@@ -33,7 +33,7 @@ If you are using Maven, add this to your pom.xml file
 ```
 [//]: # ({x-version-update-end})
 
-[//]: # ({x-version-update-start:google-cloud-storage:released})
+[//]: # ({x-version-update-start:common-protos-java:released})
 If you are using Gradle, add this to your dependencies
 ```Groovy
 compile 'com.google.api.grpc:proto-google-common-protos:1.14.0'
