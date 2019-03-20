@@ -80,7 +80,8 @@ public interface HttpRequestOrBuilder extends
   /**
    * <pre>
    * The user agent sent by the client. Example:
-   * `"Mozilla/4.0 (compatible; MSIE 6.0; Windows 98; Q312461; .NET CLR 1.0.3705)"`.
+   * `"Mozilla/4.0 (compatible; MSIE 6.0; Windows 98; Q312461; .NET
+   * CLR 1.0.3705)"`.
    * </pre>
    *
    * <code>string user_agent = 6;</code>
@@ -89,7 +90,8 @@ public interface HttpRequestOrBuilder extends
   /**
    * <pre>
    * The user agent sent by the client. Example:
-   * `"Mozilla/4.0 (compatible; MSIE 6.0; Windows 98; Q312461; .NET CLR 1.0.3705)"`.
+   * `"Mozilla/4.0 (compatible; MSIE 6.0; Windows 98; Q312461; .NET
+   * CLR 1.0.3705)"`.
    * </pre>
    *
    * <code>string user_agent = 6;</code>
@@ -140,7 +142,8 @@ public interface HttpRequestOrBuilder extends
   /**
    * <pre>
    * The referer URL of the request, as defined in
-   * [HTTP/1.1 Header Field Definitions](http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html).
+   * [HTTP/1.1 Header Field
+   * Definitions](http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html).
    * </pre>
    *
    * <code>string referer = 8;</code>
@@ -149,7 +152,8 @@ public interface HttpRequestOrBuilder extends
   /**
    * <pre>
    * The referer URL of the request, as defined in
-   * [HTTP/1.1 Header Field Definitions](http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html).
+   * [HTTP/1.1 Header Field
+   * Definitions](http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html).
    * </pre>
    *
    * <code>string referer = 8;</code>

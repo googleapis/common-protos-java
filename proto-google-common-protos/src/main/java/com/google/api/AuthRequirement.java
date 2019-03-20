@@ -6,7 +6,8 @@ package com.google.api;
 /**
  * <pre>
  * User-defined authentication requirements, including support for
- * [JSON Web Token (JWT)](https://tools.ietf.org/html/draft-ietf-oauth-json-web-token-32).
+ * [JSON Web Token
+ * (JWT)](https://tools.ietf.org/html/draft-ietf-oauth-json-web-token-32).
  * </pre>
  *
  * Protobuf type {@code google.api.AuthRequirement}
@@ -373,7 +374,8 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * User-defined authentication requirements, including support for
-   * [JSON Web Token (JWT)](https://tools.ietf.org/html/draft-ietf-oauth-json-web-token-32).
+   * [JSON Web Token
+   * (JWT)](https://tools.ietf.org/html/draft-ietf-oauth-json-web-token-32).
    * </pre>
    *
    * Protobuf type {@code google.api.AuthRequirement}

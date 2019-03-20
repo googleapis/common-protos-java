@@ -63,7 +63,9 @@ package com.google.api;
  * This enables a HTTP JSON to RPC mapping as below:
  * HTTP | gRPC
  * -----|-----
- * `GET /v1/messages/123456?revision=2&amp;sub.subfield=foo` | `GetMessage(message_id: "123456" revision: 2 sub: SubMessage(subfield: "foo"))`
+ * `GET /v1/messages/123456?revision=2&amp;sub.subfield=foo` |
+ * `GetMessage(message_id: "123456" revision: 2 sub: SubMessage(subfield:
+ * "foo"))`
  * Note that fields which are mapped to URL query parameters must have a
  * primitive type or a repeated primitive type or a non-repeated message type.
  * In the case of a repeated type, the parameter can be repeated in the URL
@@ -90,7 +92,8 @@ package com.google.api;
  * protos JSON encoding:
  * HTTP | gRPC
  * -----|-----
- * `PATCH /v1/messages/123456 { "text": "Hi!" }` | `UpdateMessage(message_id: "123456" message { text: "Hi!" })`
+ * `PATCH /v1/messages/123456 { "text": "Hi!" }` | `UpdateMessage(message_id:
+ * "123456" message { text: "Hi!" })`
  * The special name `*` can be used in the body mapping to define that
  * every field not bound by the path template should be mapped to the
  * request body.  This enables the following alternative definition of
@@ -110,7 +113,8 @@ package com.google.api;
  * The following HTTP JSON to RPC mapping is enabled:
  * HTTP | gRPC
  * -----|-----
- * `PATCH /v1/messages/123456 { "text": "Hi!" }` | `UpdateMessage(message_id: "123456" text: "Hi!")`
+ * `PATCH /v1/messages/123456 { "text": "Hi!" }` | `UpdateMessage(message_id:
+ * "123456" text: "Hi!")`
  * Note that when using `*` in the body mapping, it is not possible to
  * have HTTP parameters, as all fields not bound by the path end in
  * the body. This makes this option more rarely used in practice when
@@ -136,20 +140,24 @@ package com.google.api;
  * HTTP | gRPC
  * -----|-----
  * `GET /v1/messages/123456` | `GetMessage(message_id: "123456")`
- * `GET /v1/users/me/messages/123456` | `GetMessage(user_id: "me" message_id: "123456")`
+ * `GET /v1/users/me/messages/123456` | `GetMessage(user_id: "me" message_id:
+ * "123456")`
  * ## Rules for HTTP mapping
  * 1. Leaf request fields (recursive expansion nested messages in the request
  *    message) are classified into three categories:
  *    - Fields referred by the path template. They are passed via the URL path.
- *    - Fields referred by the [HttpRule.body][google.api.HttpRule.body]. They are passed via the HTTP
+ *    - Fields referred by the [HttpRule.body][google.api.HttpRule.body]. They
+ *    are passed via the HTTP
  *      request body.
  *    - All other fields are passed via the URL query parameters, and the
  *      parameter name is the field path in the request message. A repeated
  *      field can be represented as multiple query parameters under the same
  *      name.
- *  2. If [HttpRule.body][google.api.HttpRule.body] is "*", there is no URL query parameter, all fields
+ *  2. If [HttpRule.body][google.api.HttpRule.body] is "*", there is no URL
+ *  query parameter, all fields
  *     are passed via URL path and HTTP request body.
- *  3. If [HttpRule.body][google.api.HttpRule.body] is omitted, there is no HTTP request body, all
+ *  3. If [HttpRule.body][google.api.HttpRule.body] is omitted, there is no HTTP
+ *  request body, all
  *     fields are passed via URL path and URL query parameters.
  * ### Path template syntax
  *     Template = "/" Segments [ Verb ] ;
@@ -172,15 +180,17 @@ package com.google.api;
  * `"{var=*}"`, when such a variable is expanded into a URL path on the client
  * side, all characters except `[-_.~0-9a-zA-Z]` are percent-encoded. The
  * server side does the reverse decoding. Such variables show up in the
- * [Discovery Document](https://developers.google.com/discovery/v1/reference/apis)
- * as `{var}`.
+ * [Discovery
+ * Document](https://developers.google.com/discovery/v1/reference/apis) as
+ * `{var}`.
  * If a variable contains multiple path segments, such as `"{var=foo/&#42;}"`
  * or `"{var=**}"`, when such a variable is expanded into a URL path on the
  * client side, all characters except `[-_.~/0-9a-zA-Z]` are percent-encoded.
  * The server side does the reverse decoding, except "%2F" and "%2f" are left
  * unchanged. Such variables show up in the
- * [Discovery Document](https://developers.google.com/discovery/v1/reference/apis)
- * as `{+var}`.
+ * [Discovery
+ * Document](https://developers.google.com/discovery/v1/reference/apis) as
+ * `{+var}`.
  * ## Using gRPC API Service Configuration
  * gRPC API Service Configuration (service config) is a configuration language
  * for configuring a gRPC service to become a user-facing product. The
@@ -422,7 +432,8 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Selects a method to which this rule applies.
-   * Refer to [selector][google.api.DocumentationRule.selector] for syntax details.
+   * Refer to [selector][google.api.DocumentationRule.selector] for syntax
+   * details.
    * </pre>
    *
    * <code>string selector = 1;</code>
@@ -442,7 +453,8 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Selects a method to which this rule applies.
-   * Refer to [selector][google.api.DocumentationRule.selector] for syntax details.
+   * Refer to [selector][google.api.DocumentationRule.selector] for syntax
+   * details.
    * </pre>
    *
    * <code>string selector = 1;</code>
@@ -1274,7 +1286,9 @@ private static final long serialVersionUID = 0L;
    * This enables a HTTP JSON to RPC mapping as below:
    * HTTP | gRPC
    * -----|-----
-   * `GET /v1/messages/123456?revision=2&amp;sub.subfield=foo` | `GetMessage(message_id: "123456" revision: 2 sub: SubMessage(subfield: "foo"))`
+   * `GET /v1/messages/123456?revision=2&amp;sub.subfield=foo` |
+   * `GetMessage(message_id: "123456" revision: 2 sub: SubMessage(subfield:
+   * "foo"))`
    * Note that fields which are mapped to URL query parameters must have a
    * primitive type or a repeated primitive type or a non-repeated message type.
    * In the case of a repeated type, the parameter can be repeated in the URL
@@ -1301,7 +1315,8 @@ private static final long serialVersionUID = 0L;
    * protos JSON encoding:
    * HTTP | gRPC
    * -----|-----
-   * `PATCH /v1/messages/123456 { "text": "Hi!" }` | `UpdateMessage(message_id: "123456" message { text: "Hi!" })`
+   * `PATCH /v1/messages/123456 { "text": "Hi!" }` | `UpdateMessage(message_id:
+   * "123456" message { text: "Hi!" })`
    * The special name `*` can be used in the body mapping to define that
    * every field not bound by the path template should be mapped to the
    * request body.  This enables the following alternative definition of
@@ -1321,7 +1336,8 @@ private static final long serialVersionUID = 0L;
    * The following HTTP JSON to RPC mapping is enabled:
    * HTTP | gRPC
    * -----|-----
-   * `PATCH /v1/messages/123456 { "text": "Hi!" }` | `UpdateMessage(message_id: "123456" text: "Hi!")`
+   * `PATCH /v1/messages/123456 { "text": "Hi!" }` | `UpdateMessage(message_id:
+   * "123456" text: "Hi!")`
    * Note that when using `*` in the body mapping, it is not possible to
    * have HTTP parameters, as all fields not bound by the path end in
    * the body. This makes this option more rarely used in practice when
@@ -1347,20 +1363,24 @@ private static final long serialVersionUID = 0L;
    * HTTP | gRPC
    * -----|-----
    * `GET /v1/messages/123456` | `GetMessage(message_id: "123456")`
-   * `GET /v1/users/me/messages/123456` | `GetMessage(user_id: "me" message_id: "123456")`
+   * `GET /v1/users/me/messages/123456` | `GetMessage(user_id: "me" message_id:
+   * "123456")`
    * ## Rules for HTTP mapping
    * 1. Leaf request fields (recursive expansion nested messages in the request
    *    message) are classified into three categories:
    *    - Fields referred by the path template. They are passed via the URL path.
-   *    - Fields referred by the [HttpRule.body][google.api.HttpRule.body]. They are passed via the HTTP
+   *    - Fields referred by the [HttpRule.body][google.api.HttpRule.body]. They
+   *    are passed via the HTTP
    *      request body.
    *    - All other fields are passed via the URL query parameters, and the
    *      parameter name is the field path in the request message. A repeated
    *      field can be represented as multiple query parameters under the same
    *      name.
-   *  2. If [HttpRule.body][google.api.HttpRule.body] is "*", there is no URL query parameter, all fields
+   *  2. If [HttpRule.body][google.api.HttpRule.body] is "*", there is no URL
+   *  query parameter, all fields
    *     are passed via URL path and HTTP request body.
-   *  3. If [HttpRule.body][google.api.HttpRule.body] is omitted, there is no HTTP request body, all
+   *  3. If [HttpRule.body][google.api.HttpRule.body] is omitted, there is no HTTP
+   *  request body, all
    *     fields are passed via URL path and URL query parameters.
    * ### Path template syntax
    *     Template = "/" Segments [ Verb ] ;
@@ -1383,15 +1403,17 @@ private static final long serialVersionUID = 0L;
    * `"{var=*}"`, when such a variable is expanded into a URL path on the client
    * side, all characters except `[-_.~0-9a-zA-Z]` are percent-encoded. The
    * server side does the reverse decoding. Such variables show up in the
-   * [Discovery Document](https://developers.google.com/discovery/v1/reference/apis)
-   * as `{var}`.
+   * [Discovery
+   * Document](https://developers.google.com/discovery/v1/reference/apis) as
+   * `{var}`.
    * If a variable contains multiple path segments, such as `"{var=foo/&#42;}"`
    * or `"{var=**}"`, when such a variable is expanded into a URL path on the
    * client side, all characters except `[-_.~/0-9a-zA-Z]` are percent-encoded.
    * The server side does the reverse decoding, except "%2F" and "%2f" are left
    * unchanged. Such variables show up in the
-   * [Discovery Document](https://developers.google.com/discovery/v1/reference/apis)
-   * as `{+var}`.
+   * [Discovery
+   * Document](https://developers.google.com/discovery/v1/reference/apis) as
+   * `{+var}`.
    * ## Using gRPC API Service Configuration
    * gRPC API Service Configuration (service config) is a configuration language
    * for configuring a gRPC service to become a user-facing product. The
@@ -1723,7 +1745,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Selects a method to which this rule applies.
-     * Refer to [selector][google.api.DocumentationRule.selector] for syntax details.
+     * Refer to [selector][google.api.DocumentationRule.selector] for syntax
+     * details.
      * </pre>
      *
      * <code>string selector = 1;</code>
@@ -1743,7 +1766,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Selects a method to which this rule applies.
-     * Refer to [selector][google.api.DocumentationRule.selector] for syntax details.
+     * Refer to [selector][google.api.DocumentationRule.selector] for syntax
+     * details.
      * </pre>
      *
      * <code>string selector = 1;</code>
@@ -1764,7 +1788,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Selects a method to which this rule applies.
-     * Refer to [selector][google.api.DocumentationRule.selector] for syntax details.
+     * Refer to [selector][google.api.DocumentationRule.selector] for syntax
+     * details.
      * </pre>
      *
      * <code>string selector = 1;</code>
@@ -1782,7 +1807,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Selects a method to which this rule applies.
-     * Refer to [selector][google.api.DocumentationRule.selector] for syntax details.
+     * Refer to [selector][google.api.DocumentationRule.selector] for syntax
+     * details.
      * </pre>
      *
      * <code>string selector = 1;</code>
@@ -1796,7 +1822,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Selects a method to which this rule applies.
-     * Refer to [selector][google.api.DocumentationRule.selector] for syntax details.
+     * Refer to [selector][google.api.DocumentationRule.selector] for syntax
+     * details.
      * </pre>
      *
      * <code>string selector = 1;</code>

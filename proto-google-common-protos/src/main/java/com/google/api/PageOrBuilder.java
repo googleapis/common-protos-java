@@ -53,8 +53,8 @@ public interface PageOrBuilder extends
 
   /**
    * <pre>
-   * The Markdown content of the page. You can use &lt;code&gt;&amp;#40;== include {path} ==&amp;#41;&lt;/code&gt;
-   * to include content from a Markdown file.
+   * The Markdown content of the page. You can use &lt;code&gt;&amp;#40;== include {path}
+   * ==&amp;#41;&lt;/code&gt; to include content from a Markdown file.
    * </pre>
    *
    * <code>string content = 2;</code>
@@ -62,8 +62,8 @@ public interface PageOrBuilder extends
   java.lang.String getContent();
   /**
    * <pre>
-   * The Markdown content of the page. You can use &lt;code&gt;&amp;#40;== include {path} ==&amp;#41;&lt;/code&gt;
-   * to include content from a Markdown file.
+   * The Markdown content of the page. You can use &lt;code&gt;&amp;#40;== include {path}
+   * ==&amp;#41;&lt;/code&gt; to include content from a Markdown file.
    * </pre>
    *
    * <code>string content = 2;</code>

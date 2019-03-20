@@ -6,7 +6,7 @@ package com.google.type;
 /**
  * <pre>
  * Represents a time of day. The date and time zone are either not significant
- * or are specified elsewhere. An API may chose to allow leap seconds. Related
+ * or are specified elsewhere. An API may choose to allow leap seconds. Related
  * types are [google.type.Date][google.type.Date] and `google.protobuf.Timestamp`.
  * </pre>
  *
@@ -350,7 +350,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Represents a time of day. The date and time zone are either not significant
-   * or are specified elsewhere. An API may chose to allow leap seconds. Related
+   * or are specified elsewhere. An API may choose to allow leap seconds. Related
    * types are [google.type.Date][google.type.Date] and `google.protobuf.Timestamp`.
    * </pre>
    *

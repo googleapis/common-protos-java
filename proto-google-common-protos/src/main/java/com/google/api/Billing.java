@@ -116,7 +116,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The monitored resource type. The type must be defined in
-     * [Service.monitored_resources][google.api.Service.monitored_resources] section.
+     * [Service.monitored_resources][google.api.Service.monitored_resources]
+     * section.
      * </pre>
      *
      * <code>string monitored_resource = 1;</code>
@@ -125,7 +126,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The monitored resource type. The type must be defined in
-     * [Service.monitored_resources][google.api.Service.monitored_resources] section.
+     * [Service.monitored_resources][google.api.Service.monitored_resources]
+     * section.
      * </pre>
      *
      * <code>string monitored_resource = 1;</code>
@@ -136,7 +138,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Names of the metrics to report to this billing destination.
-     * Each name must be defined in [Service.metrics][google.api.Service.metrics] section.
+     * Each name must be defined in
+     * [Service.metrics][google.api.Service.metrics] section.
      * </pre>
      *
      * <code>repeated string metrics = 2;</code>
@@ -146,7 +149,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Names of the metrics to report to this billing destination.
-     * Each name must be defined in [Service.metrics][google.api.Service.metrics] section.
+     * Each name must be defined in
+     * [Service.metrics][google.api.Service.metrics] section.
      * </pre>
      *
      * <code>repeated string metrics = 2;</code>
@@ -155,7 +159,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Names of the metrics to report to this billing destination.
-     * Each name must be defined in [Service.metrics][google.api.Service.metrics] section.
+     * Each name must be defined in
+     * [Service.metrics][google.api.Service.metrics] section.
      * </pre>
      *
      * <code>repeated string metrics = 2;</code>
@@ -164,7 +169,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Names of the metrics to report to this billing destination.
-     * Each name must be defined in [Service.metrics][google.api.Service.metrics] section.
+     * Each name must be defined in
+     * [Service.metrics][google.api.Service.metrics] section.
      * </pre>
      *
      * <code>repeated string metrics = 2;</code>
@@ -274,7 +280,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The monitored resource type. The type must be defined in
-     * [Service.monitored_resources][google.api.Service.monitored_resources] section.
+     * [Service.monitored_resources][google.api.Service.monitored_resources]
+     * section.
      * </pre>
      *
      * <code>string monitored_resource = 1;</code>
@@ -294,7 +301,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The monitored resource type. The type must be defined in
-     * [Service.monitored_resources][google.api.Service.monitored_resources] section.
+     * [Service.monitored_resources][google.api.Service.monitored_resources]
+     * section.
      * </pre>
      *
      * <code>string monitored_resource = 1;</code>
@@ -318,7 +326,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Names of the metrics to report to this billing destination.
-     * Each name must be defined in [Service.metrics][google.api.Service.metrics] section.
+     * Each name must be defined in
+     * [Service.metrics][google.api.Service.metrics] section.
      * </pre>
      *
      * <code>repeated string metrics = 2;</code>
@@ -330,7 +339,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Names of the metrics to report to this billing destination.
-     * Each name must be defined in [Service.metrics][google.api.Service.metrics] section.
+     * Each name must be defined in
+     * [Service.metrics][google.api.Service.metrics] section.
      * </pre>
      *
      * <code>repeated string metrics = 2;</code>
@@ -341,7 +351,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Names of the metrics to report to this billing destination.
-     * Each name must be defined in [Service.metrics][google.api.Service.metrics] section.
+     * Each name must be defined in
+     * [Service.metrics][google.api.Service.metrics] section.
      * </pre>
      *
      * <code>repeated string metrics = 2;</code>
@@ -352,7 +363,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Names of the metrics to report to this billing destination.
-     * Each name must be defined in [Service.metrics][google.api.Service.metrics] section.
+     * Each name must be defined in
+     * [Service.metrics][google.api.Service.metrics] section.
      * </pre>
      *
      * <code>repeated string metrics = 2;</code>
@@ -712,7 +724,8 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * The monitored resource type. The type must be defined in
-       * [Service.monitored_resources][google.api.Service.monitored_resources] section.
+       * [Service.monitored_resources][google.api.Service.monitored_resources]
+       * section.
        * </pre>
        *
        * <code>string monitored_resource = 1;</code>
@@ -732,7 +745,8 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * The monitored resource type. The type must be defined in
-       * [Service.monitored_resources][google.api.Service.monitored_resources] section.
+       * [Service.monitored_resources][google.api.Service.monitored_resources]
+       * section.
        * </pre>
        *
        * <code>string monitored_resource = 1;</code>
@@ -753,7 +767,8 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * The monitored resource type. The type must be defined in
-       * [Service.monitored_resources][google.api.Service.monitored_resources] section.
+       * [Service.monitored_resources][google.api.Service.monitored_resources]
+       * section.
        * </pre>
        *
        * <code>string monitored_resource = 1;</code>
@@ -771,7 +786,8 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * The monitored resource type. The type must be defined in
-       * [Service.monitored_resources][google.api.Service.monitored_resources] section.
+       * [Service.monitored_resources][google.api.Service.monitored_resources]
+       * section.
        * </pre>
        *
        * <code>string monitored_resource = 1;</code>
@@ -785,7 +801,8 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * The monitored resource type. The type must be defined in
-       * [Service.monitored_resources][google.api.Service.monitored_resources] section.
+       * [Service.monitored_resources][google.api.Service.monitored_resources]
+       * section.
        * </pre>
        *
        * <code>string monitored_resource = 1;</code>
@@ -812,7 +829,8 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * Names of the metrics to report to this billing destination.
-       * Each name must be defined in [Service.metrics][google.api.Service.metrics] section.
+       * Each name must be defined in
+       * [Service.metrics][google.api.Service.metrics] section.
        * </pre>
        *
        * <code>repeated string metrics = 2;</code>
@@ -824,7 +842,8 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * Names of the metrics to report to this billing destination.
-       * Each name must be defined in [Service.metrics][google.api.Service.metrics] section.
+       * Each name must be defined in
+       * [Service.metrics][google.api.Service.metrics] section.
        * </pre>
        *
        * <code>repeated string metrics = 2;</code>
@@ -835,7 +854,8 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * Names of the metrics to report to this billing destination.
-       * Each name must be defined in [Service.metrics][google.api.Service.metrics] section.
+       * Each name must be defined in
+       * [Service.metrics][google.api.Service.metrics] section.
        * </pre>
        *
        * <code>repeated string metrics = 2;</code>
@@ -846,7 +866,8 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * Names of the metrics to report to this billing destination.
-       * Each name must be defined in [Service.metrics][google.api.Service.metrics] section.
+       * Each name must be defined in
+       * [Service.metrics][google.api.Service.metrics] section.
        * </pre>
        *
        * <code>repeated string metrics = 2;</code>
@@ -858,7 +879,8 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * Names of the metrics to report to this billing destination.
-       * Each name must be defined in [Service.metrics][google.api.Service.metrics] section.
+       * Each name must be defined in
+       * [Service.metrics][google.api.Service.metrics] section.
        * </pre>
        *
        * <code>repeated string metrics = 2;</code>
@@ -876,7 +898,8 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * Names of the metrics to report to this billing destination.
-       * Each name must be defined in [Service.metrics][google.api.Service.metrics] section.
+       * Each name must be defined in
+       * [Service.metrics][google.api.Service.metrics] section.
        * </pre>
        *
        * <code>repeated string metrics = 2;</code>
@@ -894,7 +917,8 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * Names of the metrics to report to this billing destination.
-       * Each name must be defined in [Service.metrics][google.api.Service.metrics] section.
+       * Each name must be defined in
+       * [Service.metrics][google.api.Service.metrics] section.
        * </pre>
        *
        * <code>repeated string metrics = 2;</code>
@@ -910,7 +934,8 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * Names of the metrics to report to this billing destination.
-       * Each name must be defined in [Service.metrics][google.api.Service.metrics] section.
+       * Each name must be defined in
+       * [Service.metrics][google.api.Service.metrics] section.
        * </pre>
        *
        * <code>repeated string metrics = 2;</code>
@@ -924,7 +949,8 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * Names of the metrics to report to this billing destination.
-       * Each name must be defined in [Service.metrics][google.api.Service.metrics] section.
+       * Each name must be defined in
+       * [Service.metrics][google.api.Service.metrics] section.
        * </pre>
        *
        * <code>repeated string metrics = 2;</code>

@@ -10,8 +10,10 @@ public interface MonitoredResourceOrBuilder extends
   /**
    * <pre>
    * Required. The monitored resource type. This field must match
-   * the `type` field of a [MonitoredResourceDescriptor][google.api.MonitoredResourceDescriptor] object. For
-   * example, the type of a Compute Engine VM instance is `gce_instance`.
+   * the `type` field of a
+   * [MonitoredResourceDescriptor][google.api.MonitoredResourceDescriptor]
+   * object. For example, the type of a Compute Engine VM instance is
+   * `gce_instance`.
    * </pre>
    *
    * <code>string type = 1;</code>
@@ -20,8 +22,10 @@ public interface MonitoredResourceOrBuilder extends
   /**
    * <pre>
    * Required. The monitored resource type. This field must match
-   * the `type` field of a [MonitoredResourceDescriptor][google.api.MonitoredResourceDescriptor] object. For
-   * example, the type of a Compute Engine VM instance is `gce_instance`.
+   * the `type` field of a
+   * [MonitoredResourceDescriptor][google.api.MonitoredResourceDescriptor]
+   * object. For example, the type of a Compute Engine VM instance is
+   * `gce_instance`.
    * </pre>
    *
    * <code>string type = 1;</code>

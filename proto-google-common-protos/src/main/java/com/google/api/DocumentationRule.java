@@ -197,8 +197,8 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object deprecationDescription_;
   /**
    * <pre>
-   * Deprecation description of the selected element(s). It can be provided if an
-   * element is marked as `deprecated`.
+   * Deprecation description of the selected element(s). It can be provided if
+   * an element is marked as `deprecated`.
    * </pre>
    *
    * <code>string deprecation_description = 3;</code>
@@ -217,8 +217,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Deprecation description of the selected element(s). It can be provided if an
-   * element is marked as `deprecated`.
+   * Deprecation description of the selected element(s). It can be provided if
+   * an element is marked as `deprecated`.
    * </pre>
    *
    * <code>string deprecation_description = 3;</code>
@@ -784,8 +784,8 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object deprecationDescription_ = "";
     /**
      * <pre>
-     * Deprecation description of the selected element(s). It can be provided if an
-     * element is marked as `deprecated`.
+     * Deprecation description of the selected element(s). It can be provided if
+     * an element is marked as `deprecated`.
      * </pre>
      *
      * <code>string deprecation_description = 3;</code>
@@ -804,8 +804,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Deprecation description of the selected element(s). It can be provided if an
-     * element is marked as `deprecated`.
+     * Deprecation description of the selected element(s). It can be provided if
+     * an element is marked as `deprecated`.
      * </pre>
      *
      * <code>string deprecation_description = 3;</code>
@@ -825,8 +825,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Deprecation description of the selected element(s). It can be provided if an
-     * element is marked as `deprecated`.
+     * Deprecation description of the selected element(s). It can be provided if
+     * an element is marked as `deprecated`.
      * </pre>
      *
      * <code>string deprecation_description = 3;</code>
@@ -843,8 +843,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Deprecation description of the selected element(s). It can be provided if an
-     * element is marked as `deprecated`.
+     * Deprecation description of the selected element(s). It can be provided if
+     * an element is marked as `deprecated`.
      * </pre>
      *
      * <code>string deprecation_description = 3;</code>
@@ -857,8 +857,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Deprecation description of the selected element(s). It can be provided if an
-     * element is marked as `deprecated`.
+     * Deprecation description of the selected element(s). It can be provided if
+     * an element is marked as `deprecated`.
      * </pre>
      *
      * <code>string deprecation_description = 3;</code>
