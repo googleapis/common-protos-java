@@ -19,12 +19,12 @@ import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
  * <pre>
  * Manages long-running operations with an API service.
  * When an API method normally takes long time to complete, it can be designed
- * to return [Operation][google.longrunning.Operation] to the client, and the
- * client can use this interface to receive the real response asynchronously by
- * polling the operation resource, or pass the operation resource to another API
- * (such as Google Cloud Pub/Sub API) to receive the response.  Any API service
- * that returns long-running operations should implement the `Operations`
- * interface so developers can have a consistent client experience.
+ * to return [Operation][google.longrunning.Operation] to the client, and the client can use this
+ * interface to receive the real response asynchronously by polling the
+ * operation resource, or pass the operation resource to another API (such as
+ * Google Cloud Pub/Sub API) to receive the response.  Any API service that
+ * returns long-running operations should implement the `Operations` interface
+ * so developers can have a consistent client experience.
  * </pre>
  */
 @javax.annotation.Generated(
@@ -185,6 +185,43 @@ public final class OperationsGrpc {
      }
      return getCancelOperationMethod;
   }
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @java.lang.Deprecated // Use {@link #getWaitOperationMethod()} instead. 
+  public static final io.grpc.MethodDescriptor<com.google.longrunning.WaitOperationRequest,
+      com.google.longrunning.Operation> METHOD_WAIT_OPERATION = getWaitOperationMethodHelper();
+
+  private static volatile io.grpc.MethodDescriptor<com.google.longrunning.WaitOperationRequest,
+      com.google.longrunning.Operation> getWaitOperationMethod;
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  public static io.grpc.MethodDescriptor<com.google.longrunning.WaitOperationRequest,
+      com.google.longrunning.Operation> getWaitOperationMethod() {
+    return getWaitOperationMethodHelper();
+  }
+
+  private static io.grpc.MethodDescriptor<com.google.longrunning.WaitOperationRequest,
+      com.google.longrunning.Operation> getWaitOperationMethodHelper() {
+    io.grpc.MethodDescriptor<com.google.longrunning.WaitOperationRequest, com.google.longrunning.Operation> getWaitOperationMethod;
+    if ((getWaitOperationMethod = OperationsGrpc.getWaitOperationMethod) == null) {
+      synchronized (OperationsGrpc.class) {
+        if ((getWaitOperationMethod = OperationsGrpc.getWaitOperationMethod) == null) {
+          OperationsGrpc.getWaitOperationMethod = getWaitOperationMethod = 
+              io.grpc.MethodDescriptor.<com.google.longrunning.WaitOperationRequest, com.google.longrunning.Operation>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(
+                  "google.longrunning.Operations", "WaitOperation"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.longrunning.WaitOperationRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.longrunning.Operation.getDefaultInstance()))
+                  .setSchemaDescriptor(new OperationsMethodDescriptorSupplier("WaitOperation"))
+                  .build();
+          }
+        }
+     }
+     return getWaitOperationMethod;
+  }
 
   /**
    * Creates a new async stub that supports all call types for the service
@@ -213,12 +250,12 @@ public final class OperationsGrpc {
    * <pre>
    * Manages long-running operations with an API service.
    * When an API method normally takes long time to complete, it can be designed
-   * to return [Operation][google.longrunning.Operation] to the client, and the
-   * client can use this interface to receive the real response asynchronously by
-   * polling the operation resource, or pass the operation resource to another API
-   * (such as Google Cloud Pub/Sub API) to receive the response.  Any API service
-   * that returns long-running operations should implement the `Operations`
-   * interface so developers can have a consistent client experience.
+   * to return [Operation][google.longrunning.Operation] to the client, and the client can use this
+   * interface to receive the real response asynchronously by polling the
+   * operation resource, or pass the operation resource to another API (such as
+   * Google Cloud Pub/Sub API) to receive the response.  Any API service that
+   * returns long-running operations should implement the `Operations` interface
+   * so developers can have a consistent client experience.
    * </pre>
    */
   public static abstract class OperationsImplBase implements io.grpc.BindableService {
@@ -227,8 +264,13 @@ public final class OperationsGrpc {
      * <pre>
      * Lists operations that match the specified filter in the request. If the
      * server doesn't support this method, it returns `UNIMPLEMENTED`.
-     * NOTE: the `name` binding below allows API services to override the binding
-     * to use different resource name schemes, such as `users/&#42;&#47;operations`.
+     * NOTE: the `name` binding allows API services to override the binding
+     * to use different resource name schemes, such as `users/&#42;&#47;operations`. To
+     * override the binding, API services can add a binding such as
+     * `"/v1/{name=users/&#42;}/operations"` to their service configuration.
+     * For backwards compatibility, the default name includes the operations
+     * collection id, however overriding users must ensure the name binding
+     * is the parent resource, without the operations collection id.
      * </pre>
      */
     public void listOperations(com.google.longrunning.ListOperationsRequest request,
@@ -271,14 +313,31 @@ public final class OperationsGrpc {
      * other methods to check whether the cancellation succeeded or whether the
      * operation completed despite cancellation. On successful cancellation,
      * the operation is not deleted; instead, it becomes an operation with
-     * an [Operation.error][google.longrunning.Operation.error] value with a
-     * [google.rpc.Status.code][google.rpc.Status.code] of 1, corresponding to
-     * `Code.CANCELLED`.
+     * an [Operation.error][google.longrunning.Operation.error] value with a [google.rpc.Status.code][google.rpc.Status.code] of 1,
+     * corresponding to `Code.CANCELLED`.
      * </pre>
      */
     public void cancelOperation(com.google.longrunning.CancelOperationRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       asyncUnimplementedUnaryCall(getCancelOperationMethodHelper(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Waits for the specified long-running operation until it is done or reaches
+     * at most a specified timeout, returning the latest state.  If the operation
+     * is already done, the latest state is immediately returned.  If the timeout
+     * specified is greater than the default HTTP/RPC timeout, the HTTP/RPC
+     * timeout is used.  If the server does not support this method, it returns
+     * `google.rpc.Code.UNIMPLEMENTED`.
+     * Note that this method is on a best-effort basis.  It may return the latest
+     * state before the specified timeout (including immediately), meaning even an
+     * immediate response is no guarantee that the operation is done.
+     * </pre>
+     */
+    public void waitOperation(com.google.longrunning.WaitOperationRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      asyncUnimplementedUnaryCall(getWaitOperationMethodHelper(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
@@ -311,6 +370,13 @@ public final class OperationsGrpc {
                 com.google.longrunning.CancelOperationRequest,
                 com.google.protobuf.Empty>(
                   this, METHODID_CANCEL_OPERATION)))
+          .addMethod(
+            getWaitOperationMethodHelper(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                com.google.longrunning.WaitOperationRequest,
+                com.google.longrunning.Operation>(
+                  this, METHODID_WAIT_OPERATION)))
           .build();
     }
   }
@@ -319,12 +385,12 @@ public final class OperationsGrpc {
    * <pre>
    * Manages long-running operations with an API service.
    * When an API method normally takes long time to complete, it can be designed
-   * to return [Operation][google.longrunning.Operation] to the client, and the
-   * client can use this interface to receive the real response asynchronously by
-   * polling the operation resource, or pass the operation resource to another API
-   * (such as Google Cloud Pub/Sub API) to receive the response.  Any API service
-   * that returns long-running operations should implement the `Operations`
-   * interface so developers can have a consistent client experience.
+   * to return [Operation][google.longrunning.Operation] to the client, and the client can use this
+   * interface to receive the real response asynchronously by polling the
+   * operation resource, or pass the operation resource to another API (such as
+   * Google Cloud Pub/Sub API) to receive the response.  Any API service that
+   * returns long-running operations should implement the `Operations` interface
+   * so developers can have a consistent client experience.
    * </pre>
    */
   public static final class OperationsStub extends io.grpc.stub.AbstractStub<OperationsStub> {
@@ -347,8 +413,13 @@ public final class OperationsGrpc {
      * <pre>
      * Lists operations that match the specified filter in the request. If the
      * server doesn't support this method, it returns `UNIMPLEMENTED`.
-     * NOTE: the `name` binding below allows API services to override the binding
-     * to use different resource name schemes, such as `users/&#42;&#47;operations`.
+     * NOTE: the `name` binding allows API services to override the binding
+     * to use different resource name schemes, such as `users/&#42;&#47;operations`. To
+     * override the binding, API services can add a binding such as
+     * `"/v1/{name=users/&#42;}/operations"` to their service configuration.
+     * For backwards compatibility, the default name includes the operations
+     * collection id, however overriding users must ensure the name binding
+     * is the parent resource, without the operations collection id.
      * </pre>
      */
     public void listOperations(com.google.longrunning.ListOperationsRequest request,
@@ -394,9 +465,8 @@ public final class OperationsGrpc {
      * other methods to check whether the cancellation succeeded or whether the
      * operation completed despite cancellation. On successful cancellation,
      * the operation is not deleted; instead, it becomes an operation with
-     * an [Operation.error][google.longrunning.Operation.error] value with a
-     * [google.rpc.Status.code][google.rpc.Status.code] of 1, corresponding to
-     * `Code.CANCELLED`.
+     * an [Operation.error][google.longrunning.Operation.error] value with a [google.rpc.Status.code][google.rpc.Status.code] of 1,
+     * corresponding to `Code.CANCELLED`.
      * </pre>
      */
     public void cancelOperation(com.google.longrunning.CancelOperationRequest request,
@@ -404,18 +474,37 @@ public final class OperationsGrpc {
       asyncUnaryCall(
           getChannel().newCall(getCancelOperationMethodHelper(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     * <pre>
+     * Waits for the specified long-running operation until it is done or reaches
+     * at most a specified timeout, returning the latest state.  If the operation
+     * is already done, the latest state is immediately returned.  If the timeout
+     * specified is greater than the default HTTP/RPC timeout, the HTTP/RPC
+     * timeout is used.  If the server does not support this method, it returns
+     * `google.rpc.Code.UNIMPLEMENTED`.
+     * Note that this method is on a best-effort basis.  It may return the latest
+     * state before the specified timeout (including immediately), meaning even an
+     * immediate response is no guarantee that the operation is done.
+     * </pre>
+     */
+    public void waitOperation(com.google.longrunning.WaitOperationRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getWaitOperationMethodHelper(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
    * <pre>
    * Manages long-running operations with an API service.
    * When an API method normally takes long time to complete, it can be designed
-   * to return [Operation][google.longrunning.Operation] to the client, and the
-   * client can use this interface to receive the real response asynchronously by
-   * polling the operation resource, or pass the operation resource to another API
-   * (such as Google Cloud Pub/Sub API) to receive the response.  Any API service
-   * that returns long-running operations should implement the `Operations`
-   * interface so developers can have a consistent client experience.
+   * to return [Operation][google.longrunning.Operation] to the client, and the client can use this
+   * interface to receive the real response asynchronously by polling the
+   * operation resource, or pass the operation resource to another API (such as
+   * Google Cloud Pub/Sub API) to receive the response.  Any API service that
+   * returns long-running operations should implement the `Operations` interface
+   * so developers can have a consistent client experience.
    * </pre>
    */
   public static final class OperationsBlockingStub extends io.grpc.stub.AbstractStub<OperationsBlockingStub> {
@@ -438,8 +527,13 @@ public final class OperationsGrpc {
      * <pre>
      * Lists operations that match the specified filter in the request. If the
      * server doesn't support this method, it returns `UNIMPLEMENTED`.
-     * NOTE: the `name` binding below allows API services to override the binding
-     * to use different resource name schemes, such as `users/&#42;&#47;operations`.
+     * NOTE: the `name` binding allows API services to override the binding
+     * to use different resource name schemes, such as `users/&#42;&#47;operations`. To
+     * override the binding, API services can add a binding such as
+     * `"/v1/{name=users/&#42;}/operations"` to their service configuration.
+     * For backwards compatibility, the default name includes the operations
+     * collection id, however overriding users must ensure the name binding
+     * is the parent resource, without the operations collection id.
      * </pre>
      */
     public com.google.longrunning.ListOperationsResponse listOperations(com.google.longrunning.ListOperationsRequest request) {
@@ -482,14 +576,31 @@ public final class OperationsGrpc {
      * other methods to check whether the cancellation succeeded or whether the
      * operation completed despite cancellation. On successful cancellation,
      * the operation is not deleted; instead, it becomes an operation with
-     * an [Operation.error][google.longrunning.Operation.error] value with a
-     * [google.rpc.Status.code][google.rpc.Status.code] of 1, corresponding to
-     * `Code.CANCELLED`.
+     * an [Operation.error][google.longrunning.Operation.error] value with a [google.rpc.Status.code][google.rpc.Status.code] of 1,
+     * corresponding to `Code.CANCELLED`.
      * </pre>
      */
     public com.google.protobuf.Empty cancelOperation(com.google.longrunning.CancelOperationRequest request) {
       return blockingUnaryCall(
           getChannel(), getCancelOperationMethodHelper(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Waits for the specified long-running operation until it is done or reaches
+     * at most a specified timeout, returning the latest state.  If the operation
+     * is already done, the latest state is immediately returned.  If the timeout
+     * specified is greater than the default HTTP/RPC timeout, the HTTP/RPC
+     * timeout is used.  If the server does not support this method, it returns
+     * `google.rpc.Code.UNIMPLEMENTED`.
+     * Note that this method is on a best-effort basis.  It may return the latest
+     * state before the specified timeout (including immediately), meaning even an
+     * immediate response is no guarantee that the operation is done.
+     * </pre>
+     */
+    public com.google.longrunning.Operation waitOperation(com.google.longrunning.WaitOperationRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getWaitOperationMethodHelper(), getCallOptions(), request);
     }
   }
 
@@ -497,12 +608,12 @@ public final class OperationsGrpc {
    * <pre>
    * Manages long-running operations with an API service.
    * When an API method normally takes long time to complete, it can be designed
-   * to return [Operation][google.longrunning.Operation] to the client, and the
-   * client can use this interface to receive the real response asynchronously by
-   * polling the operation resource, or pass the operation resource to another API
-   * (such as Google Cloud Pub/Sub API) to receive the response.  Any API service
-   * that returns long-running operations should implement the `Operations`
-   * interface so developers can have a consistent client experience.
+   * to return [Operation][google.longrunning.Operation] to the client, and the client can use this
+   * interface to receive the real response asynchronously by polling the
+   * operation resource, or pass the operation resource to another API (such as
+   * Google Cloud Pub/Sub API) to receive the response.  Any API service that
+   * returns long-running operations should implement the `Operations` interface
+   * so developers can have a consistent client experience.
    * </pre>
    */
   public static final class OperationsFutureStub extends io.grpc.stub.AbstractStub<OperationsFutureStub> {
@@ -525,8 +636,13 @@ public final class OperationsGrpc {
      * <pre>
      * Lists operations that match the specified filter in the request. If the
      * server doesn't support this method, it returns `UNIMPLEMENTED`.
-     * NOTE: the `name` binding below allows API services to override the binding
-     * to use different resource name schemes, such as `users/&#42;&#47;operations`.
+     * NOTE: the `name` binding allows API services to override the binding
+     * to use different resource name schemes, such as `users/&#42;&#47;operations`. To
+     * override the binding, API services can add a binding such as
+     * `"/v1/{name=users/&#42;}/operations"` to their service configuration.
+     * For backwards compatibility, the default name includes the operations
+     * collection id, however overriding users must ensure the name binding
+     * is the parent resource, without the operations collection id.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.ListOperationsResponse> listOperations(
@@ -572,9 +688,8 @@ public final class OperationsGrpc {
      * other methods to check whether the cancellation succeeded or whether the
      * operation completed despite cancellation. On successful cancellation,
      * the operation is not deleted; instead, it becomes an operation with
-     * an [Operation.error][google.longrunning.Operation.error] value with a
-     * [google.rpc.Status.code][google.rpc.Status.code] of 1, corresponding to
-     * `Code.CANCELLED`.
+     * an [Operation.error][google.longrunning.Operation.error] value with a [google.rpc.Status.code][google.rpc.Status.code] of 1,
+     * corresponding to `Code.CANCELLED`.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> cancelOperation(
@@ -582,12 +697,32 @@ public final class OperationsGrpc {
       return futureUnaryCall(
           getChannel().newCall(getCancelOperationMethodHelper(), getCallOptions()), request);
     }
+
+    /**
+     * <pre>
+     * Waits for the specified long-running operation until it is done or reaches
+     * at most a specified timeout, returning the latest state.  If the operation
+     * is already done, the latest state is immediately returned.  If the timeout
+     * specified is greater than the default HTTP/RPC timeout, the HTTP/RPC
+     * timeout is used.  If the server does not support this method, it returns
+     * `google.rpc.Code.UNIMPLEMENTED`.
+     * Note that this method is on a best-effort basis.  It may return the latest
+     * state before the specified timeout (including immediately), meaning even an
+     * immediate response is no guarantee that the operation is done.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation> waitOperation(
+        com.google.longrunning.WaitOperationRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getWaitOperationMethodHelper(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_LIST_OPERATIONS = 0;
   private static final int METHODID_GET_OPERATION = 1;
   private static final int METHODID_DELETE_OPERATION = 2;
   private static final int METHODID_CANCEL_OPERATION = 3;
+  private static final int METHODID_WAIT_OPERATION = 4;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -621,6 +756,10 @@ public final class OperationsGrpc {
         case METHODID_CANCEL_OPERATION:
           serviceImpl.cancelOperation((com.google.longrunning.CancelOperationRequest) request,
               (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
+          break;
+        case METHODID_WAIT_OPERATION:
+          serviceImpl.waitOperation((com.google.longrunning.WaitOperationRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -687,6 +826,7 @@ public final class OperationsGrpc {
               .addMethod(getGetOperationMethodHelper())
               .addMethod(getDeleteOperationMethodHelper())
               .addMethod(getCancelOperationMethodHelper())
+              .addMethod(getWaitOperationMethodHelper())
               .build();
         }
       }

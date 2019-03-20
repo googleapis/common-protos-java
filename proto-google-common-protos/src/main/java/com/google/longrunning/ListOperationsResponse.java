@@ -5,8 +5,7 @@ package com.google.longrunning;
 
 /**
  * <pre>
- * The response message for
- * [Operations.ListOperations][google.longrunning.Operations.ListOperations].
+ * The response message for [Operations.ListOperations][google.longrunning.Operations.ListOperations].
  * </pre>
  *
  * Protobuf type {@code google.longrunning.ListOperationsResponse}
@@ -367,8 +366,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The response message for
-   * [Operations.ListOperations][google.longrunning.Operations.ListOperations].
+   * The response message for [Operations.ListOperations][google.longrunning.Operations.ListOperations].
    * </pre>
    *
    * Protobuf type {@code google.longrunning.ListOperationsResponse}

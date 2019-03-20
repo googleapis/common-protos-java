@@ -5,25 +5,31 @@ package com.google.longrunning;
 
 /**
  * <pre>
- * The request message for [Operations.ListOperations][google.longrunning.Operations.ListOperations].
+ * A message representing the message types used by a long-running operation.
+ * Example:
+ *   rpc LongRunningRecognize(LongRunningRecognizeRequest)
+ *       returns (google.longrunning.Operation) {
+ *     option (google.longrunning.operation_info) = {
+ *       response_type: "LongRunningRecognizeResponse"
+ *       metadata_type: "LongRunningRecognizeMetadata"
+ *     };
+ *   }
  * </pre>
  *
- * Protobuf type {@code google.longrunning.ListOperationsRequest}
+ * Protobuf type {@code google.longrunning.OperationInfo}
  */
-public  final class ListOperationsRequest extends
+public  final class OperationInfo extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:google.longrunning.ListOperationsRequest)
-    ListOperationsRequestOrBuilder {
+    // @@protoc_insertion_point(message_implements:google.longrunning.OperationInfo)
+    OperationInfoOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use ListOperationsRequest.newBuilder() to construct.
-  private ListOperationsRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use OperationInfo.newBuilder() to construct.
+  private OperationInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private ListOperationsRequest() {
-    name_ = "";
-    filter_ = "";
-    pageSize_ = 0;
-    pageToken_ = "";
+  private OperationInfo() {
+    responseType_ = "";
+    metadataType_ = "";
   }
 
   @java.lang.Override
@@ -31,7 +37,7 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private ListOperationsRequest(
+  private OperationInfo(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -53,24 +59,13 @@ private static final long serialVersionUID = 0L;
           case 10: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            filter_ = s;
+            responseType_ = s;
             break;
           }
-          case 16: {
-
-            pageSize_ = input.readInt32();
-            break;
-          }
-          case 26: {
+          case 18: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            pageToken_ = s;
-            break;
-          }
-          case 34: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            name_ = s;
+            metadataType_ = s;
             break;
           }
           default: {
@@ -94,150 +89,113 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.google.longrunning.OperationsProto.internal_static_google_longrunning_ListOperationsRequest_descriptor;
+    return com.google.longrunning.OperationsProto.internal_static_google_longrunning_OperationInfo_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.longrunning.OperationsProto.internal_static_google_longrunning_ListOperationsRequest_fieldAccessorTable
+    return com.google.longrunning.OperationsProto.internal_static_google_longrunning_OperationInfo_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.longrunning.ListOperationsRequest.class, com.google.longrunning.ListOperationsRequest.Builder.class);
+            com.google.longrunning.OperationInfo.class, com.google.longrunning.OperationInfo.Builder.class);
   }
 
-  public static final int NAME_FIELD_NUMBER = 4;
-  private volatile java.lang.Object name_;
+  public static final int RESPONSE_TYPE_FIELD_NUMBER = 1;
+  private volatile java.lang.Object responseType_;
   /**
    * <pre>
-   * The name of the operation's parent resource.
+   * Required. The message name of the primary return type for this
+   * long-running operation.
+   * This type will be used to deserialize the LRO's response.
+   * If the response is in a different package from the rpc, a fully-qualified
+   * message name must be used (e.g. `google.protobuf.Struct`).
+   * Note: Altering this value constitutes a breaking change.
    * </pre>
    *
-   * <code>string name = 4;</code>
+   * <code>string response_type = 1;</code>
    */
-  public java.lang.String getName() {
-    java.lang.Object ref = name_;
+  public java.lang.String getResponseType() {
+    java.lang.Object ref = responseType_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      name_ = s;
+      responseType_ = s;
       return s;
     }
   }
   /**
    * <pre>
-   * The name of the operation's parent resource.
+   * Required. The message name of the primary return type for this
+   * long-running operation.
+   * This type will be used to deserialize the LRO's response.
+   * If the response is in a different package from the rpc, a fully-qualified
+   * message name must be used (e.g. `google.protobuf.Struct`).
+   * Note: Altering this value constitutes a breaking change.
    * </pre>
    *
-   * <code>string name = 4;</code>
+   * <code>string response_type = 1;</code>
    */
   public com.google.protobuf.ByteString
-      getNameBytes() {
-    java.lang.Object ref = name_;
+      getResponseTypeBytes() {
+    java.lang.Object ref = responseType_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      name_ = b;
+      responseType_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
   }
 
-  public static final int FILTER_FIELD_NUMBER = 1;
-  private volatile java.lang.Object filter_;
+  public static final int METADATA_TYPE_FIELD_NUMBER = 2;
+  private volatile java.lang.Object metadataType_;
   /**
    * <pre>
-   * The standard list filter.
+   * Required. The message name of the metadata type for this long-running
+   * operation.
+   * If the response is in a different package from the rpc, a fully-qualified
+   * message name must be used (e.g. `google.protobuf.Struct`).
+   * Note: Altering this value constitutes a breaking change.
    * </pre>
    *
-   * <code>string filter = 1;</code>
+   * <code>string metadata_type = 2;</code>
    */
-  public java.lang.String getFilter() {
-    java.lang.Object ref = filter_;
+  public java.lang.String getMetadataType() {
+    java.lang.Object ref = metadataType_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      filter_ = s;
+      metadataType_ = s;
       return s;
     }
   }
   /**
    * <pre>
-   * The standard list filter.
+   * Required. The message name of the metadata type for this long-running
+   * operation.
+   * If the response is in a different package from the rpc, a fully-qualified
+   * message name must be used (e.g. `google.protobuf.Struct`).
+   * Note: Altering this value constitutes a breaking change.
    * </pre>
    *
-   * <code>string filter = 1;</code>
+   * <code>string metadata_type = 2;</code>
    */
   public com.google.protobuf.ByteString
-      getFilterBytes() {
-    java.lang.Object ref = filter_;
+      getMetadataTypeBytes() {
+    java.lang.Object ref = metadataType_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      filter_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int PAGE_SIZE_FIELD_NUMBER = 2;
-  private int pageSize_;
-  /**
-   * <pre>
-   * The standard list page size.
-   * </pre>
-   *
-   * <code>int32 page_size = 2;</code>
-   */
-  public int getPageSize() {
-    return pageSize_;
-  }
-
-  public static final int PAGE_TOKEN_FIELD_NUMBER = 3;
-  private volatile java.lang.Object pageToken_;
-  /**
-   * <pre>
-   * The standard list page token.
-   * </pre>
-   *
-   * <code>string page_token = 3;</code>
-   */
-  public java.lang.String getPageToken() {
-    java.lang.Object ref = pageToken_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      pageToken_ = s;
-      return s;
-    }
-  }
-  /**
-   * <pre>
-   * The standard list page token.
-   * </pre>
-   *
-   * <code>string page_token = 3;</code>
-   */
-  public com.google.protobuf.ByteString
-      getPageTokenBytes() {
-    java.lang.Object ref = pageToken_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      pageToken_ = b;
+      metadataType_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -258,17 +216,11 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getFilterBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, filter_);
+    if (!getResponseTypeBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, responseType_);
     }
-    if (pageSize_ != 0) {
-      output.writeInt32(2, pageSize_);
-    }
-    if (!getPageTokenBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, pageToken_);
-    }
-    if (!getNameBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, name_);
+    if (!getMetadataTypeBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, metadataType_);
     }
     unknownFields.writeTo(output);
   }
@@ -279,18 +231,11 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getFilterBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, filter_);
+    if (!getResponseTypeBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, responseType_);
     }
-    if (pageSize_ != 0) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(2, pageSize_);
-    }
-    if (!getPageTokenBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, pageToken_);
-    }
-    if (!getNameBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, name_);
+    if (!getMetadataTypeBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, metadataType_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -302,20 +247,16 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof com.google.longrunning.ListOperationsRequest)) {
+    if (!(obj instanceof com.google.longrunning.OperationInfo)) {
       return super.equals(obj);
     }
-    com.google.longrunning.ListOperationsRequest other = (com.google.longrunning.ListOperationsRequest) obj;
+    com.google.longrunning.OperationInfo other = (com.google.longrunning.OperationInfo) obj;
 
     boolean result = true;
-    result = result && getName()
-        .equals(other.getName());
-    result = result && getFilter()
-        .equals(other.getFilter());
-    result = result && (getPageSize()
-        == other.getPageSize());
-    result = result && getPageToken()
-        .equals(other.getPageToken());
+    result = result && getResponseType()
+        .equals(other.getResponseType());
+    result = result && getMetadataType()
+        .equals(other.getMetadataType());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -327,82 +268,78 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + NAME_FIELD_NUMBER;
-    hash = (53 * hash) + getName().hashCode();
-    hash = (37 * hash) + FILTER_FIELD_NUMBER;
-    hash = (53 * hash) + getFilter().hashCode();
-    hash = (37 * hash) + PAGE_SIZE_FIELD_NUMBER;
-    hash = (53 * hash) + getPageSize();
-    hash = (37 * hash) + PAGE_TOKEN_FIELD_NUMBER;
-    hash = (53 * hash) + getPageToken().hashCode();
+    hash = (37 * hash) + RESPONSE_TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + getResponseType().hashCode();
+    hash = (37 * hash) + METADATA_TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + getMetadataType().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static com.google.longrunning.ListOperationsRequest parseFrom(
+  public static com.google.longrunning.OperationInfo parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.google.longrunning.ListOperationsRequest parseFrom(
+  public static com.google.longrunning.OperationInfo parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.longrunning.ListOperationsRequest parseFrom(
+  public static com.google.longrunning.OperationInfo parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.google.longrunning.ListOperationsRequest parseFrom(
+  public static com.google.longrunning.OperationInfo parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.longrunning.ListOperationsRequest parseFrom(byte[] data)
+  public static com.google.longrunning.OperationInfo parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.google.longrunning.ListOperationsRequest parseFrom(
+  public static com.google.longrunning.OperationInfo parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.longrunning.ListOperationsRequest parseFrom(java.io.InputStream input)
+  public static com.google.longrunning.OperationInfo parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.google.longrunning.ListOperationsRequest parseFrom(
+  public static com.google.longrunning.OperationInfo parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.google.longrunning.ListOperationsRequest parseDelimitedFrom(java.io.InputStream input)
+  public static com.google.longrunning.OperationInfo parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static com.google.longrunning.ListOperationsRequest parseDelimitedFrom(
+  public static com.google.longrunning.OperationInfo parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.google.longrunning.ListOperationsRequest parseFrom(
+  public static com.google.longrunning.OperationInfo parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.google.longrunning.ListOperationsRequest parseFrom(
+  public static com.google.longrunning.OperationInfo parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -415,7 +352,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.google.longrunning.ListOperationsRequest prototype) {
+  public static Builder newBuilder(com.google.longrunning.OperationInfo prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -432,29 +369,37 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The request message for [Operations.ListOperations][google.longrunning.Operations.ListOperations].
+   * A message representing the message types used by a long-running operation.
+   * Example:
+   *   rpc LongRunningRecognize(LongRunningRecognizeRequest)
+   *       returns (google.longrunning.Operation) {
+   *     option (google.longrunning.operation_info) = {
+   *       response_type: "LongRunningRecognizeResponse"
+   *       metadata_type: "LongRunningRecognizeMetadata"
+   *     };
+   *   }
    * </pre>
    *
-   * Protobuf type {@code google.longrunning.ListOperationsRequest}
+   * Protobuf type {@code google.longrunning.OperationInfo}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:google.longrunning.ListOperationsRequest)
-      com.google.longrunning.ListOperationsRequestOrBuilder {
+      // @@protoc_insertion_point(builder_implements:google.longrunning.OperationInfo)
+      com.google.longrunning.OperationInfoOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.google.longrunning.OperationsProto.internal_static_google_longrunning_ListOperationsRequest_descriptor;
+      return com.google.longrunning.OperationsProto.internal_static_google_longrunning_OperationInfo_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.longrunning.OperationsProto.internal_static_google_longrunning_ListOperationsRequest_fieldAccessorTable
+      return com.google.longrunning.OperationsProto.internal_static_google_longrunning_OperationInfo_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.longrunning.ListOperationsRequest.class, com.google.longrunning.ListOperationsRequest.Builder.class);
+              com.google.longrunning.OperationInfo.class, com.google.longrunning.OperationInfo.Builder.class);
     }
 
-    // Construct using com.google.longrunning.ListOperationsRequest.newBuilder()
+    // Construct using com.google.longrunning.OperationInfo.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -472,13 +417,9 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      name_ = "";
+      responseType_ = "";
 
-      filter_ = "";
-
-      pageSize_ = 0;
-
-      pageToken_ = "";
+      metadataType_ = "";
 
       return this;
     }
@@ -486,17 +427,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.google.longrunning.OperationsProto.internal_static_google_longrunning_ListOperationsRequest_descriptor;
+      return com.google.longrunning.OperationsProto.internal_static_google_longrunning_OperationInfo_descriptor;
     }
 
     @java.lang.Override
-    public com.google.longrunning.ListOperationsRequest getDefaultInstanceForType() {
-      return com.google.longrunning.ListOperationsRequest.getDefaultInstance();
+    public com.google.longrunning.OperationInfo getDefaultInstanceForType() {
+      return com.google.longrunning.OperationInfo.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.google.longrunning.ListOperationsRequest build() {
-      com.google.longrunning.ListOperationsRequest result = buildPartial();
+    public com.google.longrunning.OperationInfo build() {
+      com.google.longrunning.OperationInfo result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -504,12 +445,10 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.longrunning.ListOperationsRequest buildPartial() {
-      com.google.longrunning.ListOperationsRequest result = new com.google.longrunning.ListOperationsRequest(this);
-      result.name_ = name_;
-      result.filter_ = filter_;
-      result.pageSize_ = pageSize_;
-      result.pageToken_ = pageToken_;
+    public com.google.longrunning.OperationInfo buildPartial() {
+      com.google.longrunning.OperationInfo result = new com.google.longrunning.OperationInfo(this);
+      result.responseType_ = responseType_;
+      result.metadataType_ = metadataType_;
       onBuilt();
       return result;
     }
@@ -548,29 +487,22 @@ private static final long serialVersionUID = 0L;
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.google.longrunning.ListOperationsRequest) {
-        return mergeFrom((com.google.longrunning.ListOperationsRequest)other);
+      if (other instanceof com.google.longrunning.OperationInfo) {
+        return mergeFrom((com.google.longrunning.OperationInfo)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.google.longrunning.ListOperationsRequest other) {
-      if (other == com.google.longrunning.ListOperationsRequest.getDefaultInstance()) return this;
-      if (!other.getName().isEmpty()) {
-        name_ = other.name_;
+    public Builder mergeFrom(com.google.longrunning.OperationInfo other) {
+      if (other == com.google.longrunning.OperationInfo.getDefaultInstance()) return this;
+      if (!other.getResponseType().isEmpty()) {
+        responseType_ = other.responseType_;
         onChanged();
       }
-      if (!other.getFilter().isEmpty()) {
-        filter_ = other.filter_;
-        onChanged();
-      }
-      if (other.getPageSize() != 0) {
-        setPageSize(other.getPageSize());
-      }
-      if (!other.getPageToken().isEmpty()) {
-        pageToken_ = other.pageToken_;
+      if (!other.getMetadataType().isEmpty()) {
+        metadataType_ = other.metadataType_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -588,11 +520,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.longrunning.ListOperationsRequest parsedMessage = null;
+      com.google.longrunning.OperationInfo parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.longrunning.ListOperationsRequest) e.getUnfinishedMessage();
+        parsedMessage = (com.google.longrunning.OperationInfo) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -602,21 +534,26 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object name_ = "";
+    private java.lang.Object responseType_ = "";
     /**
      * <pre>
-     * The name of the operation's parent resource.
+     * Required. The message name of the primary return type for this
+     * long-running operation.
+     * This type will be used to deserialize the LRO's response.
+     * If the response is in a different package from the rpc, a fully-qualified
+     * message name must be used (e.g. `google.protobuf.Struct`).
+     * Note: Altering this value constitutes a breaking change.
      * </pre>
      *
-     * <code>string name = 4;</code>
+     * <code>string response_type = 1;</code>
      */
-    public java.lang.String getName() {
-      java.lang.Object ref = name_;
+    public java.lang.String getResponseType() {
+      java.lang.Object ref = responseType_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        name_ = s;
+        responseType_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -624,19 +561,24 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The name of the operation's parent resource.
+     * Required. The message name of the primary return type for this
+     * long-running operation.
+     * This type will be used to deserialize the LRO's response.
+     * If the response is in a different package from the rpc, a fully-qualified
+     * message name must be used (e.g. `google.protobuf.Struct`).
+     * Note: Altering this value constitutes a breaking change.
      * </pre>
      *
-     * <code>string name = 4;</code>
+     * <code>string response_type = 1;</code>
      */
     public com.google.protobuf.ByteString
-        getNameBytes() {
-      java.lang.Object ref = name_;
+        getResponseTypeBytes() {
+      java.lang.Object ref = responseType_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        name_ = b;
+        responseType_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -644,68 +586,87 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The name of the operation's parent resource.
+     * Required. The message name of the primary return type for this
+     * long-running operation.
+     * This type will be used to deserialize the LRO's response.
+     * If the response is in a different package from the rpc, a fully-qualified
+     * message name must be used (e.g. `google.protobuf.Struct`).
+     * Note: Altering this value constitutes a breaking change.
      * </pre>
      *
-     * <code>string name = 4;</code>
+     * <code>string response_type = 1;</code>
      */
-    public Builder setName(
+    public Builder setResponseType(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
   
-      name_ = value;
+      responseType_ = value;
       onChanged();
       return this;
     }
     /**
      * <pre>
-     * The name of the operation's parent resource.
+     * Required. The message name of the primary return type for this
+     * long-running operation.
+     * This type will be used to deserialize the LRO's response.
+     * If the response is in a different package from the rpc, a fully-qualified
+     * message name must be used (e.g. `google.protobuf.Struct`).
+     * Note: Altering this value constitutes a breaking change.
      * </pre>
      *
-     * <code>string name = 4;</code>
+     * <code>string response_type = 1;</code>
      */
-    public Builder clearName() {
+    public Builder clearResponseType() {
       
-      name_ = getDefaultInstance().getName();
+      responseType_ = getDefaultInstance().getResponseType();
       onChanged();
       return this;
     }
     /**
      * <pre>
-     * The name of the operation's parent resource.
+     * Required. The message name of the primary return type for this
+     * long-running operation.
+     * This type will be used to deserialize the LRO's response.
+     * If the response is in a different package from the rpc, a fully-qualified
+     * message name must be used (e.g. `google.protobuf.Struct`).
+     * Note: Altering this value constitutes a breaking change.
      * </pre>
      *
-     * <code>string name = 4;</code>
+     * <code>string response_type = 1;</code>
      */
-    public Builder setNameBytes(
+    public Builder setResponseTypeBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
       
-      name_ = value;
+      responseType_ = value;
       onChanged();
       return this;
     }
 
-    private java.lang.Object filter_ = "";
+    private java.lang.Object metadataType_ = "";
     /**
      * <pre>
-     * The standard list filter.
+     * Required. The message name of the metadata type for this long-running
+     * operation.
+     * If the response is in a different package from the rpc, a fully-qualified
+     * message name must be used (e.g. `google.protobuf.Struct`).
+     * Note: Altering this value constitutes a breaking change.
      * </pre>
      *
-     * <code>string filter = 1;</code>
+     * <code>string metadata_type = 2;</code>
      */
-    public java.lang.String getFilter() {
-      java.lang.Object ref = filter_;
+    public java.lang.String getMetadataType() {
+      java.lang.Object ref = metadataType_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        filter_ = s;
+        metadataType_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -713,19 +674,23 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The standard list filter.
+     * Required. The message name of the metadata type for this long-running
+     * operation.
+     * If the response is in a different package from the rpc, a fully-qualified
+     * message name must be used (e.g. `google.protobuf.Struct`).
+     * Note: Altering this value constitutes a breaking change.
      * </pre>
      *
-     * <code>string filter = 1;</code>
+     * <code>string metadata_type = 2;</code>
      */
     public com.google.protobuf.ByteString
-        getFilterBytes() {
-      java.lang.Object ref = filter_;
+        getMetadataTypeBytes() {
+      java.lang.Object ref = metadataType_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        filter_ = b;
+        metadataType_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -733,176 +698,61 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The standard list filter.
+     * Required. The message name of the metadata type for this long-running
+     * operation.
+     * If the response is in a different package from the rpc, a fully-qualified
+     * message name must be used (e.g. `google.protobuf.Struct`).
+     * Note: Altering this value constitutes a breaking change.
      * </pre>
      *
-     * <code>string filter = 1;</code>
+     * <code>string metadata_type = 2;</code>
      */
-    public Builder setFilter(
+    public Builder setMetadataType(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
   
-      filter_ = value;
+      metadataType_ = value;
       onChanged();
       return this;
     }
     /**
      * <pre>
-     * The standard list filter.
+     * Required. The message name of the metadata type for this long-running
+     * operation.
+     * If the response is in a different package from the rpc, a fully-qualified
+     * message name must be used (e.g. `google.protobuf.Struct`).
+     * Note: Altering this value constitutes a breaking change.
      * </pre>
      *
-     * <code>string filter = 1;</code>
+     * <code>string metadata_type = 2;</code>
      */
-    public Builder clearFilter() {
+    public Builder clearMetadataType() {
       
-      filter_ = getDefaultInstance().getFilter();
+      metadataType_ = getDefaultInstance().getMetadataType();
       onChanged();
       return this;
     }
     /**
      * <pre>
-     * The standard list filter.
+     * Required. The message name of the metadata type for this long-running
+     * operation.
+     * If the response is in a different package from the rpc, a fully-qualified
+     * message name must be used (e.g. `google.protobuf.Struct`).
+     * Note: Altering this value constitutes a breaking change.
      * </pre>
      *
-     * <code>string filter = 1;</code>
+     * <code>string metadata_type = 2;</code>
      */
-    public Builder setFilterBytes(
+    public Builder setMetadataTypeBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
       
-      filter_ = value;
-      onChanged();
-      return this;
-    }
-
-    private int pageSize_ ;
-    /**
-     * <pre>
-     * The standard list page size.
-     * </pre>
-     *
-     * <code>int32 page_size = 2;</code>
-     */
-    public int getPageSize() {
-      return pageSize_;
-    }
-    /**
-     * <pre>
-     * The standard list page size.
-     * </pre>
-     *
-     * <code>int32 page_size = 2;</code>
-     */
-    public Builder setPageSize(int value) {
-      
-      pageSize_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * The standard list page size.
-     * </pre>
-     *
-     * <code>int32 page_size = 2;</code>
-     */
-    public Builder clearPageSize() {
-      
-      pageSize_ = 0;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object pageToken_ = "";
-    /**
-     * <pre>
-     * The standard list page token.
-     * </pre>
-     *
-     * <code>string page_token = 3;</code>
-     */
-    public java.lang.String getPageToken() {
-      java.lang.Object ref = pageToken_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        pageToken_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <pre>
-     * The standard list page token.
-     * </pre>
-     *
-     * <code>string page_token = 3;</code>
-     */
-    public com.google.protobuf.ByteString
-        getPageTokenBytes() {
-      java.lang.Object ref = pageToken_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        pageToken_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <pre>
-     * The standard list page token.
-     * </pre>
-     *
-     * <code>string page_token = 3;</code>
-     */
-    public Builder setPageToken(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      pageToken_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * The standard list page token.
-     * </pre>
-     *
-     * <code>string page_token = 3;</code>
-     */
-    public Builder clearPageToken() {
-      
-      pageToken_ = getDefaultInstance().getPageToken();
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * The standard list page token.
-     * </pre>
-     *
-     * <code>string page_token = 3;</code>
-     */
-    public Builder setPageTokenBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      pageToken_ = value;
+      metadataType_ = value;
       onChanged();
       return this;
     }
@@ -919,41 +769,41 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:google.longrunning.ListOperationsRequest)
+    // @@protoc_insertion_point(builder_scope:google.longrunning.OperationInfo)
   }
 
-  // @@protoc_insertion_point(class_scope:google.longrunning.ListOperationsRequest)
-  private static final com.google.longrunning.ListOperationsRequest DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:google.longrunning.OperationInfo)
+  private static final com.google.longrunning.OperationInfo DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new com.google.longrunning.ListOperationsRequest();
+    DEFAULT_INSTANCE = new com.google.longrunning.OperationInfo();
   }
 
-  public static com.google.longrunning.ListOperationsRequest getDefaultInstance() {
+  public static com.google.longrunning.OperationInfo getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<ListOperationsRequest>
-      PARSER = new com.google.protobuf.AbstractParser<ListOperationsRequest>() {
+  private static final com.google.protobuf.Parser<OperationInfo>
+      PARSER = new com.google.protobuf.AbstractParser<OperationInfo>() {
     @java.lang.Override
-    public ListOperationsRequest parsePartialFrom(
+    public OperationInfo parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new ListOperationsRequest(input, extensionRegistry);
+      return new OperationInfo(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<ListOperationsRequest> parser() {
+  public static com.google.protobuf.Parser<OperationInfo> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<ListOperationsRequest> getParserForType() {
+  public com.google.protobuf.Parser<OperationInfo> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.longrunning.ListOperationsRequest getDefaultInstanceForType() {
+  public com.google.longrunning.OperationInfo getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 
