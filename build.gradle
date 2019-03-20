@@ -78,10 +78,34 @@ subprojects {
           artifact sourcesJar
 
           pom {
+            name = 'Google Cloud Common Protos for Java'
             packaging = 'jar'
             artifactId = project.name
-            description = 'Google Common Protos for Java'
+            description = 'Google Cloud Common Protos for Java'
+            url = 'https://github.com/googleapis/common-protos-java'
 
+            scm {
+              url = 'https://github.com/googleapis/common-protos-java'
+              connection = 'scm:git:https://github.com/googleapis/common-protos-java.git'
+            }
+
+            licenses {
+              license {
+                name = 'Apache'
+                url = 'https://github.com/googleapis/common-protos-java/blob/master/LICENSE'
+              }
+            }
+
+            developers {
+              developer {
+                id = 'GoogleAPIs'
+                name = 'GoogleAPIs'
+                email = 'googleapis@googlegroups.com'
+                url = 'https://github.com/googleapis/common-protos-java'
+                organization = 'Google, Inc.'
+                organizationUrl = 'https://www.google.com'
+              }
+            }
           }
         }
       }
@@ -93,6 +117,12 @@ subprojects {
             password = project.hasProperty('ossrhPassword') ? project.getProperty('ossrhPassword') : null
           }
         }
+      }
+    }
+
+    signing {
+      if (!project.hasProperty('skip.signing')) {
+        sign publishing.publications.mavenJava
       }
     }
   }
