@@ -1,2 +1,4 @@
 include "grpc-google-common-protos"
 include "proto-google-common-protos"
+// The following can be removed once gax-java migrates to Gradle 5.x
+enableFeaturePreview('IMPROVED_POM_SUPPORT')
