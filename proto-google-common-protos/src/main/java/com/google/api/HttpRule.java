@@ -331,7 +331,7 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 90: {
-            if (!((mutable_bitField0_ & 0x00000200) == 0x00000200)) {
+            if (!((mutable_bitField0_ & 0x00000200) != 0)) {
               additionalBindings_ = new java.util.ArrayList<com.google.api.HttpRule>();
               mutable_bitField0_ |= 0x00000200;
             }
@@ -346,7 +346,7 @@ private static final long serialVersionUID = 0L;
             break;
           }
           default: {
-            if (!parseUnknownFieldProto3(
+            if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
               done = true;
             }
@@ -360,7 +360,7 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000200) == 0x00000200)) {
+      if (((mutable_bitField0_ & 0x00000200) != 0)) {
         additionalBindings_ = java.util.Collections.unmodifiableList(additionalBindings_);
       }
       this.unknownFields = unknownFields.build();
@@ -1042,48 +1042,45 @@ private static final long serialVersionUID = 0L;
     }
     com.google.api.HttpRule other = (com.google.api.HttpRule) obj;
 
-    boolean result = true;
-    result = result && getSelector()
-        .equals(other.getSelector());
-    result = result && getBody()
-        .equals(other.getBody());
-    result = result && getResponseBody()
-        .equals(other.getResponseBody());
-    result = result && getAdditionalBindingsList()
-        .equals(other.getAdditionalBindingsList());
-    result = result && getPatternCase().equals(
-        other.getPatternCase());
-    if (!result) return false;
+    if (!getSelector()
+        .equals(other.getSelector())) return false;
+    if (!getBody()
+        .equals(other.getBody())) return false;
+    if (!getResponseBody()
+        .equals(other.getResponseBody())) return false;
+    if (!getAdditionalBindingsList()
+        .equals(other.getAdditionalBindingsList())) return false;
+    if (!getPatternCase().equals(other.getPatternCase())) return false;
     switch (patternCase_) {
       case 2:
-        result = result && getGet()
-            .equals(other.getGet());
+        if (!getGet()
+            .equals(other.getGet())) return false;
         break;
       case 3:
-        result = result && getPut()
-            .equals(other.getPut());
+        if (!getPut()
+            .equals(other.getPut())) return false;
         break;
       case 4:
-        result = result && getPost()
-            .equals(other.getPost());
+        if (!getPost()
+            .equals(other.getPost())) return false;
         break;
       case 5:
-        result = result && getDelete()
-            .equals(other.getDelete());
+        if (!getDelete()
+            .equals(other.getDelete())) return false;
         break;
       case 6:
-        result = result && getPatch()
-            .equals(other.getPatch());
+        if (!getPatch()
+            .equals(other.getPatch())) return false;
         break;
       case 8:
-        result = result && getCustom()
-            .equals(other.getCustom());
+        if (!getCustom()
+            .equals(other.getCustom())) return false;
         break;
       case 0:
       default:
     }
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -1561,7 +1558,7 @@ private static final long serialVersionUID = 0L;
       result.body_ = body_;
       result.responseBody_ = responseBody_;
       if (additionalBindingsBuilder_ == null) {
-        if (((bitField0_ & 0x00000200) == 0x00000200)) {
+        if (((bitField0_ & 0x00000200) != 0)) {
           additionalBindings_ = java.util.Collections.unmodifiableList(additionalBindings_);
           bitField0_ = (bitField0_ & ~0x00000200);
         }
@@ -1577,35 +1574,35 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
     @java.lang.Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
     @java.lang.Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -2765,7 +2762,7 @@ private static final long serialVersionUID = 0L;
     private java.util.List<com.google.api.HttpRule> additionalBindings_ =
       java.util.Collections.emptyList();
     private void ensureAdditionalBindingsIsMutable() {
-      if (!((bitField0_ & 0x00000200) == 0x00000200)) {
+      if (!((bitField0_ & 0x00000200) != 0)) {
         additionalBindings_ = new java.util.ArrayList<com.google.api.HttpRule>(additionalBindings_);
         bitField0_ |= 0x00000200;
        }
@@ -3102,7 +3099,7 @@ private static final long serialVersionUID = 0L;
         additionalBindingsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             com.google.api.HttpRule, com.google.api.HttpRule.Builder, com.google.api.HttpRuleOrBuilder>(
                 additionalBindings_,
-                ((bitField0_ & 0x00000200) == 0x00000200),
+                ((bitField0_ & 0x00000200) != 0),
                 getParentForChildren(),
                 isClean());
         additionalBindings_ = null;
@@ -3112,7 +3109,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

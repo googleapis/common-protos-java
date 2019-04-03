@@ -33,7 +33,6 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private PostalAddress() {
-    revision_ = 0;
     regionCode_ = "";
     languageCode_ = "";
     postalCode_ = "";
@@ -119,7 +118,7 @@ private static final long serialVersionUID = 0L;
           }
           case 74: {
             java.lang.String s = input.readStringRequireUtf8();
-            if (!((mutable_bitField0_ & 0x00000100) == 0x00000100)) {
+            if (!((mutable_bitField0_ & 0x00000100) != 0)) {
               addressLines_ = new com.google.protobuf.LazyStringArrayList();
               mutable_bitField0_ |= 0x00000100;
             }
@@ -128,7 +127,7 @@ private static final long serialVersionUID = 0L;
           }
           case 82: {
             java.lang.String s = input.readStringRequireUtf8();
-            if (!((mutable_bitField0_ & 0x00000200) == 0x00000200)) {
+            if (!((mutable_bitField0_ & 0x00000200) != 0)) {
               recipients_ = new com.google.protobuf.LazyStringArrayList();
               mutable_bitField0_ |= 0x00000200;
             }
@@ -142,7 +141,7 @@ private static final long serialVersionUID = 0L;
             break;
           }
           default: {
-            if (!parseUnknownFieldProto3(
+            if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
               done = true;
             }
@@ -156,10 +155,10 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000100) == 0x00000100)) {
+      if (((mutable_bitField0_ & 0x00000100) != 0)) {
         addressLines_ = addressLines_.getUnmodifiableView();
       }
-      if (((mutable_bitField0_ & 0x00000200) == 0x00000200)) {
+      if (((mutable_bitField0_ & 0x00000200) != 0)) {
         recipients_ = recipients_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -875,31 +874,30 @@ private static final long serialVersionUID = 0L;
     }
     com.google.type.PostalAddress other = (com.google.type.PostalAddress) obj;
 
-    boolean result = true;
-    result = result && (getRevision()
-        == other.getRevision());
-    result = result && getRegionCode()
-        .equals(other.getRegionCode());
-    result = result && getLanguageCode()
-        .equals(other.getLanguageCode());
-    result = result && getPostalCode()
-        .equals(other.getPostalCode());
-    result = result && getSortingCode()
-        .equals(other.getSortingCode());
-    result = result && getAdministrativeArea()
-        .equals(other.getAdministrativeArea());
-    result = result && getLocality()
-        .equals(other.getLocality());
-    result = result && getSublocality()
-        .equals(other.getSublocality());
-    result = result && getAddressLinesList()
-        .equals(other.getAddressLinesList());
-    result = result && getRecipientsList()
-        .equals(other.getRecipientsList());
-    result = result && getOrganization()
-        .equals(other.getOrganization());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (getRevision()
+        != other.getRevision()) return false;
+    if (!getRegionCode()
+        .equals(other.getRegionCode())) return false;
+    if (!getLanguageCode()
+        .equals(other.getLanguageCode())) return false;
+    if (!getPostalCode()
+        .equals(other.getPostalCode())) return false;
+    if (!getSortingCode()
+        .equals(other.getSortingCode())) return false;
+    if (!getAdministrativeArea()
+        .equals(other.getAdministrativeArea())) return false;
+    if (!getLocality()
+        .equals(other.getLocality())) return false;
+    if (!getSublocality()
+        .equals(other.getSublocality())) return false;
+    if (!getAddressLinesList()
+        .equals(other.getAddressLinesList())) return false;
+    if (!getRecipientsList()
+        .equals(other.getRecipientsList())) return false;
+    if (!getOrganization()
+        .equals(other.getOrganization())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -1143,12 +1141,12 @@ private static final long serialVersionUID = 0L;
       result.administrativeArea_ = administrativeArea_;
       result.locality_ = locality_;
       result.sublocality_ = sublocality_;
-      if (((bitField0_ & 0x00000100) == 0x00000100)) {
+      if (((bitField0_ & 0x00000100) != 0)) {
         addressLines_ = addressLines_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000100);
       }
       result.addressLines_ = addressLines_;
-      if (((bitField0_ & 0x00000200) == 0x00000200)) {
+      if (((bitField0_ & 0x00000200) != 0)) {
         recipients_ = recipients_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000200);
       }
@@ -1161,35 +1159,35 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
     @java.lang.Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
     @java.lang.Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -2104,7 +2102,7 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.LazyStringList addressLines_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     private void ensureAddressLinesIsMutable() {
-      if (!((bitField0_ & 0x00000100) == 0x00000100)) {
+      if (!((bitField0_ & 0x00000100) != 0)) {
         addressLines_ = new com.google.protobuf.LazyStringArrayList(addressLines_);
         bitField0_ |= 0x00000100;
        }
@@ -2396,7 +2394,7 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.LazyStringList recipients_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     private void ensureRecipientsIsMutable() {
-      if (!((bitField0_ & 0x00000200) == 0x00000200)) {
+      if (!((bitField0_ & 0x00000200) != 0)) {
         recipients_ = new com.google.protobuf.LazyStringArrayList(recipients_);
         bitField0_ |= 0x00000200;
        }
@@ -2633,7 +2631,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override
