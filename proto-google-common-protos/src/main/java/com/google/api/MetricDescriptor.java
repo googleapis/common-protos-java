@@ -63,7 +63,7 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 18: {
-            if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+            if (!((mutable_bitField0_ & 0x00000004) != 0)) {
               labels_ = new java.util.ArrayList<com.google.api.LabelDescriptor>();
               mutable_bitField0_ |= 0x00000004;
             }
@@ -121,7 +121,7 @@ private static final long serialVersionUID = 0L;
             break;
           }
           default: {
-            if (!parseUnknownFieldProto3(
+            if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
               done = true;
             }
@@ -135,7 +135,7 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+      if (((mutable_bitField0_ & 0x00000004) != 0)) {
         labels_ = java.util.Collections.unmodifiableList(labels_);
       }
       this.unknownFields = unknownFields.build();
@@ -685,7 +685,7 @@ private static final long serialVersionUID = 0L;
               break;
             }
             default: {
-              if (!parseUnknownFieldProto3(
+              if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
@@ -881,20 +881,19 @@ private static final long serialVersionUID = 0L;
       }
       com.google.api.MetricDescriptor.MetricDescriptorMetadata other = (com.google.api.MetricDescriptor.MetricDescriptorMetadata) obj;
 
-      boolean result = true;
-      result = result && launchStage_ == other.launchStage_;
-      result = result && (hasSamplePeriod() == other.hasSamplePeriod());
+      if (launchStage_ != other.launchStage_) return false;
+      if (hasSamplePeriod() != other.hasSamplePeriod()) return false;
       if (hasSamplePeriod()) {
-        result = result && getSamplePeriod()
-            .equals(other.getSamplePeriod());
+        if (!getSamplePeriod()
+            .equals(other.getSamplePeriod())) return false;
       }
-      result = result && (hasIngestDelay() == other.hasIngestDelay());
+      if (hasIngestDelay() != other.hasIngestDelay()) return false;
       if (hasIngestDelay()) {
-        result = result && getIngestDelay()
-            .equals(other.getIngestDelay());
+        if (!getIngestDelay()
+            .equals(other.getIngestDelay())) return false;
       }
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -1108,35 +1107,35 @@ private static final long serialVersionUID = 0L;
 
       @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -1253,7 +1252,7 @@ private static final long serialVersionUID = 0L;
         return this;
       }
 
-      private com.google.protobuf.Duration samplePeriod_ = null;
+      private com.google.protobuf.Duration samplePeriod_;
       private com.google.protobuf.SingleFieldBuilderV3<
           com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder> samplePeriodBuilder_;
       /**
@@ -1433,7 +1432,7 @@ private static final long serialVersionUID = 0L;
         return samplePeriodBuilder_;
       }
 
-      private com.google.protobuf.Duration ingestDelay_ = null;
+      private com.google.protobuf.Duration ingestDelay_;
       private com.google.protobuf.SingleFieldBuilderV3<
           com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder> ingestDelayBuilder_;
       /**
@@ -1606,7 +1605,7 @@ private static final long serialVersionUID = 0L;
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -2250,28 +2249,27 @@ private static final long serialVersionUID = 0L;
     }
     com.google.api.MetricDescriptor other = (com.google.api.MetricDescriptor) obj;
 
-    boolean result = true;
-    result = result && getName()
-        .equals(other.getName());
-    result = result && getType()
-        .equals(other.getType());
-    result = result && getLabelsList()
-        .equals(other.getLabelsList());
-    result = result && metricKind_ == other.metricKind_;
-    result = result && valueType_ == other.valueType_;
-    result = result && getUnit()
-        .equals(other.getUnit());
-    result = result && getDescription()
-        .equals(other.getDescription());
-    result = result && getDisplayName()
-        .equals(other.getDisplayName());
-    result = result && (hasMetadata() == other.hasMetadata());
+    if (!getName()
+        .equals(other.getName())) return false;
+    if (!getType()
+        .equals(other.getType())) return false;
+    if (!getLabelsList()
+        .equals(other.getLabelsList())) return false;
+    if (metricKind_ != other.metricKind_) return false;
+    if (valueType_ != other.valueType_) return false;
+    if (!getUnit()
+        .equals(other.getUnit())) return false;
+    if (!getDescription()
+        .equals(other.getDescription())) return false;
+    if (!getDisplayName()
+        .equals(other.getDisplayName())) return false;
+    if (hasMetadata() != other.hasMetadata()) return false;
     if (hasMetadata()) {
-      result = result && getMetadata()
-          .equals(other.getMetadata());
+      if (!getMetadata()
+          .equals(other.getMetadata())) return false;
     }
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -2500,7 +2498,7 @@ private static final long serialVersionUID = 0L;
       result.name_ = name_;
       result.type_ = type_;
       if (labelsBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        if (((bitField0_ & 0x00000004) != 0)) {
           labels_ = java.util.Collections.unmodifiableList(labels_);
           bitField0_ = (bitField0_ & ~0x00000004);
         }
@@ -2525,35 +2523,35 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
     @java.lang.Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
     @java.lang.Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -2863,7 +2861,7 @@ private static final long serialVersionUID = 0L;
     private java.util.List<com.google.api.LabelDescriptor> labels_ =
       java.util.Collections.emptyList();
     private void ensureLabelsIsMutable() {
-      if (!((bitField0_ & 0x00000004) == 0x00000004)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         labels_ = new java.util.ArrayList<com.google.api.LabelDescriptor>(labels_);
         bitField0_ |= 0x00000004;
        }
@@ -3254,7 +3252,7 @@ private static final long serialVersionUID = 0L;
         labelsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             com.google.api.LabelDescriptor, com.google.api.LabelDescriptor.Builder, com.google.api.LabelDescriptorOrBuilder>(
                 labels_,
-                ((bitField0_ & 0x00000004) == 0x00000004),
+                ((bitField0_ & 0x00000004) != 0),
                 getParentForChildren(),
                 isClean());
         labels_ = null;
@@ -3939,7 +3937,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private com.google.api.MetricDescriptor.MetricDescriptorMetadata metadata_ = null;
+    private com.google.api.MetricDescriptor.MetricDescriptorMetadata metadata_;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.api.MetricDescriptor.MetricDescriptorMetadata, com.google.api.MetricDescriptor.MetricDescriptorMetadata.Builder, com.google.api.MetricDescriptor.MetricDescriptorMetadataOrBuilder> metadataBuilder_;
     /**
@@ -4094,7 +4092,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

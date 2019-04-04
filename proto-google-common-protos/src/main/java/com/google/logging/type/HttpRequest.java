@@ -24,17 +24,10 @@ private static final long serialVersionUID = 0L;
   private HttpRequest() {
     requestMethod_ = "";
     requestUrl_ = "";
-    requestSize_ = 0L;
-    status_ = 0;
-    responseSize_ = 0L;
     userAgent_ = "";
     remoteIp_ = "";
     serverIp_ = "";
     referer_ = "";
-    cacheLookup_ = false;
-    cacheHit_ = false;
-    cacheValidatedWithOriginServer_ = false;
-    cacheFillBytes_ = 0L;
     protocol_ = "";
   }
 
@@ -153,7 +146,7 @@ private static final long serialVersionUID = 0L;
             break;
           }
           default: {
-            if (!parseUnknownFieldProto3(
+            if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
               done = true;
             }
@@ -764,42 +757,41 @@ private static final long serialVersionUID = 0L;
     }
     com.google.logging.type.HttpRequest other = (com.google.logging.type.HttpRequest) obj;
 
-    boolean result = true;
-    result = result && getRequestMethod()
-        .equals(other.getRequestMethod());
-    result = result && getRequestUrl()
-        .equals(other.getRequestUrl());
-    result = result && (getRequestSize()
-        == other.getRequestSize());
-    result = result && (getStatus()
-        == other.getStatus());
-    result = result && (getResponseSize()
-        == other.getResponseSize());
-    result = result && getUserAgent()
-        .equals(other.getUserAgent());
-    result = result && getRemoteIp()
-        .equals(other.getRemoteIp());
-    result = result && getServerIp()
-        .equals(other.getServerIp());
-    result = result && getReferer()
-        .equals(other.getReferer());
-    result = result && (hasLatency() == other.hasLatency());
+    if (!getRequestMethod()
+        .equals(other.getRequestMethod())) return false;
+    if (!getRequestUrl()
+        .equals(other.getRequestUrl())) return false;
+    if (getRequestSize()
+        != other.getRequestSize()) return false;
+    if (getStatus()
+        != other.getStatus()) return false;
+    if (getResponseSize()
+        != other.getResponseSize()) return false;
+    if (!getUserAgent()
+        .equals(other.getUserAgent())) return false;
+    if (!getRemoteIp()
+        .equals(other.getRemoteIp())) return false;
+    if (!getServerIp()
+        .equals(other.getServerIp())) return false;
+    if (!getReferer()
+        .equals(other.getReferer())) return false;
+    if (hasLatency() != other.hasLatency()) return false;
     if (hasLatency()) {
-      result = result && getLatency()
-          .equals(other.getLatency());
+      if (!getLatency()
+          .equals(other.getLatency())) return false;
     }
-    result = result && (getCacheLookup()
-        == other.getCacheLookup());
-    result = result && (getCacheHit()
-        == other.getCacheHit());
-    result = result && (getCacheValidatedWithOriginServer()
-        == other.getCacheValidatedWithOriginServer());
-    result = result && (getCacheFillBytes()
-        == other.getCacheFillBytes());
-    result = result && getProtocol()
-        .equals(other.getProtocol());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (getCacheLookup()
+        != other.getCacheLookup()) return false;
+    if (getCacheHit()
+        != other.getCacheHit()) return false;
+    if (getCacheValidatedWithOriginServer()
+        != other.getCacheValidatedWithOriginServer()) return false;
+    if (getCacheFillBytes()
+        != other.getCacheFillBytes()) return false;
+    if (!getProtocol()
+        .equals(other.getProtocol())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -1071,35 +1063,35 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
     @java.lang.Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
     @java.lang.Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -1891,7 +1883,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private com.google.protobuf.Duration latency_ = null;
+    private com.google.protobuf.Duration latency_;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder> latencyBuilder_;
     /**
@@ -2308,7 +2300,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

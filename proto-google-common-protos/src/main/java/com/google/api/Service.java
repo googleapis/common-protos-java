@@ -90,7 +90,7 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 26: {
-            if (!((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
+            if (!((mutable_bitField0_ & 0x00000020) != 0)) {
               apis_ = new java.util.ArrayList<com.google.protobuf.Api>();
               mutable_bitField0_ |= 0x00000020;
             }
@@ -99,7 +99,7 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 34: {
-            if (!((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
+            if (!((mutable_bitField0_ & 0x00000040) != 0)) {
               types_ = new java.util.ArrayList<com.google.protobuf.Type>();
               mutable_bitField0_ |= 0x00000040;
             }
@@ -108,7 +108,7 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 42: {
-            if (!((mutable_bitField0_ & 0x00000080) == 0x00000080)) {
+            if (!((mutable_bitField0_ & 0x00000080) != 0)) {
               enums_ = new java.util.ArrayList<com.google.protobuf.Enum>();
               mutable_bitField0_ |= 0x00000080;
             }
@@ -208,7 +208,7 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 146: {
-            if (!((mutable_bitField0_ & 0x00008000) == 0x00008000)) {
+            if (!((mutable_bitField0_ & 0x00008000) != 0)) {
               endpoints_ = new java.util.ArrayList<com.google.api.Endpoint>();
               mutable_bitField0_ |= 0x00008000;
             }
@@ -249,7 +249,7 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 186: {
-            if (!((mutable_bitField0_ & 0x00020000) == 0x00020000)) {
+            if (!((mutable_bitField0_ & 0x00020000) != 0)) {
               logs_ = new java.util.ArrayList<com.google.api.LogDescriptor>();
               mutable_bitField0_ |= 0x00020000;
             }
@@ -258,7 +258,7 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 194: {
-            if (!((mutable_bitField0_ & 0x00040000) == 0x00040000)) {
+            if (!((mutable_bitField0_ & 0x00040000) != 0)) {
               metrics_ = new java.util.ArrayList<com.google.api.MetricDescriptor>();
               mutable_bitField0_ |= 0x00040000;
             }
@@ -267,7 +267,7 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 202: {
-            if (!((mutable_bitField0_ & 0x00080000) == 0x00080000)) {
+            if (!((mutable_bitField0_ & 0x00080000) != 0)) {
               monitoredResources_ = new java.util.ArrayList<com.google.api.MonitoredResourceDescriptor>();
               mutable_bitField0_ |= 0x00080000;
             }
@@ -360,7 +360,7 @@ private static final long serialVersionUID = 0L;
             break;
           }
           default: {
-            if (!parseUnknownFieldProto3(
+            if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
               done = true;
             }
@@ -374,25 +374,25 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
+      if (((mutable_bitField0_ & 0x00000020) != 0)) {
         apis_ = java.util.Collections.unmodifiableList(apis_);
       }
-      if (((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
+      if (((mutable_bitField0_ & 0x00000040) != 0)) {
         types_ = java.util.Collections.unmodifiableList(types_);
       }
-      if (((mutable_bitField0_ & 0x00000080) == 0x00000080)) {
+      if (((mutable_bitField0_ & 0x00000080) != 0)) {
         enums_ = java.util.Collections.unmodifiableList(enums_);
       }
-      if (((mutable_bitField0_ & 0x00008000) == 0x00008000)) {
+      if (((mutable_bitField0_ & 0x00008000) != 0)) {
         endpoints_ = java.util.Collections.unmodifiableList(endpoints_);
       }
-      if (((mutable_bitField0_ & 0x00020000) == 0x00020000)) {
+      if (((mutable_bitField0_ & 0x00020000) != 0)) {
         logs_ = java.util.Collections.unmodifiableList(logs_);
       }
-      if (((mutable_bitField0_ & 0x00040000) == 0x00040000)) {
+      if (((mutable_bitField0_ & 0x00040000) != 0)) {
         metrics_ = java.util.Collections.unmodifiableList(metrics_);
       }
-      if (((mutable_bitField0_ & 0x00080000) == 0x00080000)) {
+      if (((mutable_bitField0_ & 0x00080000) != 0)) {
         monitoredResources_ = java.util.Collections.unmodifiableList(monitoredResources_);
       }
       this.unknownFields = unknownFields.build();
@@ -1791,106 +1791,105 @@ private static final long serialVersionUID = 0L;
     }
     com.google.api.Service other = (com.google.api.Service) obj;
 
-    boolean result = true;
-    result = result && (hasConfigVersion() == other.hasConfigVersion());
+    if (hasConfigVersion() != other.hasConfigVersion()) return false;
     if (hasConfigVersion()) {
-      result = result && getConfigVersion()
-          .equals(other.getConfigVersion());
+      if (!getConfigVersion()
+          .equals(other.getConfigVersion())) return false;
     }
-    result = result && getName()
-        .equals(other.getName());
-    result = result && getId()
-        .equals(other.getId());
-    result = result && getTitle()
-        .equals(other.getTitle());
-    result = result && getProducerProjectId()
-        .equals(other.getProducerProjectId());
-    result = result && getApisList()
-        .equals(other.getApisList());
-    result = result && getTypesList()
-        .equals(other.getTypesList());
-    result = result && getEnumsList()
-        .equals(other.getEnumsList());
-    result = result && (hasDocumentation() == other.hasDocumentation());
+    if (!getName()
+        .equals(other.getName())) return false;
+    if (!getId()
+        .equals(other.getId())) return false;
+    if (!getTitle()
+        .equals(other.getTitle())) return false;
+    if (!getProducerProjectId()
+        .equals(other.getProducerProjectId())) return false;
+    if (!getApisList()
+        .equals(other.getApisList())) return false;
+    if (!getTypesList()
+        .equals(other.getTypesList())) return false;
+    if (!getEnumsList()
+        .equals(other.getEnumsList())) return false;
+    if (hasDocumentation() != other.hasDocumentation()) return false;
     if (hasDocumentation()) {
-      result = result && getDocumentation()
-          .equals(other.getDocumentation());
+      if (!getDocumentation()
+          .equals(other.getDocumentation())) return false;
     }
-    result = result && (hasBackend() == other.hasBackend());
+    if (hasBackend() != other.hasBackend()) return false;
     if (hasBackend()) {
-      result = result && getBackend()
-          .equals(other.getBackend());
+      if (!getBackend()
+          .equals(other.getBackend())) return false;
     }
-    result = result && (hasHttp() == other.hasHttp());
+    if (hasHttp() != other.hasHttp()) return false;
     if (hasHttp()) {
-      result = result && getHttp()
-          .equals(other.getHttp());
+      if (!getHttp()
+          .equals(other.getHttp())) return false;
     }
-    result = result && (hasQuota() == other.hasQuota());
+    if (hasQuota() != other.hasQuota()) return false;
     if (hasQuota()) {
-      result = result && getQuota()
-          .equals(other.getQuota());
+      if (!getQuota()
+          .equals(other.getQuota())) return false;
     }
-    result = result && (hasAuthentication() == other.hasAuthentication());
+    if (hasAuthentication() != other.hasAuthentication()) return false;
     if (hasAuthentication()) {
-      result = result && getAuthentication()
-          .equals(other.getAuthentication());
+      if (!getAuthentication()
+          .equals(other.getAuthentication())) return false;
     }
-    result = result && (hasContext() == other.hasContext());
+    if (hasContext() != other.hasContext()) return false;
     if (hasContext()) {
-      result = result && getContext()
-          .equals(other.getContext());
+      if (!getContext()
+          .equals(other.getContext())) return false;
     }
-    result = result && (hasUsage() == other.hasUsage());
+    if (hasUsage() != other.hasUsage()) return false;
     if (hasUsage()) {
-      result = result && getUsage()
-          .equals(other.getUsage());
+      if (!getUsage()
+          .equals(other.getUsage())) return false;
     }
-    result = result && getEndpointsList()
-        .equals(other.getEndpointsList());
-    result = result && (hasControl() == other.hasControl());
+    if (!getEndpointsList()
+        .equals(other.getEndpointsList())) return false;
+    if (hasControl() != other.hasControl()) return false;
     if (hasControl()) {
-      result = result && getControl()
-          .equals(other.getControl());
+      if (!getControl()
+          .equals(other.getControl())) return false;
     }
-    result = result && getLogsList()
-        .equals(other.getLogsList());
-    result = result && getMetricsList()
-        .equals(other.getMetricsList());
-    result = result && getMonitoredResourcesList()
-        .equals(other.getMonitoredResourcesList());
-    result = result && (hasBilling() == other.hasBilling());
+    if (!getLogsList()
+        .equals(other.getLogsList())) return false;
+    if (!getMetricsList()
+        .equals(other.getMetricsList())) return false;
+    if (!getMonitoredResourcesList()
+        .equals(other.getMonitoredResourcesList())) return false;
+    if (hasBilling() != other.hasBilling()) return false;
     if (hasBilling()) {
-      result = result && getBilling()
-          .equals(other.getBilling());
+      if (!getBilling()
+          .equals(other.getBilling())) return false;
     }
-    result = result && (hasLogging() == other.hasLogging());
+    if (hasLogging() != other.hasLogging()) return false;
     if (hasLogging()) {
-      result = result && getLogging()
-          .equals(other.getLogging());
+      if (!getLogging()
+          .equals(other.getLogging())) return false;
     }
-    result = result && (hasMonitoring() == other.hasMonitoring());
+    if (hasMonitoring() != other.hasMonitoring()) return false;
     if (hasMonitoring()) {
-      result = result && getMonitoring()
-          .equals(other.getMonitoring());
+      if (!getMonitoring()
+          .equals(other.getMonitoring())) return false;
     }
-    result = result && (hasSystemParameters() == other.hasSystemParameters());
+    if (hasSystemParameters() != other.hasSystemParameters()) return false;
     if (hasSystemParameters()) {
-      result = result && getSystemParameters()
-          .equals(other.getSystemParameters());
+      if (!getSystemParameters()
+          .equals(other.getSystemParameters())) return false;
     }
-    result = result && (hasSourceInfo() == other.hasSourceInfo());
+    if (hasSourceInfo() != other.hasSourceInfo()) return false;
     if (hasSourceInfo()) {
-      result = result && getSourceInfo()
-          .equals(other.getSourceInfo());
+      if (!getSourceInfo()
+          .equals(other.getSourceInfo())) return false;
     }
-    result = result && (hasExperimental() == other.hasExperimental());
+    if (hasExperimental() != other.hasExperimental()) return false;
     if (hasExperimental()) {
-      result = result && getExperimental()
-          .equals(other.getExperimental());
+      if (!getExperimental()
+          .equals(other.getExperimental())) return false;
     }
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -2338,7 +2337,7 @@ private static final long serialVersionUID = 0L;
       result.title_ = title_;
       result.producerProjectId_ = producerProjectId_;
       if (apisBuilder_ == null) {
-        if (((bitField0_ & 0x00000020) == 0x00000020)) {
+        if (((bitField0_ & 0x00000020) != 0)) {
           apis_ = java.util.Collections.unmodifiableList(apis_);
           bitField0_ = (bitField0_ & ~0x00000020);
         }
@@ -2347,7 +2346,7 @@ private static final long serialVersionUID = 0L;
         result.apis_ = apisBuilder_.build();
       }
       if (typesBuilder_ == null) {
-        if (((bitField0_ & 0x00000040) == 0x00000040)) {
+        if (((bitField0_ & 0x00000040) != 0)) {
           types_ = java.util.Collections.unmodifiableList(types_);
           bitField0_ = (bitField0_ & ~0x00000040);
         }
@@ -2356,7 +2355,7 @@ private static final long serialVersionUID = 0L;
         result.types_ = typesBuilder_.build();
       }
       if (enumsBuilder_ == null) {
-        if (((bitField0_ & 0x00000080) == 0x00000080)) {
+        if (((bitField0_ & 0x00000080) != 0)) {
           enums_ = java.util.Collections.unmodifiableList(enums_);
           bitField0_ = (bitField0_ & ~0x00000080);
         }
@@ -2400,7 +2399,7 @@ private static final long serialVersionUID = 0L;
         result.usage_ = usageBuilder_.build();
       }
       if (endpointsBuilder_ == null) {
-        if (((bitField0_ & 0x00008000) == 0x00008000)) {
+        if (((bitField0_ & 0x00008000) != 0)) {
           endpoints_ = java.util.Collections.unmodifiableList(endpoints_);
           bitField0_ = (bitField0_ & ~0x00008000);
         }
@@ -2414,7 +2413,7 @@ private static final long serialVersionUID = 0L;
         result.control_ = controlBuilder_.build();
       }
       if (logsBuilder_ == null) {
-        if (((bitField0_ & 0x00020000) == 0x00020000)) {
+        if (((bitField0_ & 0x00020000) != 0)) {
           logs_ = java.util.Collections.unmodifiableList(logs_);
           bitField0_ = (bitField0_ & ~0x00020000);
         }
@@ -2423,7 +2422,7 @@ private static final long serialVersionUID = 0L;
         result.logs_ = logsBuilder_.build();
       }
       if (metricsBuilder_ == null) {
-        if (((bitField0_ & 0x00040000) == 0x00040000)) {
+        if (((bitField0_ & 0x00040000) != 0)) {
           metrics_ = java.util.Collections.unmodifiableList(metrics_);
           bitField0_ = (bitField0_ & ~0x00040000);
         }
@@ -2432,7 +2431,7 @@ private static final long serialVersionUID = 0L;
         result.metrics_ = metricsBuilder_.build();
       }
       if (monitoredResourcesBuilder_ == null) {
-        if (((bitField0_ & 0x00080000) == 0x00080000)) {
+        if (((bitField0_ & 0x00080000) != 0)) {
           monitoredResources_ = java.util.Collections.unmodifiableList(monitoredResources_);
           bitField0_ = (bitField0_ & ~0x00080000);
         }
@@ -2477,35 +2476,35 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
     @java.lang.Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
     @java.lang.Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -2792,7 +2791,7 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0_;
 
-    private com.google.protobuf.UInt32Value configVersion_ = null;
+    private com.google.protobuf.UInt32Value configVersion_;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.UInt32Value, com.google.protobuf.UInt32Value.Builder, com.google.protobuf.UInt32ValueOrBuilder> configVersionBuilder_;
     /**
@@ -3356,7 +3355,7 @@ private static final long serialVersionUID = 0L;
     private java.util.List<com.google.protobuf.Api> apis_ =
       java.util.Collections.emptyList();
     private void ensureApisIsMutable() {
-      if (!((bitField0_ & 0x00000020) == 0x00000020)) {
+      if (!((bitField0_ & 0x00000020) != 0)) {
         apis_ = new java.util.ArrayList<com.google.protobuf.Api>(apis_);
         bitField0_ |= 0x00000020;
        }
@@ -3729,7 +3728,7 @@ private static final long serialVersionUID = 0L;
         apisBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             com.google.protobuf.Api, com.google.protobuf.Api.Builder, com.google.protobuf.ApiOrBuilder>(
                 apis_,
-                ((bitField0_ & 0x00000020) == 0x00000020),
+                ((bitField0_ & 0x00000020) != 0),
                 getParentForChildren(),
                 isClean());
         apis_ = null;
@@ -3740,7 +3739,7 @@ private static final long serialVersionUID = 0L;
     private java.util.List<com.google.protobuf.Type> types_ =
       java.util.Collections.emptyList();
     private void ensureTypesIsMutable() {
-      if (!((bitField0_ & 0x00000040) == 0x00000040)) {
+      if (!((bitField0_ & 0x00000040) != 0)) {
         types_ = new java.util.ArrayList<com.google.protobuf.Type>(types_);
         bitField0_ |= 0x00000040;
        }
@@ -4149,7 +4148,7 @@ private static final long serialVersionUID = 0L;
         typesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             com.google.protobuf.Type, com.google.protobuf.Type.Builder, com.google.protobuf.TypeOrBuilder>(
                 types_,
-                ((bitField0_ & 0x00000040) == 0x00000040),
+                ((bitField0_ & 0x00000040) != 0),
                 getParentForChildren(),
                 isClean());
         types_ = null;
@@ -4160,7 +4159,7 @@ private static final long serialVersionUID = 0L;
     private java.util.List<com.google.protobuf.Enum> enums_ =
       java.util.Collections.emptyList();
     private void ensureEnumsIsMutable() {
-      if (!((bitField0_ & 0x00000080) == 0x00000080)) {
+      if (!((bitField0_ & 0x00000080) != 0)) {
         enums_ = new java.util.ArrayList<com.google.protobuf.Enum>(enums_);
         bitField0_ |= 0x00000080;
        }
@@ -4551,7 +4550,7 @@ private static final long serialVersionUID = 0L;
         enumsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             com.google.protobuf.Enum, com.google.protobuf.Enum.Builder, com.google.protobuf.EnumOrBuilder>(
                 enums_,
-                ((bitField0_ & 0x00000080) == 0x00000080),
+                ((bitField0_ & 0x00000080) != 0),
                 getParentForChildren(),
                 isClean());
         enums_ = null;
@@ -4559,7 +4558,7 @@ private static final long serialVersionUID = 0L;
       return enumsBuilder_;
     }
 
-    private com.google.api.Documentation documentation_ = null;
+    private com.google.api.Documentation documentation_;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.api.Documentation, com.google.api.Documentation.Builder, com.google.api.DocumentationOrBuilder> documentationBuilder_;
     /**
@@ -4712,7 +4711,7 @@ private static final long serialVersionUID = 0L;
       return documentationBuilder_;
     }
 
-    private com.google.api.Backend backend_ = null;
+    private com.google.api.Backend backend_;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.api.Backend, com.google.api.Backend.Builder, com.google.api.BackendOrBuilder> backendBuilder_;
     /**
@@ -4865,7 +4864,7 @@ private static final long serialVersionUID = 0L;
       return backendBuilder_;
     }
 
-    private com.google.api.Http http_ = null;
+    private com.google.api.Http http_;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.api.Http, com.google.api.Http.Builder, com.google.api.HttpOrBuilder> httpBuilder_;
     /**
@@ -5018,7 +5017,7 @@ private static final long serialVersionUID = 0L;
       return httpBuilder_;
     }
 
-    private com.google.api.Quota quota_ = null;
+    private com.google.api.Quota quota_;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.api.Quota, com.google.api.Quota.Builder, com.google.api.QuotaOrBuilder> quotaBuilder_;
     /**
@@ -5171,7 +5170,7 @@ private static final long serialVersionUID = 0L;
       return quotaBuilder_;
     }
 
-    private com.google.api.Authentication authentication_ = null;
+    private com.google.api.Authentication authentication_;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.api.Authentication, com.google.api.Authentication.Builder, com.google.api.AuthenticationOrBuilder> authenticationBuilder_;
     /**
@@ -5324,7 +5323,7 @@ private static final long serialVersionUID = 0L;
       return authenticationBuilder_;
     }
 
-    private com.google.api.Context context_ = null;
+    private com.google.api.Context context_;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.api.Context, com.google.api.Context.Builder, com.google.api.ContextOrBuilder> contextBuilder_;
     /**
@@ -5477,7 +5476,7 @@ private static final long serialVersionUID = 0L;
       return contextBuilder_;
     }
 
-    private com.google.api.Usage usage_ = null;
+    private com.google.api.Usage usage_;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.api.Usage, com.google.api.Usage.Builder, com.google.api.UsageOrBuilder> usageBuilder_;
     /**
@@ -5633,7 +5632,7 @@ private static final long serialVersionUID = 0L;
     private java.util.List<com.google.api.Endpoint> endpoints_ =
       java.util.Collections.emptyList();
     private void ensureEndpointsIsMutable() {
-      if (!((bitField0_ & 0x00008000) == 0x00008000)) {
+      if (!((bitField0_ & 0x00008000) != 0)) {
         endpoints_ = new java.util.ArrayList<com.google.api.Endpoint>(endpoints_);
         bitField0_ |= 0x00008000;
        }
@@ -5970,7 +5969,7 @@ private static final long serialVersionUID = 0L;
         endpointsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             com.google.api.Endpoint, com.google.api.Endpoint.Builder, com.google.api.EndpointOrBuilder>(
                 endpoints_,
-                ((bitField0_ & 0x00008000) == 0x00008000),
+                ((bitField0_ & 0x00008000) != 0),
                 getParentForChildren(),
                 isClean());
         endpoints_ = null;
@@ -5978,7 +5977,7 @@ private static final long serialVersionUID = 0L;
       return endpointsBuilder_;
     }
 
-    private com.google.api.Control control_ = null;
+    private com.google.api.Control control_;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.api.Control, com.google.api.Control.Builder, com.google.api.ControlOrBuilder> controlBuilder_;
     /**
@@ -6134,7 +6133,7 @@ private static final long serialVersionUID = 0L;
     private java.util.List<com.google.api.LogDescriptor> logs_ =
       java.util.Collections.emptyList();
     private void ensureLogsIsMutable() {
-      if (!((bitField0_ & 0x00020000) == 0x00020000)) {
+      if (!((bitField0_ & 0x00020000) != 0)) {
         logs_ = new java.util.ArrayList<com.google.api.LogDescriptor>(logs_);
         bitField0_ |= 0x00020000;
        }
@@ -6435,7 +6434,7 @@ private static final long serialVersionUID = 0L;
         logsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             com.google.api.LogDescriptor, com.google.api.LogDescriptor.Builder, com.google.api.LogDescriptorOrBuilder>(
                 logs_,
-                ((bitField0_ & 0x00020000) == 0x00020000),
+                ((bitField0_ & 0x00020000) != 0),
                 getParentForChildren(),
                 isClean());
         logs_ = null;
@@ -6446,7 +6445,7 @@ private static final long serialVersionUID = 0L;
     private java.util.List<com.google.api.MetricDescriptor> metrics_ =
       java.util.Collections.emptyList();
     private void ensureMetricsIsMutable() {
-      if (!((bitField0_ & 0x00040000) == 0x00040000)) {
+      if (!((bitField0_ & 0x00040000) != 0)) {
         metrics_ = new java.util.ArrayList<com.google.api.MetricDescriptor>(metrics_);
         bitField0_ |= 0x00040000;
        }
@@ -6747,7 +6746,7 @@ private static final long serialVersionUID = 0L;
         metricsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             com.google.api.MetricDescriptor, com.google.api.MetricDescriptor.Builder, com.google.api.MetricDescriptorOrBuilder>(
                 metrics_,
-                ((bitField0_ & 0x00040000) == 0x00040000),
+                ((bitField0_ & 0x00040000) != 0),
                 getParentForChildren(),
                 isClean());
         metrics_ = null;
@@ -6758,7 +6757,7 @@ private static final long serialVersionUID = 0L;
     private java.util.List<com.google.api.MonitoredResourceDescriptor> monitoredResources_ =
       java.util.Collections.emptyList();
     private void ensureMonitoredResourcesIsMutable() {
-      if (!((bitField0_ & 0x00080000) == 0x00080000)) {
+      if (!((bitField0_ & 0x00080000) != 0)) {
         monitoredResources_ = new java.util.ArrayList<com.google.api.MonitoredResourceDescriptor>(monitoredResources_);
         bitField0_ |= 0x00080000;
        }
@@ -7095,7 +7094,7 @@ private static final long serialVersionUID = 0L;
         monitoredResourcesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             com.google.api.MonitoredResourceDescriptor, com.google.api.MonitoredResourceDescriptor.Builder, com.google.api.MonitoredResourceDescriptorOrBuilder>(
                 monitoredResources_,
-                ((bitField0_ & 0x00080000) == 0x00080000),
+                ((bitField0_ & 0x00080000) != 0),
                 getParentForChildren(),
                 isClean());
         monitoredResources_ = null;
@@ -7103,7 +7102,7 @@ private static final long serialVersionUID = 0L;
       return monitoredResourcesBuilder_;
     }
 
-    private com.google.api.Billing billing_ = null;
+    private com.google.api.Billing billing_;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.api.Billing, com.google.api.Billing.Builder, com.google.api.BillingOrBuilder> billingBuilder_;
     /**
@@ -7256,7 +7255,7 @@ private static final long serialVersionUID = 0L;
       return billingBuilder_;
     }
 
-    private com.google.api.Logging logging_ = null;
+    private com.google.api.Logging logging_;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.api.Logging, com.google.api.Logging.Builder, com.google.api.LoggingOrBuilder> loggingBuilder_;
     /**
@@ -7409,7 +7408,7 @@ private static final long serialVersionUID = 0L;
       return loggingBuilder_;
     }
 
-    private com.google.api.Monitoring monitoring_ = null;
+    private com.google.api.Monitoring monitoring_;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.api.Monitoring, com.google.api.Monitoring.Builder, com.google.api.MonitoringOrBuilder> monitoringBuilder_;
     /**
@@ -7562,7 +7561,7 @@ private static final long serialVersionUID = 0L;
       return monitoringBuilder_;
     }
 
-    private com.google.api.SystemParameters systemParameters_ = null;
+    private com.google.api.SystemParameters systemParameters_;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.api.SystemParameters, com.google.api.SystemParameters.Builder, com.google.api.SystemParametersOrBuilder> systemParametersBuilder_;
     /**
@@ -7715,7 +7714,7 @@ private static final long serialVersionUID = 0L;
       return systemParametersBuilder_;
     }
 
-    private com.google.api.SourceInfo sourceInfo_ = null;
+    private com.google.api.SourceInfo sourceInfo_;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.api.SourceInfo, com.google.api.SourceInfo.Builder, com.google.api.SourceInfoOrBuilder> sourceInfoBuilder_;
     /**
@@ -7868,7 +7867,7 @@ private static final long serialVersionUID = 0L;
       return sourceInfoBuilder_;
     }
 
-    private com.google.api.Experimental experimental_ = null;
+    private com.google.api.Experimental experimental_;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.api.Experimental, com.google.api.Experimental.Builder, com.google.api.ExperimentalOrBuilder> experimentalBuilder_;
     /**
@@ -8023,7 +8022,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

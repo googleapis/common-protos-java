@@ -88,7 +88,7 @@ private static final long serialVersionUID = 0L;
             done = true;
             break;
           case 26: {
-            if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
               limits_ = new java.util.ArrayList<com.google.api.QuotaLimit>();
               mutable_bitField0_ |= 0x00000001;
             }
@@ -97,7 +97,7 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 34: {
-            if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+            if (!((mutable_bitField0_ & 0x00000002) != 0)) {
               metricRules_ = new java.util.ArrayList<com.google.api.MetricRule>();
               mutable_bitField0_ |= 0x00000002;
             }
@@ -106,7 +106,7 @@ private static final long serialVersionUID = 0L;
             break;
           }
           default: {
-            if (!parseUnknownFieldProto3(
+            if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
               done = true;
             }
@@ -120,10 +120,10 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         limits_ = java.util.Collections.unmodifiableList(limits_);
       }
-      if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
         metricRules_ = java.util.Collections.unmodifiableList(metricRules_);
       }
       this.unknownFields = unknownFields.build();
@@ -310,13 +310,12 @@ private static final long serialVersionUID = 0L;
     }
     com.google.api.Quota other = (com.google.api.Quota) obj;
 
-    boolean result = true;
-    result = result && getLimitsList()
-        .equals(other.getLimitsList());
-    result = result && getMetricRulesList()
-        .equals(other.getMetricRulesList());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!getLimitsList()
+        .equals(other.getLimitsList())) return false;
+    if (!getMetricRulesList()
+        .equals(other.getMetricRulesList())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -552,7 +551,7 @@ private static final long serialVersionUID = 0L;
       com.google.api.Quota result = new com.google.api.Quota(this);
       int from_bitField0_ = bitField0_;
       if (limitsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           limits_ = java.util.Collections.unmodifiableList(limits_);
           bitField0_ = (bitField0_ & ~0x00000001);
         }
@@ -561,7 +560,7 @@ private static final long serialVersionUID = 0L;
         result.limits_ = limitsBuilder_.build();
       }
       if (metricRulesBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           metricRules_ = java.util.Collections.unmodifiableList(metricRules_);
           bitField0_ = (bitField0_ & ~0x00000002);
         }
@@ -575,35 +574,35 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
     @java.lang.Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
     @java.lang.Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -702,7 +701,7 @@ private static final long serialVersionUID = 0L;
     private java.util.List<com.google.api.QuotaLimit> limits_ =
       java.util.Collections.emptyList();
     private void ensureLimitsIsMutable() {
-      if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         limits_ = new java.util.ArrayList<com.google.api.QuotaLimit>(limits_);
         bitField0_ |= 0x00000001;
        }
@@ -1003,7 +1002,7 @@ private static final long serialVersionUID = 0L;
         limitsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             com.google.api.QuotaLimit, com.google.api.QuotaLimit.Builder, com.google.api.QuotaLimitOrBuilder>(
                 limits_,
-                ((bitField0_ & 0x00000001) == 0x00000001),
+                ((bitField0_ & 0x00000001) != 0),
                 getParentForChildren(),
                 isClean());
         limits_ = null;
@@ -1014,7 +1013,7 @@ private static final long serialVersionUID = 0L;
     private java.util.List<com.google.api.MetricRule> metricRules_ =
       java.util.Collections.emptyList();
     private void ensureMetricRulesIsMutable() {
-      if (!((bitField0_ & 0x00000002) == 0x00000002)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         metricRules_ = new java.util.ArrayList<com.google.api.MetricRule>(metricRules_);
         bitField0_ |= 0x00000002;
        }
@@ -1333,7 +1332,7 @@ private static final long serialVersionUID = 0L;
         metricRulesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             com.google.api.MetricRule, com.google.api.MetricRule.Builder, com.google.api.MetricRuleOrBuilder>(
                 metricRules_,
-                ((bitField0_ & 0x00000002) == 0x00000002),
+                ((bitField0_ & 0x00000002) != 0),
                 getParentForChildren(),
                 isClean());
         metricRules_ = null;
@@ -1343,7 +1342,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

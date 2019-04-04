@@ -60,7 +60,7 @@ private static final long serialVersionUID = 0L;
           }
           case 18: {
             java.lang.String s = input.readStringRequireUtf8();
-            if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+            if (!((mutable_bitField0_ & 0x00000002) != 0)) {
               requested_ = new com.google.protobuf.LazyStringArrayList();
               mutable_bitField0_ |= 0x00000002;
             }
@@ -69,7 +69,7 @@ private static final long serialVersionUID = 0L;
           }
           case 26: {
             java.lang.String s = input.readStringRequireUtf8();
-            if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+            if (!((mutable_bitField0_ & 0x00000004) != 0)) {
               provided_ = new com.google.protobuf.LazyStringArrayList();
               mutable_bitField0_ |= 0x00000004;
             }
@@ -78,7 +78,7 @@ private static final long serialVersionUID = 0L;
           }
           case 34: {
             java.lang.String s = input.readStringRequireUtf8();
-            if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+            if (!((mutable_bitField0_ & 0x00000008) != 0)) {
               allowedRequestExtensions_ = new com.google.protobuf.LazyStringArrayList();
               mutable_bitField0_ |= 0x00000008;
             }
@@ -87,7 +87,7 @@ private static final long serialVersionUID = 0L;
           }
           case 42: {
             java.lang.String s = input.readStringRequireUtf8();
-            if (!((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
+            if (!((mutable_bitField0_ & 0x00000010) != 0)) {
               allowedResponseExtensions_ = new com.google.protobuf.LazyStringArrayList();
               mutable_bitField0_ |= 0x00000010;
             }
@@ -95,7 +95,7 @@ private static final long serialVersionUID = 0L;
             break;
           }
           default: {
-            if (!parseUnknownFieldProto3(
+            if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
               done = true;
             }
@@ -109,16 +109,16 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
         requested_ = requested_.getUnmodifiableView();
       }
-      if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+      if (((mutable_bitField0_ & 0x00000004) != 0)) {
         provided_ = provided_.getUnmodifiableView();
       }
-      if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+      if (((mutable_bitField0_ & 0x00000008) != 0)) {
         allowedRequestExtensions_ = allowedRequestExtensions_.getUnmodifiableView();
       }
-      if (((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
+      if (((mutable_bitField0_ & 0x00000010) != 0)) {
         allowedResponseExtensions_ = allowedResponseExtensions_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -461,19 +461,18 @@ private static final long serialVersionUID = 0L;
     }
     com.google.api.ContextRule other = (com.google.api.ContextRule) obj;
 
-    boolean result = true;
-    result = result && getSelector()
-        .equals(other.getSelector());
-    result = result && getRequestedList()
-        .equals(other.getRequestedList());
-    result = result && getProvidedList()
-        .equals(other.getProvidedList());
-    result = result && getAllowedRequestExtensionsList()
-        .equals(other.getAllowedRequestExtensionsList());
-    result = result && getAllowedResponseExtensionsList()
-        .equals(other.getAllowedResponseExtensionsList());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!getSelector()
+        .equals(other.getSelector())) return false;
+    if (!getRequestedList()
+        .equals(other.getRequestedList())) return false;
+    if (!getProvidedList()
+        .equals(other.getProvidedList())) return false;
+    if (!getAllowedRequestExtensionsList()
+        .equals(other.getAllowedRequestExtensionsList())) return false;
+    if (!getAllowedResponseExtensionsList()
+        .equals(other.getAllowedResponseExtensionsList())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -678,22 +677,22 @@ private static final long serialVersionUID = 0L;
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       result.selector_ = selector_;
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+      if (((bitField0_ & 0x00000002) != 0)) {
         requested_ = requested_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000002);
       }
       result.requested_ = requested_;
-      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+      if (((bitField0_ & 0x00000004) != 0)) {
         provided_ = provided_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000004);
       }
       result.provided_ = provided_;
-      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+      if (((bitField0_ & 0x00000008) != 0)) {
         allowedRequestExtensions_ = allowedRequestExtensions_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000008);
       }
       result.allowedRequestExtensions_ = allowedRequestExtensions_;
-      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+      if (((bitField0_ & 0x00000010) != 0)) {
         allowedResponseExtensions_ = allowedResponseExtensions_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000010);
       }
@@ -705,35 +704,35 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
     @java.lang.Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
     @java.lang.Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -922,7 +921,7 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.LazyStringList requested_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     private void ensureRequestedIsMutable() {
-      if (!((bitField0_ & 0x00000002) == 0x00000002)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         requested_ = new com.google.protobuf.LazyStringArrayList(requested_);
         bitField0_ |= 0x00000002;
        }
@@ -1052,7 +1051,7 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.LazyStringList provided_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     private void ensureProvidedIsMutable() {
-      if (!((bitField0_ & 0x00000004) == 0x00000004)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         provided_ = new com.google.protobuf.LazyStringArrayList(provided_);
         bitField0_ |= 0x00000004;
        }
@@ -1182,7 +1181,7 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.LazyStringList allowedRequestExtensions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     private void ensureAllowedRequestExtensionsIsMutable() {
-      if (!((bitField0_ & 0x00000008) == 0x00000008)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         allowedRequestExtensions_ = new com.google.protobuf.LazyStringArrayList(allowedRequestExtensions_);
         bitField0_ |= 0x00000008;
        }
@@ -1321,7 +1320,7 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.LazyStringList allowedResponseExtensions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     private void ensureAllowedResponseExtensionsIsMutable() {
-      if (!((bitField0_ & 0x00000010) == 0x00000010)) {
+      if (!((bitField0_ & 0x00000010) != 0)) {
         allowedResponseExtensions_ = new com.google.protobuf.LazyStringArrayList(allowedResponseExtensions_);
         bitField0_ |= 0x00000010;
        }
@@ -1460,7 +1459,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

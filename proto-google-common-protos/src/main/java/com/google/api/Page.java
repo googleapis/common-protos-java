@@ -63,7 +63,7 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 26: {
-            if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+            if (!((mutable_bitField0_ & 0x00000004) != 0)) {
               subpages_ = new java.util.ArrayList<com.google.api.Page>();
               mutable_bitField0_ |= 0x00000004;
             }
@@ -72,7 +72,7 @@ private static final long serialVersionUID = 0L;
             break;
           }
           default: {
-            if (!parseUnknownFieldProto3(
+            if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
               done = true;
             }
@@ -86,7 +86,7 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+      if (((mutable_bitField0_ & 0x00000004) != 0)) {
         subpages_ = java.util.Collections.unmodifiableList(subpages_);
       }
       this.unknownFields = unknownFields.build();
@@ -336,15 +336,14 @@ private static final long serialVersionUID = 0L;
     }
     com.google.api.Page other = (com.google.api.Page) obj;
 
-    boolean result = true;
-    result = result && getName()
-        .equals(other.getName());
-    result = result && getContent()
-        .equals(other.getContent());
-    result = result && getSubpagesList()
-        .equals(other.getSubpagesList());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!getName()
+        .equals(other.getName())) return false;
+    if (!getContent()
+        .equals(other.getContent())) return false;
+    if (!getSubpagesList()
+        .equals(other.getSubpagesList())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -542,7 +541,7 @@ private static final long serialVersionUID = 0L;
       result.name_ = name_;
       result.content_ = content_;
       if (subpagesBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        if (((bitField0_ & 0x00000004) != 0)) {
           subpages_ = java.util.Collections.unmodifiableList(subpages_);
           bitField0_ = (bitField0_ & ~0x00000004);
         }
@@ -557,35 +556,35 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
     @java.lang.Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
     @java.lang.Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -914,7 +913,7 @@ private static final long serialVersionUID = 0L;
     private java.util.List<com.google.api.Page> subpages_ =
       java.util.Collections.emptyList();
     private void ensureSubpagesIsMutable() {
-      if (!((bitField0_ & 0x00000004) == 0x00000004)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         subpages_ = new java.util.ArrayList<com.google.api.Page>(subpages_);
         bitField0_ |= 0x00000004;
        }
@@ -1233,7 +1232,7 @@ private static final long serialVersionUID = 0L;
         subpagesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             com.google.api.Page, com.google.api.Page.Builder, com.google.api.PageOrBuilder>(
                 subpages_,
-                ((bitField0_ & 0x00000004) == 0x00000004),
+                ((bitField0_ & 0x00000004) != 0),
                 getParentForChildren(),
                 isClean());
         subpages_ = null;
@@ -1243,7 +1242,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override

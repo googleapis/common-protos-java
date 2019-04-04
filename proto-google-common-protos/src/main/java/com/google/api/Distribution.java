@@ -31,10 +31,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private Distribution() {
-    count_ = 0L;
-    mean_ = 0D;
-    sumOfSquaredDeviation_ = 0D;
-    bucketCounts_ = java.util.Collections.emptyList();
+    bucketCounts_ = emptyLongList();
     exemplars_ = java.util.Collections.emptyList();
   }
 
@@ -104,28 +101,28 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 56: {
-            if (!((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
-              bucketCounts_ = new java.util.ArrayList<java.lang.Long>();
+            if (!((mutable_bitField0_ & 0x00000020) != 0)) {
+              bucketCounts_ = newLongList();
               mutable_bitField0_ |= 0x00000020;
             }
-            bucketCounts_.add(input.readInt64());
+            bucketCounts_.addLong(input.readInt64());
             break;
           }
           case 58: {
             int length = input.readRawVarint32();
             int limit = input.pushLimit(length);
-            if (!((mutable_bitField0_ & 0x00000020) == 0x00000020) && input.getBytesUntilLimit() > 0) {
-              bucketCounts_ = new java.util.ArrayList<java.lang.Long>();
+            if (!((mutable_bitField0_ & 0x00000020) != 0) && input.getBytesUntilLimit() > 0) {
+              bucketCounts_ = newLongList();
               mutable_bitField0_ |= 0x00000020;
             }
             while (input.getBytesUntilLimit() > 0) {
-              bucketCounts_.add(input.readInt64());
+              bucketCounts_.addLong(input.readInt64());
             }
             input.popLimit(limit);
             break;
           }
           case 82: {
-            if (!((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
+            if (!((mutable_bitField0_ & 0x00000040) != 0)) {
               exemplars_ = new java.util.ArrayList<com.google.api.Distribution.Exemplar>();
               mutable_bitField0_ |= 0x00000040;
             }
@@ -134,7 +131,7 @@ private static final long serialVersionUID = 0L;
             break;
           }
           default: {
-            if (!parseUnknownFieldProto3(
+            if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
               done = true;
             }
@@ -148,10 +145,10 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
-        bucketCounts_ = java.util.Collections.unmodifiableList(bucketCounts_);
+      if (((mutable_bitField0_ & 0x00000020) != 0)) {
+        bucketCounts_.makeImmutable(); // C
       }
-      if (((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
+      if (((mutable_bitField0_ & 0x00000040) != 0)) {
         exemplars_ = java.util.Collections.unmodifiableList(exemplars_);
       }
       this.unknownFields = unknownFields.build();
@@ -210,8 +207,6 @@ private static final long serialVersionUID = 0L;
       super(builder);
     }
     private Range() {
-      min_ = 0D;
-      max_ = 0D;
     }
 
     @java.lang.Override
@@ -249,7 +244,7 @@ private static final long serialVersionUID = 0L;
               break;
             }
             default: {
-              if (!parseUnknownFieldProto3(
+              if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
@@ -358,17 +353,14 @@ private static final long serialVersionUID = 0L;
       }
       com.google.api.Distribution.Range other = (com.google.api.Distribution.Range) obj;
 
-      boolean result = true;
-      result = result && (
-          java.lang.Double.doubleToLongBits(getMin())
-          == java.lang.Double.doubleToLongBits(
-              other.getMin()));
-      result = result && (
-          java.lang.Double.doubleToLongBits(getMax())
-          == java.lang.Double.doubleToLongBits(
-              other.getMax()));
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (java.lang.Double.doubleToLongBits(getMin())
+          != java.lang.Double.doubleToLongBits(
+              other.getMin())) return false;
+      if (java.lang.Double.doubleToLongBits(getMax())
+          != java.lang.Double.doubleToLongBits(
+              other.getMax())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -559,35 +551,35 @@ private static final long serialVersionUID = 0L;
 
       @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -714,7 +706,7 @@ private static final long serialVersionUID = 0L;
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -944,7 +936,7 @@ private static final long serialVersionUID = 0L;
               break;
             }
             default: {
-              if (!parseUnknownFieldProto3(
+              if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
@@ -1029,9 +1021,6 @@ private static final long serialVersionUID = 0L;
         super(builder);
       }
       private Linear() {
-        numFiniteBuckets_ = 0;
-        width_ = 0D;
-        offset_ = 0D;
       }
 
       @java.lang.Override
@@ -1074,7 +1063,7 @@ private static final long serialVersionUID = 0L;
                 break;
               }
               default: {
-                if (!parseUnknownFieldProto3(
+                if (!parseUnknownField(
                     input, unknownFields, extensionRegistry, tag)) {
                   done = true;
                 }
@@ -1203,19 +1192,16 @@ private static final long serialVersionUID = 0L;
         }
         com.google.api.Distribution.BucketOptions.Linear other = (com.google.api.Distribution.BucketOptions.Linear) obj;
 
-        boolean result = true;
-        result = result && (getNumFiniteBuckets()
-            == other.getNumFiniteBuckets());
-        result = result && (
-            java.lang.Double.doubleToLongBits(getWidth())
-            == java.lang.Double.doubleToLongBits(
-                other.getWidth()));
-        result = result && (
-            java.lang.Double.doubleToLongBits(getOffset())
-            == java.lang.Double.doubleToLongBits(
-                other.getOffset()));
-        result = result && unknownFields.equals(other.unknownFields);
-        return result;
+        if (getNumFiniteBuckets()
+            != other.getNumFiniteBuckets()) return false;
+        if (java.lang.Double.doubleToLongBits(getWidth())
+            != java.lang.Double.doubleToLongBits(
+                other.getWidth())) return false;
+        if (java.lang.Double.doubleToLongBits(getOffset())
+            != java.lang.Double.doubleToLongBits(
+                other.getOffset())) return false;
+        if (!unknownFields.equals(other.unknownFields)) return false;
+        return true;
       }
 
       @java.lang.Override
@@ -1417,35 +1403,35 @@ private static final long serialVersionUID = 0L;
 
         @java.lang.Override
         public Builder clone() {
-          return (Builder) super.clone();
+          return super.clone();
         }
         @java.lang.Override
         public Builder setField(
             com.google.protobuf.Descriptors.FieldDescriptor field,
             java.lang.Object value) {
-          return (Builder) super.setField(field, value);
+          return super.setField(field, value);
         }
         @java.lang.Override
         public Builder clearField(
             com.google.protobuf.Descriptors.FieldDescriptor field) {
-          return (Builder) super.clearField(field);
+          return super.clearField(field);
         }
         @java.lang.Override
         public Builder clearOneof(
             com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-          return (Builder) super.clearOneof(oneof);
+          return super.clearOneof(oneof);
         }
         @java.lang.Override
         public Builder setRepeatedField(
             com.google.protobuf.Descriptors.FieldDescriptor field,
             int index, java.lang.Object value) {
-          return (Builder) super.setRepeatedField(field, index, value);
+          return super.setRepeatedField(field, index, value);
         }
         @java.lang.Override
         public Builder addRepeatedField(
             com.google.protobuf.Descriptors.FieldDescriptor field,
             java.lang.Object value) {
-          return (Builder) super.addRepeatedField(field, value);
+          return super.addRepeatedField(field, value);
         }
         @java.lang.Override
         public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -1613,7 +1599,7 @@ private static final long serialVersionUID = 0L;
         @java.lang.Override
         public final Builder setUnknownFields(
             final com.google.protobuf.UnknownFieldSet unknownFields) {
-          return super.setUnknownFieldsProto3(unknownFields);
+          return super.setUnknownFields(unknownFields);
         }
 
         @java.lang.Override
@@ -1717,9 +1703,6 @@ private static final long serialVersionUID = 0L;
         super(builder);
       }
       private Exponential() {
-        numFiniteBuckets_ = 0;
-        growthFactor_ = 0D;
-        scale_ = 0D;
       }
 
       @java.lang.Override
@@ -1762,7 +1745,7 @@ private static final long serialVersionUID = 0L;
                 break;
               }
               default: {
-                if (!parseUnknownFieldProto3(
+                if (!parseUnknownField(
                     input, unknownFields, extensionRegistry, tag)) {
                   done = true;
                 }
@@ -1891,19 +1874,16 @@ private static final long serialVersionUID = 0L;
         }
         com.google.api.Distribution.BucketOptions.Exponential other = (com.google.api.Distribution.BucketOptions.Exponential) obj;
 
-        boolean result = true;
-        result = result && (getNumFiniteBuckets()
-            == other.getNumFiniteBuckets());
-        result = result && (
-            java.lang.Double.doubleToLongBits(getGrowthFactor())
-            == java.lang.Double.doubleToLongBits(
-                other.getGrowthFactor()));
-        result = result && (
-            java.lang.Double.doubleToLongBits(getScale())
-            == java.lang.Double.doubleToLongBits(
-                other.getScale()));
-        result = result && unknownFields.equals(other.unknownFields);
-        return result;
+        if (getNumFiniteBuckets()
+            != other.getNumFiniteBuckets()) return false;
+        if (java.lang.Double.doubleToLongBits(getGrowthFactor())
+            != java.lang.Double.doubleToLongBits(
+                other.getGrowthFactor())) return false;
+        if (java.lang.Double.doubleToLongBits(getScale())
+            != java.lang.Double.doubleToLongBits(
+                other.getScale())) return false;
+        if (!unknownFields.equals(other.unknownFields)) return false;
+        return true;
       }
 
       @java.lang.Override
@@ -2105,35 +2085,35 @@ private static final long serialVersionUID = 0L;
 
         @java.lang.Override
         public Builder clone() {
-          return (Builder) super.clone();
+          return super.clone();
         }
         @java.lang.Override
         public Builder setField(
             com.google.protobuf.Descriptors.FieldDescriptor field,
             java.lang.Object value) {
-          return (Builder) super.setField(field, value);
+          return super.setField(field, value);
         }
         @java.lang.Override
         public Builder clearField(
             com.google.protobuf.Descriptors.FieldDescriptor field) {
-          return (Builder) super.clearField(field);
+          return super.clearField(field);
         }
         @java.lang.Override
         public Builder clearOneof(
             com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-          return (Builder) super.clearOneof(oneof);
+          return super.clearOneof(oneof);
         }
         @java.lang.Override
         public Builder setRepeatedField(
             com.google.protobuf.Descriptors.FieldDescriptor field,
             int index, java.lang.Object value) {
-          return (Builder) super.setRepeatedField(field, index, value);
+          return super.setRepeatedField(field, index, value);
         }
         @java.lang.Override
         public Builder addRepeatedField(
             com.google.protobuf.Descriptors.FieldDescriptor field,
             java.lang.Object value) {
-          return (Builder) super.addRepeatedField(field, value);
+          return super.addRepeatedField(field, value);
         }
         @java.lang.Override
         public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -2301,7 +2281,7 @@ private static final long serialVersionUID = 0L;
         @java.lang.Override
         public final Builder setUnknownFields(
             final com.google.protobuf.UnknownFieldSet unknownFields) {
-          return super.setUnknownFieldsProto3(unknownFields);
+          return super.setUnknownFields(unknownFields);
         }
 
         @java.lang.Override
@@ -2404,7 +2384,7 @@ private static final long serialVersionUID = 0L;
         super(builder);
       }
       private Explicit() {
-        bounds_ = java.util.Collections.emptyList();
+        bounds_ = emptyDoubleList();
       }
 
       @java.lang.Override
@@ -2432,28 +2412,28 @@ private static final long serialVersionUID = 0L;
                 done = true;
                 break;
               case 9: {
-                if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-                  bounds_ = new java.util.ArrayList<java.lang.Double>();
+                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                  bounds_ = newDoubleList();
                   mutable_bitField0_ |= 0x00000001;
                 }
-                bounds_.add(input.readDouble());
+                bounds_.addDouble(input.readDouble());
                 break;
               }
               case 10: {
                 int length = input.readRawVarint32();
                 int limit = input.pushLimit(length);
-                if (!((mutable_bitField0_ & 0x00000001) == 0x00000001) && input.getBytesUntilLimit() > 0) {
-                  bounds_ = new java.util.ArrayList<java.lang.Double>();
+                if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
+                  bounds_ = newDoubleList();
                   mutable_bitField0_ |= 0x00000001;
                 }
                 while (input.getBytesUntilLimit() > 0) {
-                  bounds_.add(input.readDouble());
+                  bounds_.addDouble(input.readDouble());
                 }
                 input.popLimit(limit);
                 break;
               }
               default: {
-                if (!parseUnknownFieldProto3(
+                if (!parseUnknownField(
                     input, unknownFields, extensionRegistry, tag)) {
                   done = true;
                 }
@@ -2467,8 +2447,8 @@ private static final long serialVersionUID = 0L;
           throw new com.google.protobuf.InvalidProtocolBufferException(
               e).setUnfinishedMessage(this);
         } finally {
-          if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-            bounds_ = java.util.Collections.unmodifiableList(bounds_);
+          if (((mutable_bitField0_ & 0x00000001) != 0)) {
+            bounds_.makeImmutable(); // C
           }
           this.unknownFields = unknownFields.build();
           makeExtensionsImmutable();
@@ -2488,7 +2468,7 @@ private static final long serialVersionUID = 0L;
       }
 
       public static final int BOUNDS_FIELD_NUMBER = 1;
-      private java.util.List<java.lang.Double> bounds_;
+      private com.google.protobuf.Internal.DoubleList bounds_;
       /**
        * <pre>
        * The values must be monotonically increasing.
@@ -2518,7 +2498,7 @@ private static final long serialVersionUID = 0L;
        * <code>repeated double bounds = 1;</code>
        */
       public double getBounds(int index) {
-        return bounds_.get(index);
+        return bounds_.getDouble(index);
       }
       private int boundsMemoizedSerializedSize = -1;
 
@@ -2542,7 +2522,7 @@ private static final long serialVersionUID = 0L;
           output.writeUInt32NoTag(boundsMemoizedSerializedSize);
         }
         for (int i = 0; i < bounds_.size(); i++) {
-          output.writeDoubleNoTag(bounds_.get(i));
+          output.writeDoubleNoTag(bounds_.getDouble(i));
         }
         unknownFields.writeTo(output);
       }
@@ -2579,11 +2559,10 @@ private static final long serialVersionUID = 0L;
         }
         com.google.api.Distribution.BucketOptions.Explicit other = (com.google.api.Distribution.BucketOptions.Explicit) obj;
 
-        boolean result = true;
-        result = result && getBoundsList()
-            .equals(other.getBoundsList());
-        result = result && unknownFields.equals(other.unknownFields);
-        return result;
+        if (!getBoundsList()
+            .equals(other.getBoundsList())) return false;
+        if (!unknownFields.equals(other.unknownFields)) return false;
+        return true;
       }
 
       @java.lang.Override
@@ -2741,7 +2720,7 @@ private static final long serialVersionUID = 0L;
         @java.lang.Override
         public Builder clear() {
           super.clear();
-          bounds_ = java.util.Collections.emptyList();
+          bounds_ = emptyDoubleList();
           bitField0_ = (bitField0_ & ~0x00000001);
           return this;
         }
@@ -2770,8 +2749,8 @@ private static final long serialVersionUID = 0L;
         public com.google.api.Distribution.BucketOptions.Explicit buildPartial() {
           com.google.api.Distribution.BucketOptions.Explicit result = new com.google.api.Distribution.BucketOptions.Explicit(this);
           int from_bitField0_ = bitField0_;
-          if (((bitField0_ & 0x00000001) == 0x00000001)) {
-            bounds_ = java.util.Collections.unmodifiableList(bounds_);
+          if (((bitField0_ & 0x00000001) != 0)) {
+            bounds_.makeImmutable();
             bitField0_ = (bitField0_ & ~0x00000001);
           }
           result.bounds_ = bounds_;
@@ -2781,35 +2760,35 @@ private static final long serialVersionUID = 0L;
 
         @java.lang.Override
         public Builder clone() {
-          return (Builder) super.clone();
+          return super.clone();
         }
         @java.lang.Override
         public Builder setField(
             com.google.protobuf.Descriptors.FieldDescriptor field,
             java.lang.Object value) {
-          return (Builder) super.setField(field, value);
+          return super.setField(field, value);
         }
         @java.lang.Override
         public Builder clearField(
             com.google.protobuf.Descriptors.FieldDescriptor field) {
-          return (Builder) super.clearField(field);
+          return super.clearField(field);
         }
         @java.lang.Override
         public Builder clearOneof(
             com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-          return (Builder) super.clearOneof(oneof);
+          return super.clearOneof(oneof);
         }
         @java.lang.Override
         public Builder setRepeatedField(
             com.google.protobuf.Descriptors.FieldDescriptor field,
             int index, java.lang.Object value) {
-          return (Builder) super.setRepeatedField(field, index, value);
+          return super.setRepeatedField(field, index, value);
         }
         @java.lang.Override
         public Builder addRepeatedField(
             com.google.protobuf.Descriptors.FieldDescriptor field,
             java.lang.Object value) {
-          return (Builder) super.addRepeatedField(field, value);
+          return super.addRepeatedField(field, value);
         }
         @java.lang.Override
         public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -2863,10 +2842,10 @@ private static final long serialVersionUID = 0L;
         }
         private int bitField0_;
 
-        private java.util.List<java.lang.Double> bounds_ = java.util.Collections.emptyList();
+        private com.google.protobuf.Internal.DoubleList bounds_ = emptyDoubleList();
         private void ensureBoundsIsMutable() {
-          if (!((bitField0_ & 0x00000001) == 0x00000001)) {
-            bounds_ = new java.util.ArrayList<java.lang.Double>(bounds_);
+          if (!((bitField0_ & 0x00000001) != 0)) {
+            bounds_ = mutableCopy(bounds_);
             bitField0_ |= 0x00000001;
            }
         }
@@ -2879,7 +2858,8 @@ private static final long serialVersionUID = 0L;
          */
         public java.util.List<java.lang.Double>
             getBoundsList() {
-          return java.util.Collections.unmodifiableList(bounds_);
+          return ((bitField0_ & 0x00000001) != 0) ?
+                   java.util.Collections.unmodifiableList(bounds_) : bounds_;
         }
         /**
          * <pre>
@@ -2899,7 +2879,7 @@ private static final long serialVersionUID = 0L;
          * <code>repeated double bounds = 1;</code>
          */
         public double getBounds(int index) {
-          return bounds_.get(index);
+          return bounds_.getDouble(index);
         }
         /**
          * <pre>
@@ -2911,7 +2891,7 @@ private static final long serialVersionUID = 0L;
         public Builder setBounds(
             int index, double value) {
           ensureBoundsIsMutable();
-          bounds_.set(index, value);
+          bounds_.setDouble(index, value);
           onChanged();
           return this;
         }
@@ -2924,7 +2904,7 @@ private static final long serialVersionUID = 0L;
          */
         public Builder addBounds(double value) {
           ensureBoundsIsMutable();
-          bounds_.add(value);
+          bounds_.addDouble(value);
           onChanged();
           return this;
         }
@@ -2951,7 +2931,7 @@ private static final long serialVersionUID = 0L;
          * <code>repeated double bounds = 1;</code>
          */
         public Builder clearBounds() {
-          bounds_ = java.util.Collections.emptyList();
+          bounds_ = emptyDoubleList();
           bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
           return this;
@@ -2959,7 +2939,7 @@ private static final long serialVersionUID = 0L;
         @java.lang.Override
         public final Builder setUnknownFields(
             final com.google.protobuf.UnknownFieldSet unknownFields) {
-          return super.setUnknownFieldsProto3(unknownFields);
+          return super.setUnknownFields(unknownFields);
         }
 
         @java.lang.Override
@@ -3222,28 +3202,25 @@ private static final long serialVersionUID = 0L;
       }
       com.google.api.Distribution.BucketOptions other = (com.google.api.Distribution.BucketOptions) obj;
 
-      boolean result = true;
-      result = result && getOptionsCase().equals(
-          other.getOptionsCase());
-      if (!result) return false;
+      if (!getOptionsCase().equals(other.getOptionsCase())) return false;
       switch (optionsCase_) {
         case 1:
-          result = result && getLinearBuckets()
-              .equals(other.getLinearBuckets());
+          if (!getLinearBuckets()
+              .equals(other.getLinearBuckets())) return false;
           break;
         case 2:
-          result = result && getExponentialBuckets()
-              .equals(other.getExponentialBuckets());
+          if (!getExponentialBuckets()
+              .equals(other.getExponentialBuckets())) return false;
           break;
         case 3:
-          result = result && getExplicitBuckets()
-              .equals(other.getExplicitBuckets());
+          if (!getExplicitBuckets()
+              .equals(other.getExplicitBuckets())) return false;
           break;
         case 0:
         default:
       }
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -3475,35 +3452,35 @@ private static final long serialVersionUID = 0L;
 
       @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -4096,7 +4073,7 @@ private static final long serialVersionUID = 0L;
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -4280,7 +4257,6 @@ private static final long serialVersionUID = 0L;
       super(builder);
     }
     private Exemplar() {
-      value_ = 0D;
       attachments_ = java.util.Collections.emptyList();
     }
 
@@ -4327,7 +4303,7 @@ private static final long serialVersionUID = 0L;
               break;
             }
             case 26: {
-              if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
                 attachments_ = new java.util.ArrayList<com.google.protobuf.Any>();
                 mutable_bitField0_ |= 0x00000004;
               }
@@ -4336,7 +4312,7 @@ private static final long serialVersionUID = 0L;
               break;
             }
             default: {
-              if (!parseUnknownFieldProto3(
+              if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
@@ -4350,7 +4326,7 @@ private static final long serialVersionUID = 0L;
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+        if (((mutable_bitField0_ & 0x00000004) != 0)) {
           attachments_ = java.util.Collections.unmodifiableList(attachments_);
         }
         this.unknownFields = unknownFields.build();
@@ -4562,20 +4538,18 @@ private static final long serialVersionUID = 0L;
       }
       com.google.api.Distribution.Exemplar other = (com.google.api.Distribution.Exemplar) obj;
 
-      boolean result = true;
-      result = result && (
-          java.lang.Double.doubleToLongBits(getValue())
-          == java.lang.Double.doubleToLongBits(
-              other.getValue()));
-      result = result && (hasTimestamp() == other.hasTimestamp());
+      if (java.lang.Double.doubleToLongBits(getValue())
+          != java.lang.Double.doubleToLongBits(
+              other.getValue())) return false;
+      if (hasTimestamp() != other.hasTimestamp()) return false;
       if (hasTimestamp()) {
-        result = result && getTimestamp()
-            .equals(other.getTimestamp());
+        if (!getTimestamp()
+            .equals(other.getTimestamp())) return false;
       }
-      result = result && getAttachmentsList()
-          .equals(other.getAttachmentsList());
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!getAttachmentsList()
+          .equals(other.getAttachmentsList())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -4787,7 +4761,7 @@ private static final long serialVersionUID = 0L;
           result.timestamp_ = timestampBuilder_.build();
         }
         if (attachmentsBuilder_ == null) {
-          if (((bitField0_ & 0x00000004) == 0x00000004)) {
+          if (((bitField0_ & 0x00000004) != 0)) {
             attachments_ = java.util.Collections.unmodifiableList(attachments_);
             bitField0_ = (bitField0_ & ~0x00000004);
           }
@@ -4802,35 +4776,35 @@ private static final long serialVersionUID = 0L;
 
       @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -4947,7 +4921,7 @@ private static final long serialVersionUID = 0L;
         return this;
       }
 
-      private com.google.protobuf.Timestamp timestamp_ = null;
+      private com.google.protobuf.Timestamp timestamp_;
       private com.google.protobuf.SingleFieldBuilderV3<
           com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> timestampBuilder_;
       /**
@@ -5103,7 +5077,7 @@ private static final long serialVersionUID = 0L;
       private java.util.List<com.google.protobuf.Any> attachments_ =
         java.util.Collections.emptyList();
       private void ensureAttachmentsIsMutable() {
-        if (!((bitField0_ & 0x00000004) == 0x00000004)) {
+        if (!((bitField0_ & 0x00000004) != 0)) {
           attachments_ = new java.util.ArrayList<com.google.protobuf.Any>(attachments_);
           bitField0_ |= 0x00000004;
          }
@@ -5512,7 +5486,7 @@ private static final long serialVersionUID = 0L;
           attachmentsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder>(
                   attachments_,
-                  ((bitField0_ & 0x00000004) == 0x00000004),
+                  ((bitField0_ & 0x00000004) != 0),
                   getParentForChildren(),
                   isClean());
           attachments_ = null;
@@ -5522,7 +5496,7 @@ private static final long serialVersionUID = 0L;
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
@@ -5693,7 +5667,7 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int BUCKET_COUNTS_FIELD_NUMBER = 7;
-  private java.util.List<java.lang.Long> bucketCounts_;
+  private com.google.protobuf.Internal.LongList bucketCounts_;
   /**
    * <pre>
    * The number of values in each bucket of the histogram, as described in
@@ -5759,7 +5733,7 @@ private static final long serialVersionUID = 0L;
    * <code>repeated int64 bucket_counts = 7;</code>
    */
   public long getBucketCounts(int index) {
-    return bucketCounts_.get(index);
+    return bucketCounts_.getLong(index);
   }
   private int bucketCountsMemoizedSerializedSize = -1;
 
@@ -5853,7 +5827,7 @@ private static final long serialVersionUID = 0L;
       output.writeUInt32NoTag(bucketCountsMemoizedSerializedSize);
     }
     for (int i = 0; i < bucketCounts_.size(); i++) {
-      output.writeInt64NoTag(bucketCounts_.get(i));
+      output.writeInt64NoTag(bucketCounts_.getLong(i));
     }
     for (int i = 0; i < exemplars_.size(); i++) {
       output.writeMessage(10, exemplars_.get(i));
@@ -5891,7 +5865,7 @@ private static final long serialVersionUID = 0L;
       int dataSize = 0;
       for (int i = 0; i < bucketCounts_.size(); i++) {
         dataSize += com.google.protobuf.CodedOutputStream
-          .computeInt64SizeNoTag(bucketCounts_.get(i));
+          .computeInt64SizeNoTag(bucketCounts_.getLong(i));
       }
       size += dataSize;
       if (!getBucketCountsList().isEmpty()) {
@@ -5920,33 +5894,30 @@ private static final long serialVersionUID = 0L;
     }
     com.google.api.Distribution other = (com.google.api.Distribution) obj;
 
-    boolean result = true;
-    result = result && (getCount()
-        == other.getCount());
-    result = result && (
-        java.lang.Double.doubleToLongBits(getMean())
-        == java.lang.Double.doubleToLongBits(
-            other.getMean()));
-    result = result && (
-        java.lang.Double.doubleToLongBits(getSumOfSquaredDeviation())
-        == java.lang.Double.doubleToLongBits(
-            other.getSumOfSquaredDeviation()));
-    result = result && (hasRange() == other.hasRange());
+    if (getCount()
+        != other.getCount()) return false;
+    if (java.lang.Double.doubleToLongBits(getMean())
+        != java.lang.Double.doubleToLongBits(
+            other.getMean())) return false;
+    if (java.lang.Double.doubleToLongBits(getSumOfSquaredDeviation())
+        != java.lang.Double.doubleToLongBits(
+            other.getSumOfSquaredDeviation())) return false;
+    if (hasRange() != other.hasRange()) return false;
     if (hasRange()) {
-      result = result && getRange()
-          .equals(other.getRange());
+      if (!getRange()
+          .equals(other.getRange())) return false;
     }
-    result = result && (hasBucketOptions() == other.hasBucketOptions());
+    if (hasBucketOptions() != other.hasBucketOptions()) return false;
     if (hasBucketOptions()) {
-      result = result && getBucketOptions()
-          .equals(other.getBucketOptions());
+      if (!getBucketOptions()
+          .equals(other.getBucketOptions())) return false;
     }
-    result = result && getBucketCountsList()
-        .equals(other.getBucketCountsList());
-    result = result && getExemplarsList()
-        .equals(other.getExemplarsList());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!getBucketCountsList()
+        .equals(other.getBucketCountsList())) return false;
+    if (!getExemplarsList()
+        .equals(other.getExemplarsList())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -6148,7 +6119,7 @@ private static final long serialVersionUID = 0L;
         bucketOptions_ = null;
         bucketOptionsBuilder_ = null;
       }
-      bucketCounts_ = java.util.Collections.emptyList();
+      bucketCounts_ = emptyLongList();
       bitField0_ = (bitField0_ & ~0x00000020);
       if (exemplarsBuilder_ == null) {
         exemplars_ = java.util.Collections.emptyList();
@@ -6197,13 +6168,13 @@ private static final long serialVersionUID = 0L;
       } else {
         result.bucketOptions_ = bucketOptionsBuilder_.build();
       }
-      if (((bitField0_ & 0x00000020) == 0x00000020)) {
-        bucketCounts_ = java.util.Collections.unmodifiableList(bucketCounts_);
+      if (((bitField0_ & 0x00000020) != 0)) {
+        bucketCounts_.makeImmutable();
         bitField0_ = (bitField0_ & ~0x00000020);
       }
       result.bucketCounts_ = bucketCounts_;
       if (exemplarsBuilder_ == null) {
-        if (((bitField0_ & 0x00000040) == 0x00000040)) {
+        if (((bitField0_ & 0x00000040) != 0)) {
           exemplars_ = java.util.Collections.unmodifiableList(exemplars_);
           bitField0_ = (bitField0_ & ~0x00000040);
         }
@@ -6218,35 +6189,35 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
     @java.lang.Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
     @java.lang.Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -6479,7 +6450,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private com.google.api.Distribution.Range range_ = null;
+    private com.google.api.Distribution.Range range_;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.api.Distribution.Range, com.google.api.Distribution.Range.Builder, com.google.api.Distribution.RangeOrBuilder> rangeBuilder_;
     /**
@@ -6641,7 +6612,7 @@ private static final long serialVersionUID = 0L;
       return rangeBuilder_;
     }
 
-    private com.google.api.Distribution.BucketOptions bucketOptions_ = null;
+    private com.google.api.Distribution.BucketOptions bucketOptions_;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.api.Distribution.BucketOptions, com.google.api.Distribution.BucketOptions.Builder, com.google.api.Distribution.BucketOptionsOrBuilder> bucketOptionsBuilder_;
     /**
@@ -6803,10 +6774,10 @@ private static final long serialVersionUID = 0L;
       return bucketOptionsBuilder_;
     }
 
-    private java.util.List<java.lang.Long> bucketCounts_ = java.util.Collections.emptyList();
+    private com.google.protobuf.Internal.LongList bucketCounts_ = emptyLongList();
     private void ensureBucketCountsIsMutable() {
-      if (!((bitField0_ & 0x00000020) == 0x00000020)) {
-        bucketCounts_ = new java.util.ArrayList<java.lang.Long>(bucketCounts_);
+      if (!((bitField0_ & 0x00000020) != 0)) {
+        bucketCounts_ = mutableCopy(bucketCounts_);
         bitField0_ |= 0x00000020;
        }
     }
@@ -6831,7 +6802,8 @@ private static final long serialVersionUID = 0L;
      */
     public java.util.List<java.lang.Long>
         getBucketCountsList() {
-      return java.util.Collections.unmodifiableList(bucketCounts_);
+      return ((bitField0_ & 0x00000020) != 0) ?
+               java.util.Collections.unmodifiableList(bucketCounts_) : bucketCounts_;
     }
     /**
      * <pre>
@@ -6875,7 +6847,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated int64 bucket_counts = 7;</code>
      */
     public long getBucketCounts(int index) {
-      return bucketCounts_.get(index);
+      return bucketCounts_.getLong(index);
     }
     /**
      * <pre>
@@ -6899,7 +6871,7 @@ private static final long serialVersionUID = 0L;
     public Builder setBucketCounts(
         int index, long value) {
       ensureBucketCountsIsMutable();
-      bucketCounts_.set(index, value);
+      bucketCounts_.setLong(index, value);
       onChanged();
       return this;
     }
@@ -6924,7 +6896,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder addBucketCounts(long value) {
       ensureBucketCountsIsMutable();
-      bucketCounts_.add(value);
+      bucketCounts_.addLong(value);
       onChanged();
       return this;
     }
@@ -6975,7 +6947,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated int64 bucket_counts = 7;</code>
      */
     public Builder clearBucketCounts() {
-      bucketCounts_ = java.util.Collections.emptyList();
+      bucketCounts_ = emptyLongList();
       bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
@@ -6984,7 +6956,7 @@ private static final long serialVersionUID = 0L;
     private java.util.List<com.google.api.Distribution.Exemplar> exemplars_ =
       java.util.Collections.emptyList();
     private void ensureExemplarsIsMutable() {
-      if (!((bitField0_ & 0x00000040) == 0x00000040)) {
+      if (!((bitField0_ & 0x00000040) != 0)) {
         exemplars_ = new java.util.ArrayList<com.google.api.Distribution.Exemplar>(exemplars_);
         bitField0_ |= 0x00000040;
        }
@@ -7285,7 +7257,7 @@ private static final long serialVersionUID = 0L;
         exemplarsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             com.google.api.Distribution.Exemplar, com.google.api.Distribution.Exemplar.Builder, com.google.api.Distribution.ExemplarOrBuilder>(
                 exemplars_,
-                ((bitField0_ & 0x00000040) == 0x00000040),
+                ((bitField0_ & 0x00000040) != 0),
                 getParentForChildren(),
                 isClean());
         exemplars_ = null;
@@ -7295,7 +7267,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
     @java.lang.Override
