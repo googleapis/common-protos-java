@@ -5,12 +5,12 @@ package com.google.api;
 
 /**
  * <pre>
- * Auxiliary metadata for a [MonitoredResource][google.api.MonitoredResource]
- * object. [MonitoredResource][google.api.MonitoredResource] objects contain the
- * minimum set of information to uniquely identify a monitored resource
- * instance. There is some other useful auxiliary metadata. Monitoring and
- * Logging use an ingestion pipeline to extract metadata for cloud resources of
- * all types, and store the metadata in this message.
+ * Auxiliary metadata for a [MonitoredResource][google.api.MonitoredResource] object.
+ * [MonitoredResource][google.api.MonitoredResource] objects contain the minimum set of information to
+ * uniquely identify a monitored resource instance. There is some other useful
+ * auxiliary metadata. Monitoring and Logging use an ingestion
+ * pipeline to extract metadata for cloud resources of all types, and store
+ * the metadata in this message.
  * </pre>
  *
  * Protobuf type {@code google.api.MonitoredResourceMetadata}
@@ -455,12 +455,12 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Auxiliary metadata for a [MonitoredResource][google.api.MonitoredResource]
-   * object. [MonitoredResource][google.api.MonitoredResource] objects contain the
-   * minimum set of information to uniquely identify a monitored resource
-   * instance. There is some other useful auxiliary metadata. Monitoring and
-   * Logging use an ingestion pipeline to extract metadata for cloud resources of
-   * all types, and store the metadata in this message.
+   * Auxiliary metadata for a [MonitoredResource][google.api.MonitoredResource] object.
+   * [MonitoredResource][google.api.MonitoredResource] objects contain the minimum set of information to
+   * uniquely identify a monitored resource instance. There is some other useful
+   * auxiliary metadata. Monitoring and Logging use an ingestion
+   * pipeline to extract metadata for cloud resources of all types, and store
+   * the metadata in this message.
    * </pre>
    *
    * Protobuf type {@code google.api.MonitoredResourceMetadata}

@@ -5,10 +5,9 @@ package com.google.api;
 
 /**
  * <pre>
- * An object that describes the schema of a
- * [MonitoredResource][google.api.MonitoredResource] object using a type name
- * and a set of labels.  For example, the monitored resource descriptor for
- * Google Compute Engine VM instances has a type of
+ * An object that describes the schema of a [MonitoredResource][google.api.MonitoredResource] object using a
+ * type name and a set of labels.  For example, the monitored resource
+ * descriptor for Google Compute Engine VM instances has a type of
  * `"gce_instance"` and specifies the use of the labels `"instance_id"` and
  * `"zone"` to identify particular VM instances.
  * Different APIs can support different monitored resource types. APIs generally
@@ -582,10 +581,9 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * An object that describes the schema of a
-   * [MonitoredResource][google.api.MonitoredResource] object using a type name
-   * and a set of labels.  For example, the monitored resource descriptor for
-   * Google Compute Engine VM instances has a type of
+   * An object that describes the schema of a [MonitoredResource][google.api.MonitoredResource] object using a
+   * type name and a set of labels.  For example, the monitored resource
+   * descriptor for Google Compute Engine VM instances has a type of
    * `"gce_instance"` and specifies the use of the labels `"instance_id"` and
    * `"zone"` to identify particular VM instances.
    * Different APIs can support different monitored resource types. APIs generally

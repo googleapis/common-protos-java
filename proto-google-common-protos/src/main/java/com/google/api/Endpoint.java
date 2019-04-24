@@ -184,8 +184,8 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * DEPRECATED: This field is no longer supported. Instead of using aliases,
-   * please specify multiple [google.api.Endpoint][google.api.Endpoint] for each
-   * of the intended aliases.
+   * please specify multiple [google.api.Endpoint][google.api.Endpoint] for each of the intended
+   * aliases.
    * Additional names that this endpoint will be hosted on.
    * </pre>
    *
@@ -198,8 +198,8 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * DEPRECATED: This field is no longer supported. Instead of using aliases,
-   * please specify multiple [google.api.Endpoint][google.api.Endpoint] for each
-   * of the intended aliases.
+   * please specify multiple [google.api.Endpoint][google.api.Endpoint] for each of the intended
+   * aliases.
    * Additional names that this endpoint will be hosted on.
    * </pre>
    *
@@ -211,8 +211,8 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * DEPRECATED: This field is no longer supported. Instead of using aliases,
-   * please specify multiple [google.api.Endpoint][google.api.Endpoint] for each
-   * of the intended aliases.
+   * please specify multiple [google.api.Endpoint][google.api.Endpoint] for each of the intended
+   * aliases.
    * Additional names that this endpoint will be hosted on.
    * </pre>
    *
@@ -224,8 +224,8 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * DEPRECATED: This field is no longer supported. Instead of using aliases,
-   * please specify multiple [google.api.Endpoint][google.api.Endpoint] for each
-   * of the intended aliases.
+   * please specify multiple [google.api.Endpoint][google.api.Endpoint] for each of the intended
+   * aliases.
    * Additional names that this endpoint will be hosted on.
    * </pre>
    *
@@ -874,8 +874,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * DEPRECATED: This field is no longer supported. Instead of using aliases,
-     * please specify multiple [google.api.Endpoint][google.api.Endpoint] for each
-     * of the intended aliases.
+     * please specify multiple [google.api.Endpoint][google.api.Endpoint] for each of the intended
+     * aliases.
      * Additional names that this endpoint will be hosted on.
      * </pre>
      *
@@ -888,8 +888,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * DEPRECATED: This field is no longer supported. Instead of using aliases,
-     * please specify multiple [google.api.Endpoint][google.api.Endpoint] for each
-     * of the intended aliases.
+     * please specify multiple [google.api.Endpoint][google.api.Endpoint] for each of the intended
+     * aliases.
      * Additional names that this endpoint will be hosted on.
      * </pre>
      *
@@ -901,8 +901,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * DEPRECATED: This field is no longer supported. Instead of using aliases,
-     * please specify multiple [google.api.Endpoint][google.api.Endpoint] for each
-     * of the intended aliases.
+     * please specify multiple [google.api.Endpoint][google.api.Endpoint] for each of the intended
+     * aliases.
      * Additional names that this endpoint will be hosted on.
      * </pre>
      *
@@ -914,8 +914,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * DEPRECATED: This field is no longer supported. Instead of using aliases,
-     * please specify multiple [google.api.Endpoint][google.api.Endpoint] for each
-     * of the intended aliases.
+     * please specify multiple [google.api.Endpoint][google.api.Endpoint] for each of the intended
+     * aliases.
      * Additional names that this endpoint will be hosted on.
      * </pre>
      *
@@ -928,8 +928,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * DEPRECATED: This field is no longer supported. Instead of using aliases,
-     * please specify multiple [google.api.Endpoint][google.api.Endpoint] for each
-     * of the intended aliases.
+     * please specify multiple [google.api.Endpoint][google.api.Endpoint] for each of the intended
+     * aliases.
      * Additional names that this endpoint will be hosted on.
      * </pre>
      *
@@ -948,8 +948,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * DEPRECATED: This field is no longer supported. Instead of using aliases,
-     * please specify multiple [google.api.Endpoint][google.api.Endpoint] for each
-     * of the intended aliases.
+     * please specify multiple [google.api.Endpoint][google.api.Endpoint] for each of the intended
+     * aliases.
      * Additional names that this endpoint will be hosted on.
      * </pre>
      *
@@ -968,8 +968,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * DEPRECATED: This field is no longer supported. Instead of using aliases,
-     * please specify multiple [google.api.Endpoint][google.api.Endpoint] for each
-     * of the intended aliases.
+     * please specify multiple [google.api.Endpoint][google.api.Endpoint] for each of the intended
+     * aliases.
      * Additional names that this endpoint will be hosted on.
      * </pre>
      *
@@ -986,8 +986,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * DEPRECATED: This field is no longer supported. Instead of using aliases,
-     * please specify multiple [google.api.Endpoint][google.api.Endpoint] for each
-     * of the intended aliases.
+     * please specify multiple [google.api.Endpoint][google.api.Endpoint] for each of the intended
+     * aliases.
      * Additional names that this endpoint will be hosted on.
      * </pre>
      *
@@ -1002,8 +1002,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * DEPRECATED: This field is no longer supported. Instead of using aliases,
-     * please specify multiple [google.api.Endpoint][google.api.Endpoint] for each
-     * of the intended aliases.
+     * please specify multiple [google.api.Endpoint][google.api.Endpoint] for each of the intended
+     * aliases.
      * Additional names that this endpoint will be hosted on.
      * </pre>
      *

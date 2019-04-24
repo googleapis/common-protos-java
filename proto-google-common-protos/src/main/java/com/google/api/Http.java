@@ -163,7 +163,7 @@ private static final long serialVersionUID = 0L;
   private boolean fullyDecodeReservedExpansion_;
   /**
    * <pre>
-   * When set to true, URL path parmeters will be fully URI-decoded except in
+   * When set to true, URL path parameters will be fully URI-decoded except in
    * cases of single segment matches in reserved expansion, where "%2F" will be
    * left encoded.
    * The default behavior is to not decode RFC 6570 reserved characters in multi
@@ -877,7 +877,7 @@ private static final long serialVersionUID = 0L;
     private boolean fullyDecodeReservedExpansion_ ;
     /**
      * <pre>
-     * When set to true, URL path parmeters will be fully URI-decoded except in
+     * When set to true, URL path parameters will be fully URI-decoded except in
      * cases of single segment matches in reserved expansion, where "%2F" will be
      * left encoded.
      * The default behavior is to not decode RFC 6570 reserved characters in multi
@@ -891,7 +891,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * When set to true, URL path parmeters will be fully URI-decoded except in
+     * When set to true, URL path parameters will be fully URI-decoded except in
      * cases of single segment matches in reserved expansion, where "%2F" will be
      * left encoded.
      * The default behavior is to not decode RFC 6570 reserved characters in multi
@@ -908,7 +908,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * When set to true, URL path parmeters will be fully URI-decoded except in
+     * When set to true, URL path parameters will be fully URI-decoded except in
      * cases of single segment matches in reserved expansion, where "%2F" will be
      * left encoded.
      * The default behavior is to not decode RFC 6570 reserved characters in multi
