@@ -11,8 +11,7 @@ public interface SystemParameterRuleOrBuilder extends
    * <pre>
    * Selects the methods to which this rule applies. Use '*' to indicate all
    * methods in all APIs.
-   * Refer to [selector][google.api.DocumentationRule.selector] for syntax
-   * details.
+   * Refer to [selector][google.api.DocumentationRule.selector] for syntax details.
    * </pre>
    *
    * <code>string selector = 1;</code>
@@ -22,8 +21,7 @@ public interface SystemParameterRuleOrBuilder extends
    * <pre>
    * Selects the methods to which this rule applies. Use '*' to indicate all
    * methods in all APIs.
-   * Refer to [selector][google.api.DocumentationRule.selector] for syntax
-   * details.
+   * Refer to [selector][google.api.DocumentationRule.selector] for syntax details.
    * </pre>
    *
    * <code>string selector = 1;</code>

@@ -5,7 +5,7 @@ package com.google.api;
 
 /**
  * <pre>
- * Configuration for an anthentication provider, including support for
+ * Configuration for an authentication provider, including support for
  * [JSON Web Token
  * (JWT)](https://tools.ietf.org/html/draft-ietf-oauth-json-web-token-32).
  * </pre>
@@ -575,7 +575,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Configuration for an anthentication provider, including support for
+   * Configuration for an authentication provider, including support for
    * [JSON Web Token
    * (JWT)](https://tools.ietf.org/html/draft-ietf-oauth-json-web-token-32).
    * </pre>

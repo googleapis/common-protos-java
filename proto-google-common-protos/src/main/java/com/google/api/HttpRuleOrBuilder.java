@@ -10,8 +10,7 @@ public interface HttpRuleOrBuilder extends
   /**
    * <pre>
    * Selects a method to which this rule applies.
-   * Refer to [selector][google.api.DocumentationRule.selector] for syntax
-   * details.
+   * Refer to [selector][google.api.DocumentationRule.selector] for syntax details.
    * </pre>
    *
    * <code>string selector = 1;</code>
@@ -20,8 +19,7 @@ public interface HttpRuleOrBuilder extends
   /**
    * <pre>
    * Selects a method to which this rule applies.
-   * Refer to [selector][google.api.DocumentationRule.selector] for syntax
-   * details.
+   * Refer to [selector][google.api.DocumentationRule.selector] for syntax details.
    * </pre>
    *
    * <code>string selector = 1;</code>

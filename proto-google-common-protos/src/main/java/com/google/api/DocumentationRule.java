@@ -106,9 +106,9 @@ private static final long serialVersionUID = 0L;
    * The selector is a comma-separated list of patterns. Each pattern is a
    * qualified name of the element which may end in "*", indicating a wildcard.
    * Wildcards are only allowed at the end and for a whole component of the
-   * qualified name, i.e. "foo.*" is ok, but not "foo.b*" or "foo.*.bar". To
-   * specify a default for all applicable elements, the whole pattern "*"
-   * is used.
+   * qualified name, i.e. "foo.*" is ok, but not "foo.b*" or "foo.*.bar". A
+   * wildcard will match one or more components. To specify a default for all
+   * applicable elements, the whole pattern "*" is used.
    * </pre>
    *
    * <code>string selector = 1;</code>
@@ -130,9 +130,9 @@ private static final long serialVersionUID = 0L;
    * The selector is a comma-separated list of patterns. Each pattern is a
    * qualified name of the element which may end in "*", indicating a wildcard.
    * Wildcards are only allowed at the end and for a whole component of the
-   * qualified name, i.e. "foo.*" is ok, but not "foo.b*" or "foo.*.bar". To
-   * specify a default for all applicable elements, the whole pattern "*"
-   * is used.
+   * qualified name, i.e. "foo.*" is ok, but not "foo.b*" or "foo.*.bar". A
+   * wildcard will match one or more components. To specify a default for all
+   * applicable elements, the whole pattern "*" is used.
    * </pre>
    *
    * <code>string selector = 1;</code>
@@ -583,9 +583,9 @@ private static final long serialVersionUID = 0L;
      * The selector is a comma-separated list of patterns. Each pattern is a
      * qualified name of the element which may end in "*", indicating a wildcard.
      * Wildcards are only allowed at the end and for a whole component of the
-     * qualified name, i.e. "foo.*" is ok, but not "foo.b*" or "foo.*.bar". To
-     * specify a default for all applicable elements, the whole pattern "*"
-     * is used.
+     * qualified name, i.e. "foo.*" is ok, but not "foo.b*" or "foo.*.bar". A
+     * wildcard will match one or more components. To specify a default for all
+     * applicable elements, the whole pattern "*" is used.
      * </pre>
      *
      * <code>string selector = 1;</code>
@@ -607,9 +607,9 @@ private static final long serialVersionUID = 0L;
      * The selector is a comma-separated list of patterns. Each pattern is a
      * qualified name of the element which may end in "*", indicating a wildcard.
      * Wildcards are only allowed at the end and for a whole component of the
-     * qualified name, i.e. "foo.*" is ok, but not "foo.b*" or "foo.*.bar". To
-     * specify a default for all applicable elements, the whole pattern "*"
-     * is used.
+     * qualified name, i.e. "foo.*" is ok, but not "foo.b*" or "foo.*.bar". A
+     * wildcard will match one or more components. To specify a default for all
+     * applicable elements, the whole pattern "*" is used.
      * </pre>
      *
      * <code>string selector = 1;</code>
@@ -632,9 +632,9 @@ private static final long serialVersionUID = 0L;
      * The selector is a comma-separated list of patterns. Each pattern is a
      * qualified name of the element which may end in "*", indicating a wildcard.
      * Wildcards are only allowed at the end and for a whole component of the
-     * qualified name, i.e. "foo.*" is ok, but not "foo.b*" or "foo.*.bar". To
-     * specify a default for all applicable elements, the whole pattern "*"
-     * is used.
+     * qualified name, i.e. "foo.*" is ok, but not "foo.b*" or "foo.*.bar". A
+     * wildcard will match one or more components. To specify a default for all
+     * applicable elements, the whole pattern "*" is used.
      * </pre>
      *
      * <code>string selector = 1;</code>
@@ -654,9 +654,9 @@ private static final long serialVersionUID = 0L;
      * The selector is a comma-separated list of patterns. Each pattern is a
      * qualified name of the element which may end in "*", indicating a wildcard.
      * Wildcards are only allowed at the end and for a whole component of the
-     * qualified name, i.e. "foo.*" is ok, but not "foo.b*" or "foo.*.bar". To
-     * specify a default for all applicable elements, the whole pattern "*"
-     * is used.
+     * qualified name, i.e. "foo.*" is ok, but not "foo.b*" or "foo.*.bar". A
+     * wildcard will match one or more components. To specify a default for all
+     * applicable elements, the whole pattern "*" is used.
      * </pre>
      *
      * <code>string selector = 1;</code>
@@ -672,9 +672,9 @@ private static final long serialVersionUID = 0L;
      * The selector is a comma-separated list of patterns. Each pattern is a
      * qualified name of the element which may end in "*", indicating a wildcard.
      * Wildcards are only allowed at the end and for a whole component of the
-     * qualified name, i.e. "foo.*" is ok, but not "foo.b*" or "foo.*.bar". To
-     * specify a default for all applicable elements, the whole pattern "*"
-     * is used.
+     * qualified name, i.e. "foo.*" is ok, but not "foo.b*" or "foo.*.bar". A
+     * wildcard will match one or more components. To specify a default for all
+     * applicable elements, the whole pattern "*" is used.
      * </pre>
      *
      * <code>string selector = 1;</code>

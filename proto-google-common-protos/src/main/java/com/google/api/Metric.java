@@ -116,9 +116,8 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object type_;
   /**
    * <pre>
-   * An existing metric type, see
-   * [google.api.MetricDescriptor][google.api.MetricDescriptor]. For example,
-   * `custom.googleapis.com/invoice/paid/amount`.
+   * An existing metric type, see [google.api.MetricDescriptor][google.api.MetricDescriptor].
+   * For example, `custom.googleapis.com/invoice/paid/amount`.
    * </pre>
    *
    * <code>string type = 3;</code>
@@ -137,9 +136,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * An existing metric type, see
-   * [google.api.MetricDescriptor][google.api.MetricDescriptor]. For example,
-   * `custom.googleapis.com/invoice/paid/amount`.
+   * An existing metric type, see [google.api.MetricDescriptor][google.api.MetricDescriptor].
+   * For example, `custom.googleapis.com/invoice/paid/amount`.
    * </pre>
    *
    * <code>string type = 3;</code>
@@ -617,9 +615,8 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object type_ = "";
     /**
      * <pre>
-     * An existing metric type, see
-     * [google.api.MetricDescriptor][google.api.MetricDescriptor]. For example,
-     * `custom.googleapis.com/invoice/paid/amount`.
+     * An existing metric type, see [google.api.MetricDescriptor][google.api.MetricDescriptor].
+     * For example, `custom.googleapis.com/invoice/paid/amount`.
      * </pre>
      *
      * <code>string type = 3;</code>
@@ -638,9 +635,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * An existing metric type, see
-     * [google.api.MetricDescriptor][google.api.MetricDescriptor]. For example,
-     * `custom.googleapis.com/invoice/paid/amount`.
+     * An existing metric type, see [google.api.MetricDescriptor][google.api.MetricDescriptor].
+     * For example, `custom.googleapis.com/invoice/paid/amount`.
      * </pre>
      *
      * <code>string type = 3;</code>
@@ -660,9 +656,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * An existing metric type, see
-     * [google.api.MetricDescriptor][google.api.MetricDescriptor]. For example,
-     * `custom.googleapis.com/invoice/paid/amount`.
+     * An existing metric type, see [google.api.MetricDescriptor][google.api.MetricDescriptor].
+     * For example, `custom.googleapis.com/invoice/paid/amount`.
      * </pre>
      *
      * <code>string type = 3;</code>
@@ -679,9 +674,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * An existing metric type, see
-     * [google.api.MetricDescriptor][google.api.MetricDescriptor]. For example,
-     * `custom.googleapis.com/invoice/paid/amount`.
+     * An existing metric type, see [google.api.MetricDescriptor][google.api.MetricDescriptor].
+     * For example, `custom.googleapis.com/invoice/paid/amount`.
      * </pre>
      *
      * <code>string type = 3;</code>
@@ -694,9 +688,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * An existing metric type, see
-     * [google.api.MetricDescriptor][google.api.MetricDescriptor]. For example,
-     * `custom.googleapis.com/invoice/paid/amount`.
+     * An existing metric type, see [google.api.MetricDescriptor][google.api.MetricDescriptor].
+     * For example, `custom.googleapis.com/invoice/paid/amount`.
      * </pre>
      *
      * <code>string type = 3;</code>
