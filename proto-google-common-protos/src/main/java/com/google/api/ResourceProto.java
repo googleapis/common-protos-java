@@ -7,9 +7,8 @@ public final class ResourceProto {
   private ResourceProto() {}
   public static void registerAllExtensions(
       com.google.protobuf.ExtensionRegistryLite registry) {
-    registry.add(com.google.api.ResourceProto.resource);
     registry.add(com.google.api.ResourceProto.resourceReference);
-    registry.add(com.google.api.ResourceProto.resourceDefinition);
+    registry.add(com.google.api.ResourceProto.resource);
   }
 
   public static void registerAllExtensions(
@@ -17,30 +16,6 @@ public final class ResourceProto {
     registerAllExtensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
-  public static final int RESOURCE_FIELD_NUMBER = 1053;
-  /**
-   * <pre>
-   * A representation of the resource.
-   * This is generally intended to be attached to the "name" field of
-   * the message representing the resource.
-   * Example:
-   *     message Topic {
-   *       string name = 1 [(google.api.resource) = {
-   *         pattern: "projects/{project}/topics/{topic}"
-   *       }];
-   *     }
-   * Only one of {`resource`, `resource_reference`} may be set.
-   * </pre>
-   *
-   * <code>extend .google.protobuf.FieldOptions { ... }</code>
-   */
-  public static final
-    com.google.protobuf.GeneratedMessage.GeneratedExtension<
-      com.google.protobuf.DescriptorProtos.FieldOptions,
-      com.google.api.Resource> resource = com.google.protobuf.GeneratedMessage
-          .newFileScopedGeneratedExtension(
-        com.google.api.Resource.class,
-        com.google.api.Resource.getDefaultInstance());
   public static final int RESOURCE_REFERENCE_FIELD_NUMBER = 1055;
   /**
    * <pre>
@@ -48,14 +23,15 @@ public final class ResourceProto {
    * Marks this as a field referring to a resource in another message.
    * Example:
    *   message Subscription {
-   *     string topic = 2
-   *       [(google.api.resource_reference) = "google.pubsub.v1.Topic"];
+   *     string topic = 2 [(google.api.resource_reference) = {
+   *       type: "pubsub.googleapis.com/Topic"
+   *     }];
    *   }
    * If the referenced message is in the same proto package, the package
    * may be omitted:
    *   message Subscription {
    *     string topic = 2
-   *       [(google.api.resource_reference) = "Topic"];
+   *       [(google.api.resource_reference).type = "Topic"];
    *   }
    * Only one of {`resource`, `resource_reference`} may be set.
    * </pre>
@@ -65,35 +41,43 @@ public final class ResourceProto {
   public static final
     com.google.protobuf.GeneratedMessage.GeneratedExtension<
       com.google.protobuf.DescriptorProtos.FieldOptions,
-      java.lang.String> resourceReference = com.google.protobuf.GeneratedMessage
+      com.google.api.ResourceReference> resourceReference = com.google.protobuf.GeneratedMessage
           .newFileScopedGeneratedExtension(
-        java.lang.String.class,
-        null);
-  public static final int RESOURCE_DEFINITION_FIELD_NUMBER = 1053;
+        com.google.api.ResourceReference.class,
+        com.google.api.ResourceReference.getDefaultInstance());
+  public static final int RESOURCE_FIELD_NUMBER = 1053;
   /**
    * <pre>
-   * A representation of a resource.
-   * At a file level, this is generally used to define information for a
-   * resource from another API, or for a resource that does not have an
-   * associated proto message.
-   * See the example of `google.api.Project` and `google.api.Organization`
-   * at the bottom of this file.
+   * An annotation describing a resource.
+   * Example:
+   *     message Topic {
+   *       option (google.api.resource) = {
+   *         type: "pubsub.googleapis.com/Topic"
+   *         pattern: "projects/{project}/topics/{topic}"
+   *       };
+   *     }
+   * Only one of {`resource`, `resource_reference`} may be set.
    * </pre>
    *
-   * <code>extend .google.protobuf.FileOptions { ... }</code>
+   * <code>extend .google.protobuf.MessageOptions { ... }</code>
    */
   public static final
     com.google.protobuf.GeneratedMessage.GeneratedExtension<
-      com.google.protobuf.DescriptorProtos.FileOptions,
-      java.util.List<com.google.api.Resource>> resourceDefinition = com.google.protobuf.GeneratedMessage
+      com.google.protobuf.DescriptorProtos.MessageOptions,
+      com.google.api.ResourceDescriptor> resource = com.google.protobuf.GeneratedMessage
           .newFileScopedGeneratedExtension(
-        com.google.api.Resource.class,
-        com.google.api.Resource.getDefaultInstance());
+        com.google.api.ResourceDescriptor.class,
+        com.google.api.ResourceDescriptor.getDefaultInstance());
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_google_api_Resource_descriptor;
+    internal_static_google_api_ResourceDescriptor_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_google_api_Resource_fieldAccessorTable;
+      internal_static_google_api_ResourceDescriptor_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_google_api_ResourceReference_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_api_ResourceReference_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -104,19 +88,22 @@ public final class ResourceProto {
   static {
     java.lang.String[] descriptorData = {
       "\n\031google/api/resource.proto\022\ngoogle.api\032" +
-      " google/protobuf/descriptor.proto\"+\n\010Res" +
-      "ource\022\017\n\007pattern\030\001 \001(\t\022\016\n\006symbol\030\002 \001(\t:F" +
-      "\n\010resource\022\035.google.protobuf.FieldOption" +
-      "s\030\235\010 \001(\0132\024.google.api.Resource::\n\022resour" +
-      "ce_reference\022\035.google.protobuf.FieldOpti" +
-      "ons\030\237\010 \001(\t:P\n\023resource_definition\022\034.goog" +
-      "le.protobuf.FileOptions\030\235\010 \003(\0132\024.google." +
-      "api.ResourceB\272\001\n\016com.google.apiB\rResourc" +
-      "eProtoP\001ZAgoogle.golang.org/genproto/goo" +
-      "gleapis/api/annotations;annotations\242\002\004GA" +
-      "PI\352A\035\n\022projects/{project}\022\007Project\352A,\n\034o" +
-      "rganizations/{organization}\022\014Organizatio" +
-      "nb\006proto3"
+      " google/protobuf/descriptor.proto\"\335\001\n\022Re" +
+      "sourceDescriptor\022\014\n\004type\030\001 \001(\t\022\017\n\007patter" +
+      "n\030\002 \003(\t\022\022\n\nname_field\030\003 \001(\t\0227\n\007history\030\004" +
+      " \001(\0162&.google.api.ResourceDescriptor.His" +
+      "tory\"[\n\007History\022\027\n\023HISTORY_UNSPECIFIED\020\000" +
+      "\022\035\n\031ORIGINALLY_SINGLE_PATTERN\020\001\022\030\n\024FUTUR" +
+      "E_MULTI_PATTERN\020\002\"5\n\021ResourceReference\022\014" +
+      "\n\004type\030\001 \001(\t\022\022\n\nchild_type\030\002 \001(\t:Y\n\022reso" +
+      "urce_reference\022\035.google.protobuf.FieldOp" +
+      "tions\030\237\010 \001(\0132\035.google.api.ResourceRefere" +
+      "nce:R\n\010resource\022\037.google.protobuf.Messag" +
+      "eOptions\030\235\010 \001(\0132\036.google.api.ResourceDes" +
+      "criptorBn\n\016com.google.apiB\rResourceProto" +
+      "P\001ZAgoogle.golang.org/genproto/googleapi" +
+      "s/api/annotations;annotations\370\001\001\242\002\004GAPIb" +
+      "\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -131,20 +118,20 @@ public final class ResourceProto {
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.google.protobuf.DescriptorProtos.getDescriptor(),
         }, assigner);
-    internal_static_google_api_Resource_descriptor =
+    internal_static_google_api_ResourceDescriptor_descriptor =
       getDescriptor().getMessageTypes().get(0);
-    internal_static_google_api_Resource_fieldAccessorTable = new
+    internal_static_google_api_ResourceDescriptor_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_google_api_Resource_descriptor,
-        new java.lang.String[] { "Pattern", "Symbol", });
-    resource.internalInit(descriptor.getExtensions().get(0));
-    resourceReference.internalInit(descriptor.getExtensions().get(1));
-    resourceDefinition.internalInit(descriptor.getExtensions().get(2));
-    com.google.protobuf.ExtensionRegistry registry =
-        com.google.protobuf.ExtensionRegistry.newInstance();
-    registry.add(com.google.api.ResourceProto.resourceDefinition);
-    com.google.protobuf.Descriptors.FileDescriptor
-        .internalUpdateFileDescriptor(descriptor, registry);
+        internal_static_google_api_ResourceDescriptor_descriptor,
+        new java.lang.String[] { "Type", "Pattern", "NameField", "History", });
+    internal_static_google_api_ResourceReference_descriptor =
+      getDescriptor().getMessageTypes().get(1);
+    internal_static_google_api_ResourceReference_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_google_api_ResourceReference_descriptor,
+        new java.lang.String[] { "Type", "ChildType", });
+    resourceReference.internalInit(descriptor.getExtensions().get(0));
+    resource.internalInit(descriptor.getExtensions().get(1));
     com.google.protobuf.DescriptorProtos.getDescriptor();
   }
 

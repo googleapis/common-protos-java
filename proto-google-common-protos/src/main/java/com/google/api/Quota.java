@@ -7,7 +7,7 @@ package com.google.api;
  * <pre>
  * Quota configuration helps to achieve fairness and budgeting in service
  * usage.
- * The quota configuration works this way:
+ * The metric based quota configuration works this way:
  * - The service configuration defines a set of metrics.
  * - For API calls, the quota.metric_rules maps methods to metrics with
  *   corresponding costs.
@@ -432,7 +432,7 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * Quota configuration helps to achieve fairness and budgeting in service
    * usage.
-   * The quota configuration works this way:
+   * The metric based quota configuration works this way:
    * - The service configuration defines a set of metrics.
    * - For API calls, the quota.metric_rules maps methods to metrics with
    *   corresponding costs.
